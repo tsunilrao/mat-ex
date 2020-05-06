@@ -2,11 +2,9 @@
 
 This library extends the basic features of Angular Material
 
-## Installation
+#### Installation
 
 Run `npm i mat-ex` to install this library
-
-
 
 ## Toolbar Button `<mtx-toolbar-button>`
 
@@ -40,8 +38,10 @@ the background color to `primary`, `accent`, or `warn`.
 
 #### Examples
 
-`<mtx-toolbar-button raised icon="check" color="primary"></mtx-toolbar-button>`
+```
+<mtx-toolbar-button raised icon="check" color="primary"></mtx-toolbar-button>
 
-`<mtx-toolbar-button flat icon="check" text="finish"></mtx-toolbar-button>`
+<mtx-toolbar-button flat icon="check" text="finish"></mtx-toolbar-button>
 
-`<mtx-toolbar-button flat text="finish" dropdown></mtx-toolbar-button>`
+<mtx-toolbar-button flat text="finish" dropdown></mtx-toolbar-button>
+```
