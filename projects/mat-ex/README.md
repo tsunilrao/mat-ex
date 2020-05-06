@@ -1,24 +1,27 @@
-# MatEx
+# Material Extension
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+This library extends the basic features of Angular Material
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project mat-ex` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project mat-ex`.
-> Note: Don't forget to add `--project mat-ex` or else it will be added to the default project in your `angular.json` file. 
+Run `npm i mat-ex` to install this library
 
-## Build
+## Toolbar Button <mtx-toolbar-button>
 
-Run `ng build mat-ex` to build the project. The build artifacts will be stored in the `dist/` directory.
+Toolbar buttons are Angular Material mat-button elements enhanced with Material Extension design and styling.
 
-## Publishing
+<mtx-toolbar-button></mtx-toolbar-button>
 
-After building your library with `ng build mat-ex`, go to the dist folder `cd dist/mat-ex` and run `npm publish`.
+#### Input Properties
 
-## Running unit tests
+Icon
+Text
 
-Run `ng test mat-ex` to execute the unit tests via [Karma](https://karma-runner.github.io).
+There are several button variants, each applied as an attribute:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+| Attribute | Description                                     |
+| --------- | ----------------------------------------------- |
+| none      | Rectangular button with no elevation            |
+| `raised`  | Rectangular contained button with elevation     |
+| `flat`    | Rectangular contained button with no elevation  |
+| `stroked` | Rectangular outlined button with no elevation   |
