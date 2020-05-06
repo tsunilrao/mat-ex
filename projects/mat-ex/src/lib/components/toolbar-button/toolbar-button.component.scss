@@ -1,0 +1,18 @@
+:host { 
+    display: inline-flex; 
+    flex-direction: row;
+    border: 0;
+    padding: 0;
+    background: transparent;
+}
+
+button { line-height: initial; height: 36px; min-width: 36px; padding:0; overflow: hidden; }
+
+.container, .content { display: flex; flex-direction: row; }
+.container, .content { align-items: center; justify-content: center; }
+.content { padding-left: 16px; padding-right: 16px; }
+.caret { margin-left: -4px; height: 20px; width: 20px; line-height: 20px; font-size: 20px;}
+
+.only-icon { width: 36px; }
+.icon-and-text .icon{ margin-right: 0.5em; }
+

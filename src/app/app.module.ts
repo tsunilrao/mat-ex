@@ -1,20 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ToolbarButtonModule } from 'mat-ex'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarButtonComponent } from 'projects/mat-ex/src/lib/components/toolbar-button/toolbar-button.component';
+import { MatButtonModule } from '@angular/material/button'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToolbarButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ToolbarButtonModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
