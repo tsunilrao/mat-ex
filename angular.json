@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "mat-ex": {
+      "projectType": "library",
+      "root": "projects/mat-ex",
+      "sourceRoot": "projects/mat-ex/src",
+      "prefix": "mtx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mat-ex/tsconfig.lib.json",
+            "project": "projects/mat-ex/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mat-ex/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mat-ex/src/test.ts",
+            "tsConfig": "projects/mat-ex/tsconfig.spec.json",
+            "karmaConfig": "projects/mat-ex/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mat-ex/tsconfig.lib.json",
+              "projects/mat-ex/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "mat-ex-app"
 }
