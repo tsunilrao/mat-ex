@@ -21,11 +21,11 @@ export class ToolbarButtonComponent implements OnChanges {
 
   get hasIcon(): boolean { return this.icon ? true : false; }
   get hasText(): boolean { return this.text ? true : false; }
+  get hasDropdown(): boolean { return this.dropdown ? true : false; }
+  get isVertical(): boolean { return this.vertical ? true : false; }
   get hasOnlyIcon(): boolean { return this.hasIcon && !this.hasText; }
   get hasOnlyText(): boolean { return !this.hasIcon && this.hasText; }
   get hasIconAndText(): boolean { return this.hasIcon && this.hasText; }
-  get hasDropdown(): boolean { return this.dropdown ? true : false; }
-  get isVertical(): boolean { return this.vertical ? true : false; }
 
   constructor(el: ElementRef) {
     this.elementRef = el;

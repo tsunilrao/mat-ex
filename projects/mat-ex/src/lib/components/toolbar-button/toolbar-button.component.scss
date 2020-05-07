@@ -1,9 +1,9 @@
 :host { 
-    display: inline-flex; 
-    flex-direction: row;
+    display: inline-block; 
     border: 0;
     padding: 0;
     background: transparent;
+    vertical-align: middle;
 }
 
 button { line-height: initial; height: 36px; min-width: 36px; padding:0; overflow: hidden; }
@@ -13,8 +13,8 @@ button { line-height: initial; height: 36px; min-width: 36px; padding:0; overflo
 .content { padding-left: 16px; padding-right: 16px; }
 .caret { margin-left: -4px; height: 20px; width: 20px; line-height: 20px; font-size: 20px;}
 
-.only-icon { width: 36px; }
 .icon-and-text .icon{ margin-right: 0.5em; }
 
-.vertical .content { flex-direction: column; padding-left: 8px; padding-right: 8px; }
+.only-icon .content, .vertical .content { padding-left: 8px; padding-right: 8px; }
+.vertical .content { flex-direction: column; }
 .vertical .icon{ margin-right: 0; }
