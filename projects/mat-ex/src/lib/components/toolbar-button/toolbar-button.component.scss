@@ -16,3 +16,5 @@ button { line-height: initial; height: 36px; min-width: 36px; padding:0; overflo
 .only-icon { width: 36px; }
 .icon-and-text .icon{ margin-right: 0.5em; }
 
+.vertical .content { flex-direction: column; padding-left: 8px; padding-right: 8px; }
+.vertical .icon{ margin-right: 0; }

@@ -1,58 +1,46 @@
-import { Component, OnInit, Input, ElementRef } from '@angular/core';
-
-const BUTTON_HOST_ATTRIBUTES = [
-  'flat',
-  'raised',
-  'stroked',
-];
+import { Component, Input, ElementRef, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: `button[mtx-toolbar-button], mtx-toolbar-button`,
   templateUrl: './toolbar-button.component.html',
   styleUrls: ['./toolbar-button.component.scss'],
-  inputs: ['disabled', 'disableRipple', 'color'],
-
 })
-export class ToolbarButtonComponent implements OnInit {
+export class ToolbarButtonComponent implements OnChanges {
 
   @Input() icon: string;
   @Input() text: string;
-  @Input() color: string;
-  
-  @Input() caret: boolean = true;
+  @Input() variant: 'flat' | 'raised' | 'stroked';
+  @Input() dropdown: boolean;
+  @Input() vertical: boolean;
+  @Input() color;
+  @Input() disabled;
+  @Input() disableRipple;
 
-  _elementRef: ElementRef;
-  matButtonStyle = 'mat-button';
-  get hasIcon():boolean { return this.icon ? true : false; }
+  elementRef: ElementRef;
+  matButtonClass: string;
+
+  get hasIcon(): boolean { return this.icon ? true : false; }
   get hasText(): boolean { return this.text ? true : false; }
-  get hasColor():boolean { return this.color ? true : false; }
   get hasOnlyIcon(): boolean { return this.hasIcon && !this.hasText; }
   get hasOnlyText(): boolean { return !this.hasIcon && this.hasText; }
   get hasIconAndText(): boolean { return this.hasIcon && this.hasText; }
+  get hasDropdown(): boolean { return this.dropdown ? true : false; }
+  get isVertical(): boolean { return this.vertical ? true : false; }
 
-
-  constructor(elementRef: ElementRef) {
-
-    this._elementRef = elementRef;
-
-    for (const attr of BUTTON_HOST_ATTRIBUTES) {
-      if (this._hasHostAttributes(attr)) this.matButtonStyle = this._getStyleClass(attr)
-    }
+  constructor(el: ElementRef) {
+    this.elementRef = el;
   }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+    this.dropdown = (this.dropdown==null || this.dropdown===false || (this.dropdown as unknown)==='false') ? false : true
+    this.vertical = (this.vertical==null || this.vertical===false || (this.vertical as unknown)==='false') ? false : true
+    this.matButtonClass = this.getVariantClass(this.variant)
   }
 
-  protected _getStyleClass(attr) {
-    return 'mat-' + attr + '-button';
-  }
-
-  protected _getHostElement() {
-    return this._elementRef.nativeElement;
-  }
-
-  protected _hasHostAttributes(...attributes: string[]) {
-    return attributes.some(attribute => this._getHostElement().hasAttribute(attribute));
+  getVariantClass(variant) {
+    var variantClass: string = 'mat-button';
+    if (variant) variantClass = 'mat-' + variant + '-button'
+    return variantClass
   }
 
 }
