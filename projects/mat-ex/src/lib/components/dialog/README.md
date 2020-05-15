@@ -13,7 +13,6 @@ Several directives are available to make it easier to structure your dialog cont
 | `mtx-dialog-actions` | Container for action buttons at the bottom of the dialog.    |
 |                      | Button alignment can be controlled via the `align` attribute |
 |                      | which can be set to `start`, `end` or `center`.              |
-| -------------------- | ------------------------------------------------------------ |
 
 #### Styling
 
@@ -37,7 +36,7 @@ the background color to `primary`, `accent`, or `warn`.
         <button mat-button>Cancel</button>
         <button mat-button>Delete</button>
     </mtx-dialog-actions>
-</mtx-dialog-button>
+</mtx-dialog>
 
 <mtx-dialog variant="raised" color="primary">
     <mtx-dialog-title>Delete all content?</mtx-dialog-title>
