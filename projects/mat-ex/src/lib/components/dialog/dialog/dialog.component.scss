@@ -1,0 +1,21 @@
+.mtx-dialog { 
+    padding: 0; display: inline-flex; flex-direction: column;
+    box-sizing: border-box; position: relative; border-radius: 4px; overflow: visible; 
+    background-color: white;
+}
+
+.mtx-dialog.mtx-dialog-stroked { 
+    border: 1px solid rgba(0, 0, 0, 0.12); 
+}
+
+.mtx-dialog.mtx-dialog-raised { 
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width:599px) {
+    .mtx-dialog { min-width: 280px; max-width: 280px;}
+}
+
+@media (min-width:600px) {
+    .mtx-dialog { min-width: 560px; max-width: 560px;}
+}

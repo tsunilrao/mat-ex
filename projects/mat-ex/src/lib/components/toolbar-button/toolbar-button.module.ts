@@ -5,16 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-
-
 @NgModule({
   declarations: [ToolbarButtonComponent],
-  imports: [
-    CommonModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatIconModule,
-  ],
+  imports: [CommonModule, BrowserAnimationsModule, MatButtonModule, MatIconModule,],
   exports: [ToolbarButtonComponent]
 })
 export class ToolbarButtonModule { }

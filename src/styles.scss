@@ -12,21 +12,180 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$mat-ex-app-primary: mat-palette($mat-indigo);
-$mat-ex-app-accent: mat-palette($mat-pink, A200, A100, A400);
+$quicklix-gray: mat-palette($mat-gray, 600);
+$quicklix-blue: mat-palette($mat-blue, 500);
+$quicklix-green: mat-palette($mat-green, 500);
+$quicklix-orange: mat-palette($mat-orange, 800);
+$quicklix-red: mat-palette($mat-red, 500);
+
+$quicklix-primary: mat-palette($mat-indigo);
+$quicklix-accent: mat-palette($mat-blue, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$mat-ex-app-warn: mat-palette($mat-red);
+$quicklix-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$mat-ex-app-theme: mat-light-theme($mat-ex-app-primary, $mat-ex-app-accent, $mat-ex-app-warn);
+$quicklix-theme: mat-light-theme($quicklix-primary, $quicklix-accent, $quicklix-warn);
+
+$quicklix-light: whitesmoke;
+$quicklix-white: white;
+
+$quicklix-text-dark: #212121;
+$quicklix-text-secondary: #757575;
+$quicklix-text-light: white;
+$quicklix-text-light-secondary: #ffffffc0;
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($mat-ex-app-theme);
+@include angular-material-theme($quicklix-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.color-gray { background-color: mat-color($quicklix-gray); color: $quicklix-text-light; }
+.color-blue { background-color: mat-color($quicklix-blue); color: $quicklix-text-light; }
+.color-green { background-color: mat-color($quicklix-green); color: $quicklix-text-light; }
+.color-orange { background-color: mat-color($quicklix-orange); color: $quicklix-text-light; }
+.color-red { background-color: mat-color($quicklix-red); color: $quicklix-text-light; }
+
+.color-primary { background-color: mat-color($quicklix-primary); color: $quicklix-text-light; }
+.color-accent { background-color: mat-color($quicklix-accent); color: $quicklix-text-light; }
+.color-secondary { background-color: $quicklix-text-secondary; color: $quicklix-text-dark; }
+.color-light { background-color: $quicklix-light; color: $quicklix-text-dark; }
+.color-white { background-color: $quicklix-white; color: $quicklix-text-dark; }
+
+.textcolor-gray { color: mat-color($quicklix-gray); }
+.textcolor-blue { color: mat-color($quicklix-blue); }
+.textcolor-green { color: mat-color($quicklix-green); }
+.textcolor-orange { color: mat-color($quicklix-orange); }
+.textcolor-red { color: mat-color($quicklix-red); }
+
+.textcolor-primary  { color: mat-color($quicklix-primary); }
+.textcolor-accent  { color: mat-color($quicklix-accent); }
+.textcolor-warn  { color: mat-color($quicklix-warn); }
+.textcolor-dark  { color: $quicklix-text-dark; }
+.textcolor-light  { color: $quicklix-text-light; }
+.textcolor-secondary  { color: $quicklix-text-secondary; }
+.textcolor-light-secondary  { color: $quicklix-text-light-secondary; }
+
+.bordercolor-gray { border-color: mat-color($quicklix-gray); }
+.bordercolor-blue { border-color: mat-color($quicklix-blue); }
+.bordercolor-green { border-color: mat-color($quicklix-green); }
+.bordercolor-orange { border-color: mat-color($quicklix-orange); }
+.bordercolor-red { border-color: mat-color($quicklix-red); }
+
+.bordercolor-primary  { border-color: mat-color($quicklix-primary); }
+.bordercolor-accent  { border-color: mat-color($quicklix-accent); }
+.bordercolor-dark  { border-color: $quicklix-text-dark; }
+.bordercolor-light  { border-color: $quicklix-text-light; }
+.bordercolor-secondary  { border-color: $quicklix-text-secondary; }
+.bordercolor-light-secondary  { border-color: $quicklix-text-light-secondary; }
+
+html, body { height: 100vh; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-width: 320px;}
+
+.row, .col, .row-fill, .col-fill, body { display: flex !important; }
+.col, .col-fill, body { flex-direction: column; }
+.row, .row-fill { flex-direction: row; }
+.row-fill, .col-fill, body { flex: 1; overflow: hidden; }
+
+.center { align-items: center; justify-content: center; }
+.align-center { text-align: center; }
+.align-left { text-align: left; align-self: flex-start; }
+.align-right { text-align: right; align-self: flex-end; }
+
+.scroll-x { overflow-x: overlay;}
+.scroll-y { overflow-y: overlay;}
+
+.p-0 { padding: 0px !important; }
+.pl-0, .px-0 { padding-left: 0px !important; }
+.pr-0, .px-0 { padding-right: 0px !important; }
+.pl-1, .pl-xs, .px-1, .px-xs { padding-left: 4px !important; }
+.pr-1, .pr-xs, .px-1, .px-xs { padding-right: 4px !important; }
+.pl-2, .pl-sm, .px-2, .px-sm { padding-left: 8px !important; }
+.pr-2, .pr-sm, .px-2, .px-sm { padding-right: 8px !important; }
+.pl-3, .pl-md, .px-3, .px-md { padding-left: 16px !important; }
+.pr-3, .pr-md, .px-3, .px-md { padding-right: 16px !important; }
+.pl-4, .pl-lg, .px-4, .px-lg { padding-left: 32px !important; }
+.pr-4, .pr-lg, .px-4, .px-lg { padding-right: 32px !important; }
+.pl-5, .pl-xl, .px-5, .px-xl { padding-left: 64px !important; }
+.pr-5, .pr-xl, .px-5, .px-xl { padding-right: 64px !important; }
+
+.pt-0, .py-0 { padding-top: 0px !important; }
+.pb-0, .py-0 { padding-bottom: 0px !important; }
+.pt-1, .pt-xs, .py-1, .py-xs { padding-top: 4px !important; }
+.pb-1, .pb-xs, .py-1, .py-xs { padding-bottom: 4px !important; }
+.pt-2, .pt-sm, .py-2, .py-sm { padding-top: 8px !important; }
+.pb-2, .pb-sm, .py-2, .py-sm { padding-bottom: 8px !important; }
+.pt-3, .pt-md, .py-3, .py-md { padding-top: 16px !important; }
+.pb-3, .pb-md, .py-3, .py-md { padding-bottom: 16px !important; }
+.pt-4, .pt-lg, .py-4, .py-lg { padding-top: 32px !important; }
+.pb-4, .pb-lg, .py-4, .py-lg { padding-bottom: 32px !important; }
+.pt-5, .pt-xl, .py-5, .py-xl { padding-top: 48px !important; }
+.pb-6, .pb-xl, .py-5, .py-xl { padding-bottom: 48px !important; }
+
+.px-auto, .p-auto { padding-left: 32px !important; padding-right: 32px !important; }
+.py-auto, .p-auto { padding-top: 32px !important; padding-bottom: 32px !important; }
+@media (max-width: 599px) {
+    .px-auto, .p-auto { padding-left: 16px !important; padding-right: 16px !important; }
+    .py-auto, .p-auto { padding-top: 16px !important; padding-bottom: 16px !important; }
+}
+@media (min-width: 960px) {
+    .px-auto, .p-auto { padding-left: 48px !important; padding-right: 48px !important; }
+    .py-auto, .p-auto { padding-top: 48px !important; padding-bottom: 48px !important; }
+}
+
+.m-0 { margin: 0px !important; }
+.mt-0, .my-0 { margin-top: 0 !important; }
+.mb-0, .my-0 { margin-bottom: 0 !important; }
+.mt-xs, .my-xs { margin-top: 2px !important; }
+.mb-xs, .my-xs { margin-bottom: 2px !important; }
+.mt-sm, .my-sm { margin-top: 4px !important; }
+.mb-sm, .my-sm { margin-bottom: 4px !important; }
+.mt-md, .my-md { margin-top: 8px !important; }
+.mb-md, .my-md { margin-bottom: 8px !important; }
+.mt-lg, .my-lg { margin-top: 16px !important; }
+.mb-lg, .my-lg { margin-bottom: 16px !important; }
+.mt-xl, .my-xl { margin-top: 32px !important; }
+.mb-xl, .my-xl { margin-bottom: 32px !important; }
+
+.font-xs, .font-xs-500 { font-size: x-small; }
+.font-sm, .font-sm-500 { font-size: small; }
+.font-md, .font-md-500 { font-size: medium; }
+.font-lg, .font-lg-500 { font-size: large; }
+.font-xl, .font-xl-500 { font-size: x-large; }
+
+.font-xs-500, .font-sm-500, .font-md-500, .font-lg-500, .font-xl-500 { font-weight: 500; }
+
+.anchor { color: mat-color($quicklix-accent); font-weight: 500; text-decoration: none;}
+.anchor:hover { text-decoration: underline;}
+
+.form-dialog { width: 50vw; max-height: 80vh; min-width: 280px;}
+.form-dialog .mat-dialog-container{ padding: 0; display: flex; flex-direction: column; overflow: hidden;}
+
+.menu-dialog { width: 280px; line-height: initial; overflow: hidden !important; }
+.menu-dialog .mat-menu-content { padding: 0 !important; display: flex; overflow: hidden; }
+
+.mat-overline { font: 400 10px/16px Roboto, "Helvetica Neue", sans-serif; letter-spacing: 0.5px;}
+
+.content-padding { padding-left: 32px; padding-right: 32px; }
+@media (max-width: 599px) {
+    .content-padding { padding-left: 16px; padding-right: 16px; }
+}
+@media (min-width: 960px) {
+    .content-padding { padding-left: 48px; padding-right: 48px; }
+}
+
+.mat-typography {
+    .mat-display-4, .mat-display-3, .mat-display-2, .mat-display-1,
+    h1, .mat-h1, .mat-headline,
+    h2, .mat-h2, .mat-title	Section,
+    h3, .mat-h3, .mat-subheading-2,
+    h4, .mat-h4, .mat-subheading-1,
+    .mat-body, .mat-body-1,
+    .mat-body-strong, .mat-body-2,
+    .mat-small, .mat-caption,
+    .mat-input,
+    .mat-overline { margin:0; line-height: 1.35}
+
+}

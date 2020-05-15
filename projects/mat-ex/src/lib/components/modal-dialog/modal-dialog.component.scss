@@ -1,0 +1,18 @@
+.mtx-modal-dialog {
+    .mtx-title { width: auto; margin: -24px -24px 0 -24px; padding: 16px 24px;}
+    .mtx-title.color-white { background: white;} 
+    .mtx-content { margin-bottom: 24px;}
+    .mtx-actions { min-height: 36px; margin: 0 -24px -24px -24px; padding: 8px; }
+    .mtx-divider { margin: 0 -24px }
+}
+
+.mtx-modal-dialog.flat {
+    .mtx-title.color-white { background: white;} 
+}
+
+
+.mtx-modal-dialog.alert {
+    .mtx-actions { justify-content: flex-end; }
+}
+
+
