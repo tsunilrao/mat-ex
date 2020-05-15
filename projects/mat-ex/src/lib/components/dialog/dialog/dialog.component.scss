@@ -3,6 +3,12 @@
     box-sizing: border-box; position: relative; border-radius: 4px; overflow: visible; 
     background-color: white;
 }
+.mtx-dialog { min-width: 560px; max-width: 560px;}
+
+.mtx-dialog .content-container { display: flex; flex-direction: row; 
+    padding: 24px; margin: 0;  max-height: 65vh; box-sizing: border-box;
+    overflow-y: overlay; -webkit-overflow-scrolling: touch; 
+}
 
 .mtx-dialog.mtx-dialog-stroked { 
     border: 1px solid rgba(0, 0, 0, 0.12); 
@@ -14,8 +20,4 @@
 
 @media (max-width:599px) {
     .mtx-dialog { min-width: 280px; max-width: 280px;}
-}
-
-@media (min-width:600px) {
-    .mtx-dialog { min-width: 560px; max-width: 560px;}
 }

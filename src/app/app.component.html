@@ -9,8 +9,9 @@
     <mtx-toolbar-button variant="flat" icon="home" text="Dialog" (click)="onDialogOpen()"></mtx-toolbar-button>
 </div>
 <div class="py-lg px-lg">
-    <mtx-dialog variant="raised" color="accent">
+    <mtx-dialog>
         <mtx-dialog-title>Delete all content?</mtx-dialog-title>
+        <mtx-dialog-icon color="primary">cancel</mtx-dialog-icon>
         <mtx-dialog-content>This will delete all elements that are currently on this page and cannot be undone.</mtx-dialog-content>
         <mtx-dialog-actions>
             <button mat-button>Cancel</button>
