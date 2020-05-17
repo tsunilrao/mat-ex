@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input, ElementRef, ContentChild, AfterContentInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, ElementRef, ContentChild, AfterContentInit, AfterViewInit, ViewChild } from '@angular/core';
 import { DialogTitleComponent } from '../dialog-title/dialog-title.component';
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 
@@ -31,10 +31,9 @@ export class DialogComponent implements OnInit, AfterViewInit, AfterContentInit 
   @Input() color?= 'basic';
 
   @ContentChild(DialogTitleComponent) titleRef: DialogTitleComponent
+  @ViewChild('container') containerRef: ElementRef;
 
-  constructor(private hostRef: ElementRef) {
-
-  }
+  constructor(private hostRef: ElementRef) { }
 
   ngOnInit(): void {
     if (!this.variant) DIALOG_VARIANT_ATTRIBUTES[0];
@@ -45,6 +44,7 @@ export class DialogComponent implements OnInit, AfterViewInit, AfterContentInit 
     DIALOG_VARIANT_ATTRIBUTES.forEach(attr => {
       if (attr === this.variant) this.hostRef.nativeElement.classList.add('mtx-dialog-' + attr);
     })
+    this.onScrollContainer()
   }
 
   ngAfterContentInit(): void {
@@ -54,4 +54,10 @@ export class DialogComponent implements OnInit, AfterViewInit, AfterContentInit 
     }
   }
 
+
+  onScrollContainer() {
+    const element:Element = this.containerRef.nativeElement
+    if (element.scrollTop>0) element.classList.add('shadow-top'); else element.classList.remove('shadow-top')
+    if (element.scrollTop + element.clientHeight < element.scrollHeight) element.classList.add('shadow-bottom'); else element.classList.remove('shadow-bottom')
+  }
 }

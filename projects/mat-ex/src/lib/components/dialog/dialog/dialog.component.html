@@ -1,6 +1,8 @@
 <ng-content select="mtx-dialog-title"></ng-content>
-<div class="content-container">
-    <ng-content select="mtx-dialog-icon"></ng-content>
-    <ng-content select="mtx-dialog-content"></ng-content>
+<div class="content-container" (scroll)="onScrollContainer()" #container>
+    <div class="content">
+        <ng-content select="mtx-dialog-icon"></ng-content>
+        <ng-content select="mtx-dialog-content"></ng-content>
+    </div>
 </div>
 <ng-content select="mtx-dialog-actions"></ng-content>
