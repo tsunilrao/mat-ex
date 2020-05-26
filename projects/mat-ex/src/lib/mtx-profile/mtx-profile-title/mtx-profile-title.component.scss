@@ -1,4 +1,4 @@
-.mtx-profile .mtx-profile-title { font-weight: 500; opacity: .87; }
+.mtx-profile .mtx-profile-title { font-weight: 500; opacity: .87; overflow: hidden; text-overflow: ellipsis; }
 
 .mtx-profile-small .mtx-profile-title { font-size: 12px; line-height: 14px; }
 .mtx-profile-medium .mtx-profile-title { font-size: 14px; line-height: 18px; }
