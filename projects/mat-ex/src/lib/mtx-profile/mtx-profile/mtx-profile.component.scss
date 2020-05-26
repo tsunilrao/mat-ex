@@ -1,0 +1,9 @@
+.mtx-profile { display: flex; flex-direction: row; }
+
+.mtx-profile-small { height: 24px; align-items: center; }
+.mtx-profile-medium { height: 32px; align-items: center; }
+.mtx-profile-large { height: 40px; align-items: center; }
+
+.mtx-profile-small .mtx-profile-spacer { margin-right: 6px; }
+.mtx-profile-medium .mtx-profile-spacer { margin-right: 8px; }
+.mtx-profile-large .mtx-profile-spacer { margin-right: 12px; }

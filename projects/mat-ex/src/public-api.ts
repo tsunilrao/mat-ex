@@ -13,3 +13,9 @@ export * from './lib/components/dialog/dialog-actions/dialog-actions.component';
 
 export * from './lib/components/modal-dialog/modal-dialog.module';
 export * from './lib/components/modal-dialog/modal-dialog.component';
+
+export * from './lib/mtx-profile/mtx-profile.module';
+export * from './lib/mtx-profile/mtx-profile/mtx-profile.component';
+export * from './lib/mtx-profile/mtx-profile-title/mtx-profile-title.component';
+export * from './lib/mtx-profile/mtx-profile-subtitle/mtx-profile-subtitle.component';
+export * from './lib/mtx-profile/mtx-profile-photo/mtx-profile-photo.component';

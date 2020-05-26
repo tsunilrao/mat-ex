@@ -8,6 +8,7 @@ import { ToolbarButtonModule } from 'projects/mat-ex/src/lib/components/toolbar-
 import { DialogModule } from 'projects/mat-ex/src/lib/components/dialog/dialog.module';
 import { ModalDialogModule } from 'projects/mat-ex/src/lib/components/modal-dialog/modal-dialog.module';
 import { MatButtonModule } from '@angular/material/button'
+import { MtxProfileModule } from 'projects/mat-ex/src/lib/mtx-profile/mtx-profile.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MatButtonModule } from '@angular/material/button'
     ToolbarButtonModule,
     ModalDialogModule,
     DialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MtxProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]
