@@ -16,6 +16,7 @@ export * from './lib/components/modal-dialog/modal-dialog.component';
 
 export * from './lib/mtx-profile/mtx-profile.module';
 export * from './lib/mtx-profile/mtx-profile/mtx-profile.component';
+export * from './lib/mtx-profile/mtx-profile-header/mtx-profile-header.component';
 export * from './lib/mtx-profile/mtx-profile-title/mtx-profile-title.component';
 export * from './lib/mtx-profile/mtx-profile-subtitle/mtx-profile-subtitle.component';
 export * from './lib/mtx-profile/mtx-profile-photo/mtx-profile-photo.component';

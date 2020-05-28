@@ -4,14 +4,21 @@ import { MtxProfileComponent } from './mtx-profile/mtx-profile.component';
 import { MtxProfileTitleComponent } from './mtx-profile-title/mtx-profile-title.component';
 import { MtxProfileSubtitleComponent } from './mtx-profile-subtitle/mtx-profile-subtitle.component';
 import { MtxProfilePhotoComponent } from './mtx-profile-photo/mtx-profile-photo.component';
+import { MtxProfileHeaderComponent } from './mtx-profile-header/mtx-profile-header.component';
 
 
 
 @NgModule({
-  declarations: [MtxProfileComponent, MtxProfileTitleComponent, MtxProfileSubtitleComponent, MtxProfilePhotoComponent],
+  declarations: [
+    MtxProfileComponent, MtxProfileTitleComponent, MtxProfileSubtitleComponent, 
+    MtxProfilePhotoComponent, MtxProfileHeaderComponent
+  ],
   imports: [
     CommonModule
   ],
-  exports: [MtxProfileComponent, MtxProfileTitleComponent, MtxProfileSubtitleComponent, MtxProfilePhotoComponent]
+  exports: [
+    MtxProfileComponent, MtxProfileTitleComponent, MtxProfileSubtitleComponent, 
+    MtxProfilePhotoComponent, MtxProfileHeaderComponent
+  ]
 })
 export class MtxProfileModule { }
