@@ -1,0 +1,12 @@
+.mtx-feature-bar { display: flex; flex-direction: column; margin: 0 16px; }
+
+.mtx-feature-bar-content { display: flex; flex-direction: row; }
+.mtx-feature-bar-content { height: 64px; padding-top: 16px; padding-bottom:8px; box-sizing: border-box; }
+
+@media (max-width: 599px) {
+    .mtx-feature-bar { margin: 0 8px; }
+    .mtx-feature-bar-content { height: 56px; padding-top: 8px; }
+}
+@media (min-width: 960px) {
+    .mtx-feature-bar { margin: 0 24px; }
+}

@@ -10,6 +10,8 @@ import { ModalDialogModule } from 'projects/mat-ex/src/lib/components/modal-dial
 import { MatButtonModule } from '@angular/material/button'
 import { MtxProfileModule } from 'projects/mat-ex/src/lib/mtx-profile/mtx-profile.module';
 import { MatIconModule } from '@angular/material/icon';
+import { MtxFeatureBarModule } from 'projects/mat-ex/src/lib/mtx-feature-bar/mtx-feature-bar.module';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MatIconModule } from '@angular/material/icon';
     DialogModule,
     MatButtonModule,
     MtxProfileModule,
-    MatIconModule
+    MatIconModule,
+    MtxFeatureBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
