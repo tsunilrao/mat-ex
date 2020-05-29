@@ -1,9 +1,9 @@
 .mtx-feature-bar { display: flex; flex-direction: column; margin: 0 16px; }
 
+.mtx-feature-bar .mtx-feature-bar-title { display: flex; flex-direction: row; flex: 1;}
+
 .mtx-feature-bar-content { display: flex; flex-direction: row; }
 .mtx-feature-bar-content { height: 64px; padding-top: 16px; padding-bottom:8px; box-sizing: border-box; }
-
-.mtx-feature-bar .mtx-profile-photo .mat-icon { color: currentColor; font-size: 24px; line-height: 24px; height: 24px; width: 24px; min-height: 24px; min-width: 24px; }
 
 @media (max-width: 599px) {
     .mtx-feature-bar { margin: 0 8px; }

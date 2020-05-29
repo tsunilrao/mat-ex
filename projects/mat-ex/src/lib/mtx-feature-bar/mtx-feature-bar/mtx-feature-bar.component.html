@@ -1,5 +1,7 @@
 <div class="mtx-feature-bar-content">
     <div style="display: flex; flex-direction: row; flex: 1; align-items: center;">
+        <ng-content select="mtx-feature-bar-icon"></ng-content>
+        <ng-content select="mtx-feature-bar-title"></ng-content>
         <ng-content></ng-content>
     </div>
     <button mat-icon-button style="margin-right: -8px;" [matMenuTriggerFor]="matMenu" *ngIf="matMenu">
