@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation, Input, ElementRef, AfterViewInit } from '@angular/core';
 
 const PROFILE_PHOTO_SIZE_ATTRIBUTES = [
-  'large',
   'small',
   'medium',
+  'large',
   'x-large',
 ];
 
@@ -22,7 +22,7 @@ export class MtxProfilePhotoComponent implements OnInit, AfterViewInit {
   constructor(private hostRef: ElementRef) { }
 
   ngOnInit(): void {
-    if (!this.size) this.size = PROFILE_PHOTO_SIZE_ATTRIBUTES[0];
+    if (!this.size) this.size = '';
   }
 
   ngAfterViewInit(): void {
