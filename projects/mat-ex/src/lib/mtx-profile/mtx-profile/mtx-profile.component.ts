@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ElementRef, AfterViewInit, Input, ViewChild } from '@angular/core';
 
-
 const PROFILE_SIZE_ATTRIBUTES = [
   'medium',
   'small',

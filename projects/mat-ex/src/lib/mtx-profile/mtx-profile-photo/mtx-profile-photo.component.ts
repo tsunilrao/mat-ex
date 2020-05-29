@@ -1,4 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, ElementRef, AfterViewInit } from '@angular/core';
+
+const PROFILE_PHOTO_SIZE_ATTRIBUTES = [
+  'large',
+  'small',
+  'medium',
+  'x-large',
+];
+
 
 @Component({
   selector: 'mtx-profile-photo',
@@ -7,11 +15,20 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   templateUrl: './mtx-profile-photo.component.html',
   styleUrls: ['./mtx-profile-photo.component.scss']
 })
-export class MtxProfilePhotoComponent implements OnInit {
+export class MtxProfilePhotoComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  @Input() size?: string;
+
+  constructor(private hostRef: ElementRef) { }
 
   ngOnInit(): void {
+    if (!this.size) this.size = PROFILE_PHOTO_SIZE_ATTRIBUTES[0];
+  }
+
+  ngAfterViewInit(): void {
+    PROFILE_PHOTO_SIZE_ATTRIBUTES.forEach(attr => {
+      if (attr === this.size) this.hostRef.nativeElement.classList.add('mtx-profile-photo-' + attr);
+    })
   }
 
 }

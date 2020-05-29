@@ -1,4 +1,8 @@
 .mtx-profile-photo { border-radius: 50%; object-fit: cover; overflow: hidden; }
 .mtx-profile-photo img { width: 100%; }
 .mtx-profile-photo .mat-icon { color: rgba(0,0,0,.54); }
-.mtx-profile-photo { font-size: 32px; line-height: 32px; height: 32px; width: 32px; min-height: 32px; min-width: 32px; }
+
+.mtx-profile-photo.mtx-profile-photo-small, .mtx-profile-photo.mtx-profile-photo-small .mat-icon { font-size: 24px; line-height: 24px; height: 24px; width: 24px; min-height: 24px; min-width: 24px; }
+.mtx-profile-photo.mtx-profile-photo-medium, .mtx-profile-photo.mtx-profile-photo-medium .mat-icon { font-size: 32px; line-height: 32px; height: 32px; width: 32px; min-height: 32px; min-width: 32px; }
+.mtx-profile-photo.mtx-profile-photo-large, .mtx-profile-photo.mtx-profile-photo-large .mat-icon { font-size: 40px; line-height: 40px; height: 40px; width: 40px; min-height: 40px; min-width: 40px; }
+.mtx-profile-photo.mtx-profile-photo-x-large, .mtx-profile-photo.mtx-profile-photo-x-large .mat-icon { font-size: 80px; line-height: 80px; height: 80px; width: 80px; min-height: 80px; min-width: 80px; }
