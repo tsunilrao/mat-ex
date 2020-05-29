@@ -5,14 +5,15 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MtxFeatureBarTitleComponent } from './mtx-feature-bar-title/mtx-feature-bar-title.component';
 
 
 
 @NgModule({
-  declarations: [MtxFeatureBarComponent],
+  declarations: [MtxFeatureBarComponent, MtxFeatureBarTitleComponent],
   imports: [
     CommonModule, MatDividerModule, MatButtonModule, MatIconModule, MatMenuModule
   ], 
-  exports: [MtxFeatureBarComponent]
+  exports: [MtxFeatureBarComponent, MtxFeatureBarTitleComponent]
 })
 export class MtxFeatureBarModule { }

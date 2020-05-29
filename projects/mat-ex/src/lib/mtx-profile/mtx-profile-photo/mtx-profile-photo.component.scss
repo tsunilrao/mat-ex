@@ -1,6 +1,8 @@
+.mtx-profile-photo { display: flex; align-items: center; justify-content: center; }
 .mtx-profile-photo { border-radius: 50%; object-fit: cover; overflow: hidden; }
+.mtx-profile-photo { line-height: 40px; height: 40px; width: 40px; }
 .mtx-profile-photo img { width: 100%; }
-.mtx-profile-photo .mat-icon { color: rgba(0,0,0,.54); }
+.mtx-profile-photo .mat-icon { color: currentColor; }
 
 .mtx-profile-photo.mtx-profile-photo-small, .mtx-profile-photo.mtx-profile-photo-small .mat-icon { font-size: 24px; line-height: 24px; height: 24px; width: 24px; min-height: 24px; min-width: 24px; }
 .mtx-profile-photo.mtx-profile-photo-medium, .mtx-profile-photo.mtx-profile-photo-medium .mat-icon { font-size: 32px; line-height: 32px; height: 32px; width: 32px; min-height: 32px; min-width: 32px; }
