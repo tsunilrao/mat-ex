@@ -5,6 +5,7 @@ import { MtxProfileTitleComponent } from './mtx-profile-title/mtx-profile-title.
 import { MtxProfileSubtitleComponent } from './mtx-profile-subtitle/mtx-profile-subtitle.component';
 import { MtxProfilePhotoComponent } from './mtx-profile-photo/mtx-profile-photo.component';
 import { MtxProfileHeaderComponent } from './mtx-profile-header/mtx-profile-header.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -14,7 +15,7 @@ import { MtxProfileHeaderComponent } from './mtx-profile-header/mtx-profile-head
     MtxProfilePhotoComponent, MtxProfileHeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, MatIconModule
   ],
   exports: [
     MtxProfileComponent, MtxProfileTitleComponent, MtxProfileSubtitleComponent, 

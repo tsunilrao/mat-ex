@@ -1,1 +1,5 @@
-<ng-content></ng-content>
+<div class="mtx-profile-photo-placeholder" *ngIf="!src || (src && !isLoaded)">
+    <span class="mtx-profile-photo-text" *ngIf="text">{{text}}</span>
+    <mat-icon class="mtx-profile-photo-icon" *ngIf="!text">{{icon}}</mat-icon>
+</div>
+<img [src]="src" (load)="onImageLoad()">

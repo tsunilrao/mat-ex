@@ -8,7 +8,7 @@ Several directives are available to make it easier to structure your profile con
 
 | Attribute              | Description                                                         |
 | ---------------------- | ------------------------------------------------------------------- |
-| `mtx-profile-photo`    | Profile photo which can be `img` or `mat-icon`.                     |
+| `mtx-profile-photo`    | Profile photo which uses an img src.                                |
 | `mtx-profile-header`   | Profile header to group title and subtitle. Can be used standalone. |
 | `mtx-profile-title`    | Profile title which generally represents the name.                  |
 | `mtx-profile-subtitle` | Profile subtitle can be like a status or designation.               |
@@ -27,11 +27,11 @@ the size to `small`, `medium`, or `large`.
 </mtx-profile>
 
 <mtx-profile size="large">
-    <mtx-profile-photo><img src="..."></mtx-profile-photo>
+    <mtx-profile-photo src="..."></mtx-profile-photo>
 </mtx-profile>
 
 <mtx-profile size="small">
-    <mtx-profile-photo><img src="..."></mtx-profile-photo>
+    <mtx-profile-photo src="..."></mtx-profile-photo>
     <mtx-profile-title>Title</mtx-profile-title>
     <mtx-profile-subtitle>Subtitle</mtx-profile-subtitle>
 </mtx-profile>
