@@ -19,7 +19,7 @@ export class MtxProfilePhotoComponent implements OnInit, AfterViewInit {
 
   @Input() size?: string;
   @Input() src?: string;
-  @Input() icon?: string = 'person'
+  @Input() icon?: string = 'account_circle'
   @Input() text?: string;
 
   isLoaded:boolean = false;
