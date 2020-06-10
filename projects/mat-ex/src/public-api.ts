@@ -25,3 +25,6 @@ export * from './lib/mtx-feature-bar/mtx-feature-bar.module';
 export * from './lib/mtx-feature-bar/mtx-feature-bar/mtx-feature-bar.component';
 export * from './lib/mtx-feature-bar/mtx-feature-bar-icon/mtx-feature-bar-icon.component';
 export * from './lib/mtx-feature-bar/mtx-feature-bar-title/mtx-feature-bar-title.component';
+
+export * from './lib/mtx-modal/mtx-modal.module';
+export * from './lib/mtx-modal/mtx-modal/mtx-modal.component';

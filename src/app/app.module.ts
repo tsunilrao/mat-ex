@@ -12,6 +12,7 @@ import { MtxProfileModule } from 'projects/mat-ex/src/lib/mtx-profile/mtx-profil
 import { MatIconModule } from '@angular/material/icon';
 import { MtxFeatureBarModule } from 'projects/mat-ex/src/lib/mtx-feature-bar/mtx-feature-bar.module';
 import { MatMenuModule } from '@angular/material/menu';
+import { MtxModalModule } from 'projects/mat-ex/src/lib/mtx-modal/mtx-modal.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MtxProfileModule,
     MatIconModule,
     MtxFeatureBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MtxModalModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
