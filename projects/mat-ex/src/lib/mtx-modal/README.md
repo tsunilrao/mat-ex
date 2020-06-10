@@ -10,8 +10,8 @@ All HTML and Angular directives are supported
 
 | Function | Description                           |
 | ---------| ------------------------------------- |
-| `open`   | Opens the dialog.                     |
-| `close`  | Closes the dialog.                    |
+| `open`   | Opens the modal.                      |
+| `close`  | Closes the modal.                     |
 
 #### Examples
 
