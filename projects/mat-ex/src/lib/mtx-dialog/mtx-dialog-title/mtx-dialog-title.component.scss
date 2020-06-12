@@ -1,13 +1,8 @@
-.mtx-dialog .mtx-dialog-title { display: flex; flex-direction: row; z-index: 1;
-    border-top-left-radius: 4px; border-top-right-radius: 4px;
-    padding: 16px 24px; margin: 0; width: auto; height: auto; line-height: 24px;
-}
+.mtx-dialog-title { display: flex; flex-direction: row; padding: 16px 24px; margin: 0; line-height: 24px; }
+.mtx-dialog .mtx-dialog-title { z-index: 1; border-top-left-radius: 4px; border-top-right-radius: 4px; 
+    margin: 0; width: auto; height: auto; }
 
-.mtx-dialog.mtx-dialog-stroked { 
-    .mtx-dialog-title { border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
-}
+.mtx-dialog.mtx-dialog-stroked .mtx-dialog-title { border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
 
-.mtx-dialog.mtx-dialog-raised { 
-    .mtx-dialog-title { box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.2); }
-}
+.mtx-dialog.mtx-dialog-raised .mtx-dialog-title { box-shadow: 0px 1px 5px -3px rgba(0, 0, 0, 0.2); }
 
