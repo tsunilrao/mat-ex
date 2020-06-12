@@ -8,11 +8,9 @@ export * from './lib/components/toolbar-button/toolbar-button.component';
 export * from './lib/components/dialog/dialog.module';
 export * from './lib/components/dialog/dialog/dialog.component';
 export * from './lib/components/dialog/dialog-title/dialog-title.component';
+export * from './lib/components/dialog/dialog-icon/dialog-icon.component';
 export * from './lib/components/dialog/dialog-content/dialog-content.component';
 export * from './lib/components/dialog/dialog-actions/dialog-actions.component';
-
-export * from './lib/components/modal-dialog/modal-dialog.module';
-export * from './lib/components/modal-dialog/modal-dialog.component';
 
 export * from './lib/mtx-profile/mtx-profile.module';
 export * from './lib/mtx-profile/mtx-profile/mtx-profile.component';
@@ -28,3 +26,10 @@ export * from './lib/mtx-feature-bar/mtx-feature-bar-title/mtx-feature-bar-title
 
 export * from './lib/mtx-modal/mtx-modal.module';
 export * from './lib/mtx-modal/mtx-modal/mtx-modal.component';
+
+export * from './lib/mtx-dialog/mtx-dialog.module';
+export * from './lib/mtx-dialog/mtx-dialog/mtx-dialog.component';
+export * from './lib/mtx-dialog/mtx-dialog-title/mtx-dialog-title.component';
+export * from './lib/mtx-dialog/mtx-dialog-icon/mtx-dialog-icon.component';
+export * from './lib/mtx-dialog/mtx-dialog-content/mtx-dialog-content.component';
+export * from './lib/mtx-dialog/mtx-dialog-actions/mtx-dialog-actions.component';
