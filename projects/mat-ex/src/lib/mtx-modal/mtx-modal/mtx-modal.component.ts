@@ -19,7 +19,7 @@ export class MtxModalComponent implements OnInit {
   dialogRef: MatDialogRef<any>
   public open() {
     this.close();
-    const dialogConfig: MatDialogConfig = { panelClass: 'mtx-modal', autoFocus: false }
+    const dialogConfig: MatDialogConfig = { panelClass: 'mtx-modal-panel', autoFocus: false }
     this.dialogRef = this.dialog.open(this.ref, dialogConfig)
   }
 

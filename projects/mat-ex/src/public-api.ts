@@ -5,6 +5,12 @@
 export * from './lib/components/toolbar-button/toolbar-button.module';
 export * from './lib/components/toolbar-button/toolbar-button.component';
 
+export * from './lib/mtx-page/mtx-page.module'
+export * from './lib/mtx-page/mtx-page/mtx-page.component'
+
+export * from './lib/mtx-app-bar/mtx-app-bar.module'
+export * from './lib/mtx-app-bar/mtx-app-bar/mtx-app-bar.component'
+
 export * from './lib/mtx-profile/mtx-profile.module';
 export * from './lib/mtx-profile/mtx-profile/mtx-profile.component';
 export * from './lib/mtx-profile/mtx-profile-header/mtx-profile-header.component';

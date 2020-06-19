@@ -12,7 +12,8 @@ import { MtxFeatureBarModule } from 'projects/mat-ex/src/lib/mtx-feature-bar/mtx
 import { MatMenuModule } from '@angular/material/menu';
 import { MtxModalModule } from 'projects/mat-ex/src/lib/mtx-modal/mtx-modal.module';
 import { MtxDialogModule } from 'projects/mat-ex/src/lib/mtx-dialog/mtx-dialog.module';
-import { ModalDialogModule } from 'projects/mat-ex/src/lib/components/modal-dialog/modal-dialog.module';
+import { MtxPageModule } from 'projects/mat-ex/src/lib/mtx-page/mtx-page.module';
+import { MtxAppBarModule } from 'projects/mat-ex/src/public-api';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ModalDialogModule } from 'projects/mat-ex/src/lib/components/modal-dial
     MatMenuModule,
     MtxModalModule,
     MtxDialogModule,
-    ModalDialogModule
+    MtxPageModule,
+    MtxAppBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

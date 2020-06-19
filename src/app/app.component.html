@@ -1,13 +1,35 @@
-<div class="row">
-    <mtx-toolbar-button variant="raised" icon="check"></mtx-toolbar-button>
-    <mtx-toolbar-button variant="raised" icon="check" dropdown></mtx-toolbar-button>
-    <mtx-toolbar-button variant="raised" icon="check" text="Finish"></mtx-toolbar-button>
-    <mtx-toolbar-button variant="raised" icon="check" text="Finish" dropdown></mtx-toolbar-button>
-    <mtx-toolbar-button variant="raised" icon="check" color="primary"></mtx-toolbar-button>
-    <mtx-toolbar-button variant="raised" icon="check" vertical></mtx-toolbar-button>
-    <mtx-toolbar-button variant="raised" icon="check" text="Finish" dropdown vertical></mtx-toolbar-button>
-    <mtx-toolbar-button variant="flat" icon="home" text="Dialog" (click)="onDialogOpen()"></mtx-toolbar-button>
-</div>
+<mtx-page>
+    <mtx-app-bar color="primary" nav="menu" [matMenu]="menu"></mtx-app-bar>
+
+    <mtx-feature-bar [matMenu]="menu">
+        <mtx-feature-bar-icon>person</mtx-feature-bar-icon>
+        <mtx-feature-bar-title>Title</mtx-feature-bar-title>
+        <mtx-profile-photo size="large">
+            <mat-icon>person</mat-icon>
+        </mtx-profile-photo>
+        <mtx-profile size="large">
+            <mtx-profile-photo>
+                <mat-icon>person</mat-icon>
+            </mtx-profile-photo>
+            <mtx-profile-title>Title</mtx-profile-title>
+            <mtx-profile-subtitle>Subtitle</mtx-profile-subtitle>
+        </mtx-profile>
+    </mtx-feature-bar>
+
+    <div class="row">
+        <mtx-toolbar-button variant="raised" icon="check"></mtx-toolbar-button>
+        <mtx-toolbar-button variant="raised" icon="check" dropdown></mtx-toolbar-button>
+        <mtx-toolbar-button variant="raised" icon="check" text="Finish"></mtx-toolbar-button>
+        <mtx-toolbar-button variant="raised" icon="check" text="Finish" dropdown></mtx-toolbar-button>
+        <mtx-toolbar-button variant="raised" icon="check" color="primary"></mtx-toolbar-button>
+        <mtx-toolbar-button variant="raised" icon="check" vertical></mtx-toolbar-button>
+        <mtx-toolbar-button variant="raised" icon="check" text="Finish" dropdown vertical></mtx-toolbar-button>
+        <mtx-toolbar-button variant="flat" icon="home" text="Dialog"></mtx-toolbar-button>
+    </div>
+
+
+</mtx-page>
+
 
 <button (click)="test.open()">test</button>
 
@@ -27,19 +49,10 @@
 
 <mtx-profile-photo size="large" text="T"></mtx-profile-photo>
 
-<mtx-feature-bar [matMenu]="menu">
-    <mtx-feature-bar-icon>person</mtx-feature-bar-icon>
-    <mtx-feature-bar-title>Title</mtx-feature-bar-title>
-    <mtx-profile-photo size="large"><mat-icon>person</mat-icon></mtx-profile-photo>
-    <mtx-profile size="large">
-        <mtx-profile-photo><mat-icon>person</mat-icon></mtx-profile-photo>
-        <mtx-profile-title>Title</mtx-profile-title>
-        <mtx-profile-subtitle>Subtitle</mtx-profile-subtitle>
-    </mtx-profile>
-</mtx-feature-bar>
-
 <mtx-profile size="medium">
-    <mtx-profile-photo><mat-icon>person</mat-icon></mtx-profile-photo>
+    <mtx-profile-photo>
+        <mat-icon>person</mat-icon>
+    </mtx-profile-photo>
     <mtx-profile-title>Title</mtx-profile-title>
     <mtx-profile-subtitle>Subtitle</mtx-profile-subtitle>
 </mtx-profile>
@@ -102,4 +115,3 @@
         </mtx-dialog-actions>
     </mtx-dialog>
 </div>
-
