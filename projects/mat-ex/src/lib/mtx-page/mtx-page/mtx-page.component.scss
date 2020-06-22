@@ -1,5 +1,7 @@
-.mtx-page { display: flex; flex-direction: column; flex: 1; overflow: hidden; }
-.mtx-page { padding-left: 32px; padding-right: 32px; box-sizing: border-box; }
+.mtx-page { display: flex; flex-direction: column; flex: 1; overflow-x: hidden; overflow-y: overlay;}
+.mtx-page { height: 100%; width: 100%; }
+.mtx-page { min-width: 320px; min-height: 240px; box-sizing: border-box; }
+.mtx-page { padding-left: 32px; padding-right: 32px; }
 .mtx-page .mtx-app-bar { margin-left: -32px; margin-right: -32px; }
 
 @media(max-width: 599px) {

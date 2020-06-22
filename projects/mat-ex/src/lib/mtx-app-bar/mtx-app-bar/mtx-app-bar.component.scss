@@ -1,11 +1,15 @@
-.mtx-app-bar { display: flex; flex-direction: row; align-items: center; }
-.mtx-app-bar { height: 56px; box-sizing: border-box; }
-.mtx-app-bar .mtx-app-bar-toolbar { height: 100%; padding-left: 32px; padding-right: 32px; }
+.mtx-app-bar { display: flex; flex-direction: row; }
+.mtx-app-bar { height: 56px; box-sizing: border-box; z-index: 10;}
+.mtx-app-bar .mtx-app-bar-toolbar { height: 100%; padding-left: 32px; padding-right: 32px; flex-direction: column;}
+.mtx-app-bar.mtx-app-bar-dense { height: 40px;}
+.mtx-app-bar.mtx-app-bar-prominent { height: 112px;}
 
 @media(max-width: 599px) {
     .mtx-app-bar { height: 48px; }
+    .mtx-app-bar.mtx-app-bar-prominent { height: 96px;}
     .mtx-app-bar .mtx-app-bar-toolbar { padding-left: 16px; padding-right: 16px; }
 }
 @media(max-height: 479px) {
     .mtx-app-bar { height: 48px; }
+    .mtx-app-bar.mtx-app-bar-prominent { height: 96px;}
 }

@@ -5,14 +5,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MtxAppBarTitleComponent } from './mtx-app-bar-title/mtx-app-bar-title.component';
 
 
 
 @NgModule({
-  declarations: [MtxAppBarComponent],
+  declarations: [MtxAppBarComponent, MtxAppBarTitleComponent],
   imports: [
     CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule
   ],
-  exports: [MtxAppBarComponent]
+  exports: [MtxAppBarComponent, MtxAppBarTitleComponent]
 })
 export class MtxAppBarModule { }

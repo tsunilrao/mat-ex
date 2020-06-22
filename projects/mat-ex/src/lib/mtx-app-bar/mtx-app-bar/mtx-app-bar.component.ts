@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, Output, EventEmitter, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'mtx-app-bar',
@@ -12,10 +12,11 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
   @Input() color;
   @Input() matMenu;
   @Input() nav;
+  @Input() bar;
 
   navIcon: string;
 
-  constructor() { }
+  constructor(private hostRef: ElementRef) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,10 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
     if (this.nav == 'menu') this.navIcon = 'menu'
     if (this.nav == 'back') this.navIcon = 'arrow_back'
     if (this.nav == 'close') this.navIcon = 'close'
+    if (this.bar == 'dense') this.hostRef.nativeElement.classList.add('mtx-app-bar-dense');
+    else this.hostRef.nativeElement.classList.remove('mtx-app-bar-dense');
+    if (this.bar == 'prominent') this.hostRef.nativeElement.classList.add('mtx-app-bar-prominent');
+    else this.hostRef.nativeElement.classList.remove('mtx-app-bar-prominent');
   }  
 
   @Output() navclick = new EventEmitter()

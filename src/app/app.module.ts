@@ -10,6 +10,7 @@ import { MtxProfileModule } from 'projects/mat-ex/src/lib/mtx-profile/mtx-profil
 import { MatIconModule } from '@angular/material/icon';
 import { MtxFeatureBarModule } from 'projects/mat-ex/src/lib/mtx-feature-bar/mtx-feature-bar.module';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MtxModalModule } from 'projects/mat-ex/src/lib/mtx-modal/mtx-modal.module';
 import { MtxDialogModule } from 'projects/mat-ex/src/lib/mtx-dialog/mtx-dialog.module';
 import { MtxPageModule } from 'projects/mat-ex/src/lib/mtx-page/mtx-page.module';
@@ -25,6 +26,7 @@ import { MtxAppBarModule } from 'projects/mat-ex/src/public-api';
     BrowserAnimationsModule,
     ToolbarButtonModule,
     MatButtonModule,
+    MatProgressBarModule,
     MtxProfileModule,
     MatIconModule,
     MtxFeatureBarModule,
