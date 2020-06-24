@@ -1,0 +1,12 @@
+.mtx-page-content { display: flex; flex-direction: column; flex: 1; overflow-y: overlay; }
+
+.mtx-page-content { padding-top: 32px; padding-bottom: 32px; }
+.mtx-page-content { padding-left: 32px; padding-right: 32px; }
+
+@media(max-width: 599px) {
+    .mtx-page-content { padding-left: 16px; padding-right: 16px; }
+}
+
+@media(min-width: 960px) {
+    .mtx-page-content { padding-left: 48px; padding-right: 48px; }
+}

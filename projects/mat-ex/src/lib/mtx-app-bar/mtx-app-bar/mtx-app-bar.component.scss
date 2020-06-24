@@ -1,6 +1,7 @@
 .mtx-app-bar { display: flex; flex-direction: row; }
 .mtx-app-bar { height: 56px; box-sizing: border-box; z-index: 10;}
-.mtx-app-bar .mtx-app-bar-toolbar { height: 100%; padding-left: 32px; padding-right: 32px; flex-direction: column;}
+.mtx-app-bar .mtx-app-bar-toolbar { display: flex; flex-direction: column; align-items: stretch;}
+.mtx-app-bar .mtx-app-bar-toolbar { height: 100%; padding-left: 32px; padding-right: 32px;}
 .mtx-app-bar.mtx-app-bar-dense { height: 40px;}
 .mtx-app-bar.mtx-app-bar-prominent { height: 112px;}
 

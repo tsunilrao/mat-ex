@@ -9,10 +9,19 @@ import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, 
 })
 export class MtxAppBarComponent implements OnInit, OnChanges {
 
+  // ## color
+  // Supports `none`, `primary`, `accent` and `warn`
   @Input() color;
-  @Input() matMenu;
+
+  // ## size
+  // Supports `standard`, `dense` and `prominent`
+  @Input() size;
+
+  // ## nav
+  // Supports `menu`, `back` and `close`
   @Input() nav;
-  @Input() bar;
+
+  @Input() matMenu;
 
   navIcon: string;
 
@@ -26,9 +35,9 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
     if (this.nav == 'menu') this.navIcon = 'menu'
     if (this.nav == 'back') this.navIcon = 'arrow_back'
     if (this.nav == 'close') this.navIcon = 'close'
-    if (this.bar == 'dense') this.hostRef.nativeElement.classList.add('mtx-app-bar-dense');
+    if (this.size == 'dense') this.hostRef.nativeElement.classList.add('mtx-app-bar-dense');
     else this.hostRef.nativeElement.classList.remove('mtx-app-bar-dense');
-    if (this.bar == 'prominent') this.hostRef.nativeElement.classList.add('mtx-app-bar-prominent');
+    if (this.size == 'prominent') this.hostRef.nativeElement.classList.add('mtx-app-bar-prominent');
     else this.hostRef.nativeElement.classList.remove('mtx-app-bar-prominent');
   }  
 

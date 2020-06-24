@@ -1,10 +1,19 @@
-.mtx-page { display: flex; flex-direction: column; flex: 1; overflow-x: hidden; overflow-y: overlay;}
+.mtx-page { display: flex; flex-direction: column; flex: 1; overflow: hidden;}
 .mtx-page { height: 100%; width: 100%; }
 .mtx-page { min-width: 320px; min-height: 240px; box-sizing: border-box; }
+
 .mtx-page { padding-left: 32px; padding-right: 32px; }
-.mtx-page .mtx-app-bar { margin-left: -32px; margin-right: -32px; }
+.mtx-page .mtx-page-header, .mtx-page .mtx-page-footer,
+.mtx-page .mtx-page-content { margin-left: -32px; margin-right: -32px; }
 
 @media(max-width: 599px) {
     .mtx-page { padding-left: 16px; padding-right: 16px; }
-    .mtx-page .mtx-app-bar { margin-left: -16px; margin-right: -16px; }
+    .mtx-page .mtx-page-header, .mtx-page .mtx-page-footer,
+    .mtx-page .mtx-page-content { margin-left: -16px; margin-right: -16px; }
+}
+
+@media(min-width: 960px) {
+    .mtx-page { padding-left: 48px; padding-right: 48px; }
+    .mtx-page .mtx-page-header, .mtx-page .mtx-page-footer,
+    .mtx-page .mtx-page-content { margin-left: -48px; margin-right: -48px; }
 }

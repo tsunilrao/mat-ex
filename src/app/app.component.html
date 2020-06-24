@@ -1,24 +1,34 @@
 <mtx-page>
-    <mtx-app-bar color="primary" bar="prominent" nav="menu" [matMenu]="menu">
-        <mtx-app-bar-title>Title</mtx-app-bar-title>
-        <div class="col-fill"></div>
-        <button mat-button style="margin-right: -8px; padding: 0 8px;">00:00:00</button>
-    </mtx-app-bar>
+
+    <mtx-page-header>
+        Test
+    </mtx-page-header>
+
+    <mtx-page-footer>
+        Test
+    </mtx-page-footer>
+
+   <mtx-app-bar color="primary" size="prominent" nav="menu" [matMenu]="menu">
+        <mtx-app-bar-title>Title fkjgsh kjhg lkhflg hdkfj hgkjfhsgkjfhg kjhfkj ghfklghlfk lgshsldkfsglsjg lj</mtx-app-bar-title>
+        <span>Test</span>
+    </mtx-app-bar>    
 
     <mtx-feature-bar [matMenu]="menu">
+
+    
         <mtx-feature-bar-icon>person</mtx-feature-bar-icon>
         <mtx-feature-bar-title>Title</mtx-feature-bar-title>
         <mtx-profile-photo size="large">
             <mat-icon>person</mat-icon>
-        </mtx-profile-photo>
+        </mtx-profile-photo>    
         <mtx-profile size="large">
             <mtx-profile-photo>
                 <mat-icon>person</mat-icon>
-            </mtx-profile-photo>
+            </mtx-profile-photo>    
             <mtx-profile-title>Title</mtx-profile-title>
             <mtx-profile-subtitle>Subtitle</mtx-profile-subtitle>
-        </mtx-profile>
-    </mtx-feature-bar>
+        </mtx-profile>    
+    </mtx-feature-bar>    
 
     <div class="row">
         <mtx-toolbar-button variant="raised" icon="check"></mtx-toolbar-button>
@@ -29,7 +39,7 @@
         <mtx-toolbar-button variant="raised" icon="check" vertical></mtx-toolbar-button>
         <mtx-toolbar-button variant="raised" icon="check" text="Finish" dropdown vertical></mtx-toolbar-button>
         <mtx-toolbar-button variant="flat" icon="home" text="Dialog"></mtx-toolbar-button>
-    </div>
+    </div>    
 
     <button (click)="test.open()">test</button>
 
@@ -39,23 +49,23 @@
             <mtx-dialog-icon color="primary">cancel</mtx-dialog-icon>
             <mtx-dialog-content>
                 This will delete all elements that are currently on this page and cannot be undone.
-            </mtx-dialog-content>
+            </mtx-dialog-content>    
             <mtx-dialog-actions>
                 <button mat-button (click)="test.close()">Cancel</button>
                 <button mat-button>Delete</button>
-            </mtx-dialog-actions>
-        </mtx-dialog>
-    </mtx-modal>
+            </mtx-dialog-actions>    
+        </mtx-dialog>    
+    </mtx-modal>    
 
     <mtx-profile-photo size="large" text="T"></mtx-profile-photo>
 
     <mtx-profile size="medium">
         <mtx-profile-photo>
             <mat-icon>person</mat-icon>
-        </mtx-profile-photo>
+        </mtx-profile-photo>    
         <mtx-profile-title>Title</mtx-profile-title>
         <mtx-profile-subtitle>Subtitle</mtx-profile-subtitle>
-    </mtx-profile>
+    </mtx-profile>    
 
     <mat-menu #menu="matMenu"></mat-menu>
 
@@ -108,13 +118,14 @@
                 This will delete all elements that are currently on this page and cannot be undone.
                 This will delete all elements that are currently on this page and cannot be undone.
                 This will delete all elements that are currently on this page and cannot be undone.
-            </mtx-dialog-content>
+            </mtx-dialog-content>    
             <mtx-dialog-actions>
                 <button mat-button>Cancel</button>
                 <button mat-button>Delete</button>
-            </mtx-dialog-actions>
-        </mtx-dialog>
-    </div>
+            </mtx-dialog-actions>    
+        </mtx-dialog>    
+    </div>    
 
 </mtx-page>        
 
+ 
