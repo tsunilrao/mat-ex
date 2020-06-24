@@ -34,11 +34,14 @@ Mtx App Bar supports Navigation and can be set using the `nav` property and supp
 
 #### Overflow
 
-Mtx App Bar supports Navigation and can be set using the `nav` property and supports the values of 
-`none`, `menu`, `back` and `close` as per material design guidelines.
+Mtx App Bar supports Overflow menu and can be bound to a `mat-menu` set using the `overflow` property.
 
 ```
-<mtx-app-bar nav="..."> ... </mtx-app-bar>
+<mtx-app-bar overflow="menu"> ... </mtx-app-bar>
+
+<mat-menu #menu="matMenu">
+ ...
+</mat-menu>
 ```
 
 #### Themimg
