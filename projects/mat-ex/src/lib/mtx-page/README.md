@@ -12,9 +12,6 @@ Mtx Page has the following sections to structure the layout of the page.
 | `mtx-page-content`     | The content section to fill up the remaining space.          |
 | `mtx-page-footer`      | The footer section fixed at the bottom of the page.          |
 
-#### MatMenu
-
-A dropdown Mat Menu as can be added using the `matMenu` property.
 
 #### Example
 
