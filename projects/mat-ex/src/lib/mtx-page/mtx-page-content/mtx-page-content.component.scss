@@ -1,5 +1,5 @@
-.mtx-page-content { display: flex; flex-direction: column; flex: 1; overflow-y: overlay; }
-
+.mtx-page-content { display: flex; flex-direction: column; flex: 1; }
+.mtx-page-content { overflow-x: hidden; overflow-y: overlay; }
 .mtx-page-content { padding-top: 32px; padding-bottom: 32px; }
 .mtx-page-content { padding-left: 32px; padding-right: 32px; }
 

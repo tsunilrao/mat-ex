@@ -13,6 +13,9 @@ export * from './lib/mtx-page/mtx-page-footer/mtx-page-footer.component'
 
 export * from './lib/mtx-app-bar/mtx-app-bar.module'
 export * from './lib/mtx-app-bar/mtx-app-bar/mtx-app-bar.component'
+export * from './lib/mtx-app-bar/mtx-app-bar-title/mtx-app-bar-title.component'
+export * from './lib/mtx-app-bar/mtx-app-bar-button/mtx-app-bar-button.component'
+export * from './lib/mtx-app-bar/mtx-app-bar-prominent/mtx-app-bar-prominent.component'
 
 export * from './lib/mtx-profile/mtx-profile.module';
 export * from './lib/mtx-profile/mtx-profile/mtx-profile.component';

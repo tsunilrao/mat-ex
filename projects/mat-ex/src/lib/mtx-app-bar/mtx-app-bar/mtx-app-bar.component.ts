@@ -9,19 +9,19 @@ import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, 
 })
 export class MtxAppBarComponent implements OnInit, OnChanges {
 
-  // ## color
-  // Supports `none`, `primary`, `accent` and `warn`
-  @Input() color;
-
   // ## size
   // Supports `standard`, `dense` and `prominent`
   @Input() size;
 
+  // ## color
+  // Supports `none`, `primary`, `accent` and `warn`
+  @Input() color;
+
   // ## nav
-  // Supports `menu`, `back` and `close`
+  // Supports `none`, `menu`, `back` and `close`
   @Input() nav;
 
-  @Input() matMenu;
+  @Input() overflow;
 
   navIcon: string;
 

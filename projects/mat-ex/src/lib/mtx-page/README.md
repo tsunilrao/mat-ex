@@ -6,7 +6,7 @@ Mtx Page is a container component to define the page layout of Angular Material 
 
 Mtx Page has the following sections to structure the layout of the page.
 
-| Attribute              | Description                                                  |
+| Sections               | Description                                                  |
 | ---------------------- | ------------------------------------------------------------ |
 | `mtx-page-header`      | The header section fixed at the top of the page.             |
 | `mtx-page-content`     | The content section to fill up the remaining space.          |
