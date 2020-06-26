@@ -16,6 +16,6 @@ import { MtxAppBarProminentComponent } from './mtx-app-bar-prominent/mtx-app-bar
   imports: [
     CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule
   ],
-  exports: [MtxAppBarComponent, MtxAppBarTitleComponent, MtxAppBarButtonComponent]
+  exports: [MtxAppBarComponent, MtxAppBarTitleComponent, MtxAppBarButtonComponent, MtxAppBarProminentComponent]
 })
 export class MtxAppBarModule { }

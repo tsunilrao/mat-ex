@@ -1,6 +1,6 @@
 {
   "name": "mat-ex",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "peerDependencies": {
     "@angular/common": "^9.1.4",
     "@angular/core": "^9.1.4",
