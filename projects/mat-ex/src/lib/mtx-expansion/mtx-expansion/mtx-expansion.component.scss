@@ -1,9 +1,9 @@
-.mtx-expansion { display: flex; flex-direction: column; position: relative; overflow: hidden; padding: 0 16px; }
+.mtx-expansion { display: flex; flex-direction: column; position: relative; padding: 0 16px; }
 .mtx-expansion .mtx-expansion-header-container { 
     display: flex; align-items: center; 
     min-height: 56px; padding: 16px 0; box-sizing: border-box;
 }
-.mtx-expansion .mtx-expansion-header { display: flex; flex: 1; }
+.mtx-expansion .mtx-expansion-header { display: flex; flex: 1; overflow: hidden; }
 
 .mtx-expansion .mtx-expansion-panel { 
     height: 0; transform: scaleY(0); transform-origin: top;
