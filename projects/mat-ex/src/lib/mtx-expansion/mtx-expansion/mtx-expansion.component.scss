@@ -1,0 +1,34 @@
+.mtx-expansion { display: flex; flex-direction: column; position: relative; overflow: hidden; padding: 0 16px; }
+.mtx-expansion .mtx-expansion-header-container { 
+    display: flex; align-items: center; 
+    min-height: 56px; padding: 16px 0; box-sizing: border-box;
+}
+.mtx-expansion .mtx-expansion-header { display: flex; flex: 1; }
+
+.mtx-expansion .mtx-expansion-panel { 
+    height: 0; transform: scaleY(0); transform-origin: top;
+    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1), transform 225ms cubic-bezier(0.4, 0, 0.2, 1),
+}
+.mtx-expansion.mtx-expansion-expanded .mtx-expansion-panel { 
+    height: auto; transform: scaleY(1);    
+}
+.mtx-expansion .mtx-expansion-content {
+    display: flex; align-items: center; box-sizing: border-box;
+    padding-bottom: 16px; min-height: 40px;
+}
+
+.mtx-expansion .mtx-expansion-indicator { 
+    transform: rotate(0deg); transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none; cursor: pointer; -webkit-tap-highlight-color: transparent;
+    display: inline-block; width: 40px; height: 40px; line-height: 40px; text-align: center;
+    margin: -8px -16px -8px 0;
+}
+.mtx-expansion.mtx-expansion-expanded .mtx-expansion-indicator { transform: rotate(180deg); }
+
+.mtx-expansion .mtx-expansion-indicator::after {
+    border-style: solid; border-width: 0 2px 2px 0; color: rgba(0, 0, 0, 0.54);
+    content: ""; display: inline-block; padding: 3px; transform: rotate(45deg);
+}
+
+.mat-button .mtx-expansion,
+.mat-card .mtx-expansion { margin: -16px !important }

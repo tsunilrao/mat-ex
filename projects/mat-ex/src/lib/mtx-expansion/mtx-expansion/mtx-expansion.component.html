@@ -1,0 +1,9 @@
+<div class="mtx-expansion-header-container">
+    <div class="mtx-expansion-header">
+        <ng-content></ng-content>
+    </div>
+    <div class="mtx-expansion-indicator" (click)="toggle()"></div>
+</div>
+<div class="mtx-expansion-panel" #panel [style.height.px]="panelHeight">
+    <ng-content select="mtx-expansion-content"></ng-content>
+</div>

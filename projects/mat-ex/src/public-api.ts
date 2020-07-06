@@ -38,3 +38,7 @@ export * from './lib/mtx-dialog/mtx-dialog-title/mtx-dialog-title.component';
 export * from './lib/mtx-dialog/mtx-dialog-icon/mtx-dialog-icon.component';
 export * from './lib/mtx-dialog/mtx-dialog-content/mtx-dialog-content.component';
 export * from './lib/mtx-dialog/mtx-dialog-actions/mtx-dialog-actions.component';
+
+export * from './lib/mtx-expansion/mtx-expansion.module';
+export * from './lib/mtx-expansion/mtx-expansion/mtx-expansion.component';
+export * from './lib/mtx-expansion/mtx-expansion-content/mtx-expansion-content.component';

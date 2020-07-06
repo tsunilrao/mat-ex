@@ -3,7 +3,7 @@
     box-sizing: border-box; position: relative; border-radius: 4px; overflow: visible; 
     background-color: white;
 }
-.mtx-dialog { max-height:80vh; max-width: 80vw;}
+.mtx-dialog { max-height:80vh; }
 
 .mtx-dialog .content-container { display: inline; padding: 0 24px; margin: 0; box-sizing: border-box;
     overflow-y: overlay; -webkit-overflow-scrolling: touch; 

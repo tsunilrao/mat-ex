@@ -14,7 +14,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MtxModalModule } from 'projects/mat-ex/src/lib/mtx-modal/mtx-modal.module';
 import { MtxDialogModule } from 'projects/mat-ex/src/lib/mtx-dialog/mtx-dialog.module';
 import { MtxPageModule } from 'projects/mat-ex/src/lib/mtx-page/mtx-page.module';
-import { MtxAppBarModule } from 'projects/mat-ex/src/public-api';
+import { MtxAppBarModule } from 'projects/mat-ex/src/lib/mtx-app-bar/mtx-app-bar.module';
+import { MtxExpansionModule } from 'projects/mat-ex/src/lib/mtx-expansion/mtx-expansion.module';
+import { MatCardModule } from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { MtxAppBarModule } from 'projects/mat-ex/src/public-api';
     MtxModalModule,
     MtxDialogModule,
     MtxPageModule,
-    MtxAppBarModule
+    MtxAppBarModule,
+    MtxExpansionModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
