@@ -4,7 +4,7 @@ import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, 
   selector: 'mtx-app-bar',
   templateUrl: './mtx-app-bar.component.html',
   styleUrls: ['./mtx-app-bar.component.scss'],
-  host: {class: 'mtx-app-bar'},
+  host: {class: 'mtx-app-bar mat-elevation-z4'},
   encapsulation: ViewEncapsulation.None
 })
 export class MtxAppBarComponent implements OnInit, OnChanges {
