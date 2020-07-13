@@ -1,0 +1,111 @@
+<mtx-page>
+    <mtx-page-header>
+        <mtx-app-bar color="primary" nav="back">
+            <mtx-app-bar-title>App Bar</mtx-app-bar-title>
+        </mtx-app-bar>
+    </mtx-page-header>
+
+    <mtx-page-content>
+
+        <ng-container *ngTemplateOutlet="InteractiveDemo"></ng-container>
+
+    </mtx-page-content>
+
+</mtx-page>
+
+<ng-template #InteractiveDemo>
+    <div style="display: flex; flex-direction: column;">
+
+        <h3 style="margin-bottom: 16px;">Interactive demo</h3>
+
+        <p style="margin-bottom: 24px;">This demo lets you preview the App Bar component, its variations, and
+            configuration options. Each tab displays a different type of App Bar.</p>
+
+        <div class="row" style="margin-bottom: 16px; justify-content: space-between;">
+            <mat-form-field style="width: 40%;">
+                <mat-label>Size</mat-label>
+                <mat-select [(value)]="size">
+                    <mat-option *ngFor="let item of ['standard', 'dense', 'prominent']" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="width: 40%;">
+                <mat-label>Navigation</mat-label>
+                <mat-select [(value)]="nav">
+                    <mat-option *ngFor="let item of ['none', 'menu', 'back', 'close']" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <mat-form-field style="margin-bottom: 16px;">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" [formControl]="title">
+        </mat-form-field>
+
+        <div class="row" style="margin-bottom: 16px; justify-content: space-between;">
+            <mat-checkbox [checked]="overflow" (change)="overflow=!overflow">Overflow Menu</mat-checkbox>
+            <mat-checkbox [checked]="icons" (change)="icons=!icons">Icons</mat-checkbox>
+            <mat-checkbox [checked]="buttons" (change)="buttons=!buttons">Buttons</mat-checkbox>
+        </div>
+
+        <mat-tab-group>
+            <mat-tab label="Demo">
+                <div style="padding: 32px 0;">
+                    <ng-container *ngTemplateOutlet="demo"></ng-container>
+                </div>
+            </mat-tab>
+            <mat-tab label="Code">
+                <div style="padding: 32px 0;">
+                    <ng-container *ngTemplateOutlet="sourceCode"></ng-container>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+
+    </div>
+</ng-template>
+
+<ng-template #demo>
+    <mtx-app-bar style="margin: 0;" [size]="size" [nav]="nav" color="primary" [overflow]="overflow?menu:undefined">
+        <mtx-app-bar-title>{{title.value}}</mtx-app-bar-title>
+        <mtx-app-bar-button *ngIf="icons">
+            <button mat-icon-button>
+                <mat-icon>search</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>notifications</mat-icon>
+            </button>
+        </mtx-app-bar-button>
+        <mtx-app-bar-button *ngIf="buttons">
+            <button mat-button>SAVE</button>
+        </mtx-app-bar-button>
+    </mtx-app-bar>
+
+    <mat-menu #menu>...</mat-menu>
+</ng-template>
+
+<ng-template #sourceCode>
+    <code>
+        <span>&lt;mtx-app-bar</span>
+        <span *ngIf="size!='standard'"> size="{{size}}"</span>
+        <span *ngIf="nav!='none'"> nav="{{nav}}"</span>
+        <span *ngIf="overflow"> overflow="menu"</span>
+        <span>&gt;<br></span>
+        
+        <span *ngIf="title.value!=''">&nbsp;&nbsp;&lt;mtx-app-bar-title&gt;{{title.value}}&lt;/mtx-app-bar-title&gt;<br></span>
+
+        <span *ngIf="icons||buttons">&nbsp;&nbsp;&lt;mtx-app-bar-button&gt;<br></span>
+        <span *ngIf="icons">&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-icon-button&gt;&lt;mat-icon&gt;search&lt;/mat-icon&gt;&lt;/button&gt;<br></span>
+        <span *ngIf="icons">&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-icon-button&gt;&lt;mat-icon&gt;notifications&lt;/mat-icon&gt;&lt;/button&gt;<br></span>
+        <span *ngIf="buttons">&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-button&gt;SAVE&lt;/button&gt;<br></span>
+        <span *ngIf="icons||buttons">&nbsp;&nbsp;&lt;/mtx-app-bar-button&gt;<br></span>
+
+        <span>&lt;/mtx-app-bar&gt;</span>
+
+        <span *ngIf="overflow"><br><br>&lt;mat-menu #menu&gt;...&lt;/mat-menu&gt;</span>
+
+    </code>
+</ng-template>

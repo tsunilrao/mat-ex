@@ -10,7 +10,7 @@ import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, 
 export class MtxAppBarComponent implements OnInit, OnChanges {
 
   // ## size
-  // Supports `standard`, `dense` and `prominent`
+  // Supports `standard`, `dense`, `prominent`, `prominent-2`
   @Input() size;
 
   // ## color
@@ -24,6 +24,7 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
   @Input() overflow;
 
   navIcon: string;
+  prominentFlex: number = 0;
 
   constructor(private hostRef: ElementRef) { }
 
@@ -39,11 +40,13 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
     else this.hostRef.nativeElement.classList.remove('mtx-app-bar-dense');
     if (this.size == 'prominent') this.hostRef.nativeElement.classList.add('mtx-app-bar-prominent');
     else this.hostRef.nativeElement.classList.remove('mtx-app-bar-prominent');
+    this.prominentFlex = this.size == 'prominent' ? 1:0
   }  
 
   @Output() navclick = new EventEmitter()
   onNavClick(event) {
     this.navclick.emit(event)
+    if (this.nav == 'back') window.history.back()
   }
 
   @Output() menuclick = new EventEmitter()

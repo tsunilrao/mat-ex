@@ -1,0 +1,165 @@
+<mtx-page>
+    <mtx-page-header>        
+        <mtx-app-bar color="primary">
+            <mtx-app-bar-title>Mat Ex Demo</mtx-app-bar-title>
+        </mtx-app-bar>
+    </mtx-page-header>
+        
+    <mtx-page-content>        
+        <button mat-button routerLink="/app-bar">App Bar</button>
+    </mtx-page-content>
+    
+</mtx-page>
+
+
+<!-- <mtx-page>
+
+    <mtx-page-header>
+        <mtx-app-bar color="primary" size="prominent" nav="menu">
+            <mtx-app-bar-title>
+                A Little Brown Fox jumps over the fence
+            </mtx-app-bar-title>
+            <mtx-app-bar-button>
+                <button mat-icon-button>
+                    <mat-icon>person</mat-icon>
+                </button>
+            </mtx-app-bar-button>
+            <mtx-app-bar-button>
+                <button mat-icon-button>
+                    <mat-icon>person</mat-icon>
+                </button>
+            </mtx-app-bar-button>
+            <span>Test</span>
+        </mtx-app-bar>
+    </mtx-page-header>
+
+    <mtx-page-footer>
+        Test
+    </mtx-page-footer>
+
+    <mtx-page-content>
+
+
+
+        <mtx-expansion>
+            test
+            <mtx-expansion-content>Test2</mtx-expansion-content>
+        </mtx-expansion>
+
+
+        <mtx-feature-bar [matMenu]="menu">
+
+
+            <mtx-feature-bar-icon>person</mtx-feature-bar-icon>
+            <mtx-feature-bar-title>Title</mtx-feature-bar-title>
+            <mtx-profile-photo size="large">
+                <mat-icon>person</mat-icon>
+            </mtx-profile-photo>
+            <mtx-profile size="large">
+                <mtx-profile-photo>
+                    <mat-icon>person</mat-icon>
+                </mtx-profile-photo>
+                <mtx-profile-title>Title</mtx-profile-title>
+                <mtx-profile-subtitle>Subtitle</mtx-profile-subtitle>
+            </mtx-profile>
+        </mtx-feature-bar>
+
+        <div class="row">
+            <mtx-toolbar-button variant="raised" icon="check"></mtx-toolbar-button>
+            <mtx-toolbar-button variant="raised" icon="check" dropdown></mtx-toolbar-button>
+            <mtx-toolbar-button variant="raised" icon="check" text="Finish"></mtx-toolbar-button>
+            <mtx-toolbar-button variant="raised" icon="check" text="Finish" dropdown></mtx-toolbar-button>
+            <mtx-toolbar-button variant="raised" icon="check" color="primary"></mtx-toolbar-button>
+            <mtx-toolbar-button variant="raised" icon="check" vertical></mtx-toolbar-button>
+            <mtx-toolbar-button variant="raised" icon="check" text="Finish" dropdown vertical></mtx-toolbar-button>
+            <mtx-toolbar-button variant="flat" icon="home" text="Dialog"></mtx-toolbar-button>
+        </div>
+
+        <button (click)="test.open()">test</button>
+
+        <mtx-modal #test>
+            <mtx-dialog variant="" color="white">
+                <mtx-dialog-title>Delete all content?</mtx-dialog-title>
+                <mtx-dialog-icon color="primary">cancel</mtx-dialog-icon>
+                <mtx-dialog-content>
+                    This will delete all elements that are currently on this page and cannot be undone.
+                </mtx-dialog-content>
+                <mtx-dialog-actions>
+                    <button mat-button (click)="test.close()">Cancel</button>
+                    <button mat-button>Delete</button>
+                </mtx-dialog-actions>
+            </mtx-dialog>
+        </mtx-modal>
+
+        <mtx-profile-photo size="large" text="T"></mtx-profile-photo>
+
+        <mtx-profile size="medium">
+            <mtx-profile-photo>
+                <mat-icon>person</mat-icon>
+            </mtx-profile-photo>
+            <mtx-profile-title>Title</mtx-profile-title>
+            <mtx-profile-subtitle>Subtitle</mtx-profile-subtitle>
+        </mtx-profile>
+
+        <mat-menu #menu="matMenu"></mat-menu>
+
+        <mtx-modal>
+            <mtx-dialog variant="" color="white">
+                <mtx-dialog-title>Delete all content?</mtx-dialog-title>
+                <mtx-dialog-icon color="primary">cancel</mtx-dialog-icon>
+                <mtx-dialog-content>
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                    This will delete all elements that are currently on this page and cannot be undone.
+                </mtx-dialog-content>
+                <mtx-dialog-actions>
+                    <button mat-button>Cancel</button>
+                    <button mat-button>Delete</button>
+                </mtx-dialog-actions>
+            </mtx-dialog>
+        </mtx-modal>
+
+    </mtx-page-content>
+
+</mtx-page> -->
