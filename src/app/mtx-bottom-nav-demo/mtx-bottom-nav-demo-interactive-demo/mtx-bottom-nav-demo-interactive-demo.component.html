@@ -1,0 +1,69 @@
+<h3 style="margin-bottom: 16px; font-weight: 500;">Interactive demo</h3>
+
+<p style="margin-bottom: 24px;">This demo lets you preview the <b>Bottom Nav</b> component, its variations, and
+    configuration options.</p>
+
+<mat-form-field style="width: 40%; margin-bottom: 16px;">
+    <mat-label>Color</mat-label>
+    <mat-select [(value)]="color">
+        <mat-option *ngFor="let item of ['none', 'primary', 'accent']" [value]="item">
+            {{item}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<div class="row textcolor-secondary" style="align-items: center; justify-content: space-between; font-size: 12px; font-weight: 500;">
+    <div style="width: 16px;"></div>
+    <div style="width: 33%;">ICON</div>
+    <div style="width: 33%;">LABEL</div>
+</div> 
+
+<div class="row" style="align-items: center; justify-content: space-between; margin-bottom: -16px;" *ngFor="let item of items">
+    <mat-checkbox [checked]="item.visible" (change)="item.visible=!item.visible"></mat-checkbox>
+    <mat-form-field style="width: 33%;">
+        <input matInput type="text" [formControl]="item.icon">
+    </mat-form-field>
+    <mat-form-field style="width: 33%;">
+        <input matInput type="text" [formControl]="item.label">
+    </mat-form-field>
+</div>
+
+<mat-tab-group style="margin-top: 24px">
+    <mat-tab label="Demo">
+        <div style="padding: 32px 0;">
+            <ng-container *ngTemplateOutlet="demo"></ng-container>
+        </div>
+    </mat-tab>
+    <mat-tab label="Code">
+        <div style="padding: 32px 0;">
+            <ng-container *ngTemplateOutlet="sourceCode"></ng-container>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+<ng-template #demo>
+    <mtx-bottom-nav [color]="color">
+        <mtx-bottom-nav-item [icon]="items[0].icon.value" *ngIf="items[0].visible">{{items[0].label.value}}</mtx-bottom-nav-item>
+        <mtx-bottom-nav-item [icon]="items[1].icon.value" *ngIf="items[1].visible">{{items[1].label.value}}</mtx-bottom-nav-item>
+        <mtx-bottom-nav-item [icon]="items[2].icon.value" *ngIf="items[2].visible">{{items[2].label.value}}</mtx-bottom-nav-item>
+        <mtx-bottom-nav-item [icon]="items[3].icon.value" *ngIf="items[3].visible">{{items[3].label.value}}</mtx-bottom-nav-item>
+        <mtx-bottom-nav-item [icon]="items[4].icon.value" *ngIf="items[4].visible">{{items[4].label.value}}</mtx-bottom-nav-item>
+    </mtx-bottom-nav>
+    
+</ng-template>
+
+<ng-template #sourceCode>
+    <code>
+        <span>&lt;mtx-bottom-nav</span>
+        <span *ngIf="color!='none'"> color="{{color}}"</span>
+        <span>&gt;<br></span>
+        
+        <span *ngIf="items[0].visible">&nbsp;&nbsp;&lt;mtx-bottom-nav-item<span *ngIf="items[0].icon.value!=''"> icon="{{items[0].icon.value}}"</span>&gt;{{items[0].label.value}}&lt;/mtx-bottom-nav-item&gt;<br></span>
+        <span *ngIf="items[1].visible">&nbsp;&nbsp;&lt;mtx-bottom-nav-item<span *ngIf="items[1].icon.value!=''"> icon="{{items[1].icon.value}}"</span>&gt;{{items[1].label.value}}&lt;/mtx-bottom-nav-item&gt;<br></span>
+        <span *ngIf="items[2].visible">&nbsp;&nbsp;&lt;mtx-bottom-nav-item<span *ngIf="items[2].icon.value!=''"> icon="{{items[2].icon.value}}"</span>&gt;{{items[2].label.value}}&lt;/mtx-bottom-nav-item&gt;<br></span>
+        <span *ngIf="items[3].visible">&nbsp;&nbsp;&lt;mtx-bottom-nav-item<span *ngIf="items[3].icon.value!=''"> icon="{{items[3].icon.value}}"</span>&gt;{{items[3].label.value}}&lt;/mtx-bottom-nav-item&gt;<br></span>
+        <span *ngIf="items[4].visible">&nbsp;&nbsp;&lt;mtx-bottom-nav-item<span *ngIf="items[4].icon.value!=''"> icon="{{items[4].icon.value}}"</span>&gt;{{items[4].label.value}}&lt;/mtx-bottom-nav-item&gt;<br></span>
+
+        <span>&lt;/mtx-bottom-nav&gt;</span>
+    </code>
+</ng-template>
