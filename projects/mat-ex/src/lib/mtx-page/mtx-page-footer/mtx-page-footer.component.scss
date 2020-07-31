@@ -1,5 +1,4 @@
-.mtx-page-footer { display: flex; flex-direction: column; }
-
+.mtx-page-footer { display: flex; flex-direction: column; z-index: 10; }
 .mtx-page-footer { padding-left: 32px; padding-right: 32px; }
 
 @media(max-width: 599px) {
