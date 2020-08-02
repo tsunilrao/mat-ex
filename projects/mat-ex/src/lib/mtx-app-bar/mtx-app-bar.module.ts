@@ -8,13 +8,14 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MtxAppBarTitleComponent } from './mtx-app-bar-title/mtx-app-bar-title.component';
 import { MtxAppBarButtonComponent } from './mtx-app-bar-button/mtx-app-bar-button.component';
 import { MtxAppBarProminentComponent } from './mtx-app-bar-prominent/mtx-app-bar-prominent.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
 @NgModule({
   declarations: [MtxAppBarComponent, MtxAppBarTitleComponent, MtxAppBarButtonComponent, MtxAppBarProminentComponent],
   imports: [
-    CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule
+    CommonModule, MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, MatTooltipModule
   ],
   exports: [MtxAppBarComponent, MtxAppBarTitleComponent, MtxAppBarButtonComponent, MtxAppBarProminentComponent]
 })

@@ -1,27 +1,33 @@
-<mtx-page>
+<mtx-page title="Material Extentions | MatEx" description="Reusable components that extend Angular Material">
     <mtx-page-header>
         <mtx-app-bar color="primary" nav="menu">
             <mtx-app-bar-title>Mat Ex</mtx-app-bar-title>
             <mtx-app-bar-button>
-                <button mat-icon-button onclick="blur()">
+                <button mat-icon-button onclick="blur()" aria-label="Select a Theme" matTooltip="Select a Theme">
                     <mat-icon>format_color_fill</mat-icon>
                 </button>
-                <button mat-icon-button onclick="blur()">
-                    <img src="assets/github-logo.svg" width="24" height="24" />
-                </button>
+                <a mat-icon-button onclick="blur()" href="https://github.com/tsunilrao/mat-ex" aria-label="GitHub Repository" matTooltip="GitHub Repository">
+                    <img src="assets/github-logo.svg" alt="Github Logo" width="24" height="24" />
+                </a>
             </mtx-app-bar-button>
         </mtx-app-bar>
     </mtx-page-header>
 
     <mtx-page-content>
         <mtx-demo-landing-section></mtx-demo-landing-section>
-        <mtx-demo-features-section></mtx-demo-features-section>
-        <mat-divider></mat-divider>
+        <div class="mtx-demo-content">
+            <mtx-demo-features-section></mtx-demo-features-section>
+            <mat-divider></mat-divider>
+            <mtx-demo-components-section></mtx-demo-components-section>
+            <mat-divider></mat-divider>
+            <mtx-demo-guides-section></mtx-demo-guides-section>
+        </div>
         <button mat-button routerLink="/mtx-app-bar">Mtx App Bar</button>
         <button mat-button routerLink="/mtx-bottom-nav">Mtx Bottom Nav</button>
         <button mat-button routerLink="/mtx-page">Mtx Page</button>
-        <mat-toolbar color="primary" class="center mtx-page-full-width mat-elevation-z4" style="height: 100px; margin-bottom: -32px;">
-            <img src="assets/mat-ex-logo.svg" width="40" height="40" />
+        <mat-toolbar color="primary" class="center mtx-page-full-width mat-elevation-z4"
+            style="height: 100px; margin-bottom: -32px;">
+            <img src="assets/mat-ex-logo.svg" alt="MatEx Logo" width="40" height="40" />
             <span class="mat-body" style="margin-left: 32px;">Current Version: {{version}}</span>
         </mat-toolbar>
     </mtx-page-content>

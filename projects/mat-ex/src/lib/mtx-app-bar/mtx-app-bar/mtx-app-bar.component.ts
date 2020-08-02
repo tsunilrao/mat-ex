@@ -1,10 +1,17 @@
 import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, Output, EventEmitter, ElementRef } from '@angular/core';
 
+const NAV_ATRRIBUTES = [
+  { key: 'none' },
+  { key: 'menu', icon: 'menu', tooltip: 'Toggle Menu' },
+  { key: 'back', icon: 'arrow_back', tooltip: 'Navigate Back' },
+  { key: 'close', icon: 'close', tooltip: 'Close Dialog' },
+]
+
 @Component({
   selector: 'mtx-app-bar',
   templateUrl: './mtx-app-bar.component.html',
   styleUrls: ['./mtx-app-bar.component.scss'],
-  host: {class: 'mtx-app-bar mtx-page-full-width mat-elevation-z4'},
+  host: { class: 'mtx-app-bar mtx-page-full-width mat-elevation-z4' },
   encapsulation: ViewEncapsulation.None
 })
 export class MtxAppBarComponent implements OnInit, OnChanges {
@@ -23,7 +30,7 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
 
   @Input() overflow;
 
-  navIcon: string;
+  navAttr;
   prominentFlex: number = 0;
 
   constructor(private hostRef: ElementRef) { }
@@ -32,16 +39,16 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.nav == 'none') this.navIcon = undefined
-    if (this.nav == 'menu') this.navIcon = 'menu'
-    if (this.nav == 'back') this.navIcon = 'arrow_back'
-    if (this.nav == 'close') this.navIcon = 'close'
+    if (changes.nav) NAV_ATRRIBUTES.forEach(attr => {
+      if (this.nav == attr.key) this.navAttr = attr
+    })
+
     if (this.size == 'dense') this.hostRef.nativeElement.classList.add('mtx-app-bar-dense');
     else this.hostRef.nativeElement.classList.remove('mtx-app-bar-dense');
     if (this.size == 'prominent') this.hostRef.nativeElement.classList.add('mtx-app-bar-prominent');
     else this.hostRef.nativeElement.classList.remove('mtx-app-bar-prominent');
-    this.prominentFlex = this.size == 'prominent' ? 1:0
-  }  
+    this.prominentFlex = this.size == 'prominent' ? 1 : 0
+  }
 
   @Output() navclick = new EventEmitter()
   onNavClick(event) {
