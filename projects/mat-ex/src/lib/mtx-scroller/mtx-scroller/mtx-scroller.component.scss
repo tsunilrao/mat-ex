@@ -1,0 +1,12 @@
+.mtx-scroller { display: flex; flex-direction: row; overflow-x: scroll;}
+.mtx-scroller-inner { display: inline-flex; flex-direction: row;}
+
+.mtx-scroller-item {
+    width: 160px; height: 120px; box-sizing: border-box; background-color: tomato;
+}
+
+.mtx-scroller-item:not(:last-child) { margin-right: 16px; }
+
+.mtx-scroller::-webkit-scrollbar {
+    display: none;
+}

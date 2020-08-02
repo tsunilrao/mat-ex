@@ -46,3 +46,6 @@ export * from './lib/mtx-dialog/mtx-dialog-actions/mtx-dialog-actions.component'
 export * from './lib/mtx-expansion/mtx-expansion.module';
 export * from './lib/mtx-expansion/mtx-expansion/mtx-expansion.component';
 export * from './lib/mtx-expansion/mtx-expansion-content/mtx-expansion-content.component';
+
+export * from './lib/mtx-scroller/mtx-scroller.module';
+export * from './lib/mtx-scroller/mtx-scroller/mtx-scroller.component';

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MtxDemoComponent } from './mtx-demo.component';
+import { MtxDemoComponent } from './mtx-demo/mtx-demo.component';
 
 
 const routes: Routes = [
