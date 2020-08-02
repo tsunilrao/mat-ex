@@ -11,6 +11,7 @@ import { MtxDemoLandingSectionComponent } from './mtx-demo-landing-section/mtx-d
 import { MtxDemoFeaturesSectionComponent } from './mtx-demo-features-section/mtx-demo-features-section.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
 import { MtxDemoComponentsSectionComponent } from './mtx-demo-components-section/mtx-demo-components-section.component';
 import { MtxDemoGuidesSectionComponent } from './mtx-demo-guides-section/mtx-demo-guides-section.component';
 
@@ -23,7 +24,8 @@ import { MtxDemoGuidesSectionComponent } from './mtx-demo-guides-section/mtx-dem
   imports: [
     CommonModule, MtxDemoRoutingModule,
     MtxPageModule, MtxAppBarModule,
-    MatButtonModule, MatToolbarModule, MatIconModule, MatDividerModule, MatTooltipModule
+    MatButtonModule, MatToolbarModule, MatIconModule, MatDividerModule, MatTooltipModule,
+    MatCardModule
   ]
 })
 export class MtxDemoModule { }

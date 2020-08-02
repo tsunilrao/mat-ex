@@ -10,7 +10,7 @@ import { Title, Meta } from '@angular/platform-browser';
 })
 export class MtxPageComponent implements OnInit, OnChanges {
 
-  @Input() title?: string;
+  @Input('page-title') title?: string;
   @Input() description?: string;
 
   constructor(private titleService: Title, private metaService: Meta) { }
