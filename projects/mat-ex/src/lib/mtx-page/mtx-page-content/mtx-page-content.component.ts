@@ -4,7 +4,7 @@ import { Component, OnInit, ViewEncapsulation, ElementRef } from '@angular/core'
   selector: 'mtx-page-content',
   templateUrl: './mtx-page-content.component.html',
   styleUrls: ['./mtx-page-content.component.scss'],
-  host: {class: 'mtx-page-content'},
+  host: {class: 'mtx-page-content mtx-page-full-width'},
   encapsulation: ViewEncapsulation.None
 })
 export class MtxPageContentComponent implements OnInit {

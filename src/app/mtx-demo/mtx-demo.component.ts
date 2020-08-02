@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { version } from 'projects/mat-ex/package.json';
 
 @Component({
   selector: 'app-mtx-demo',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mtx-demo.component.scss']
 })
 export class MtxDemoComponent implements OnInit {
+
+  public version: string = version;
 
   constructor() { }
 

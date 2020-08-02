@@ -1,0 +1,13 @@
+:host { margin-top: -32px; }
+.mat-toolbar {
+    display: flex; flex-direction: column; 
+    height: 320px; padding: 32px;
+    white-space: normal; text-align: center;
+}
+
+h1 { font-size: 48px; line-height: 1; font-weight: 700; }
+h3 { margin-top: 16px; margin-bottom: 24px; font-size: 18px; line-height: 1.25; font-weight: 300; }
+
+@media (min-width: 600px) {
+    .mat-raised-button { margin-top: 24px; }
+}
