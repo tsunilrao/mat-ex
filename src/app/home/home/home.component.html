@@ -16,15 +16,14 @@
     </mtx-page-header>
 
     <mtx-page-content>
-        <home-hero-section></home-hero-section>
-        <div class="home-content">
+        <home-hero-section class="mtx-page-full-width"></home-hero-section>
+        <div class="mtx-page-full-width home-content">
             <home-features-section></home-features-section>
             <mat-divider></mat-divider>
             <home-components-section></home-components-section>
-            <mtx-scroller></mtx-scroller>
         </div>
         <mat-toolbar color="primary" class="center mtx-page-full-width mat-elevation-z4"
-            style="height: 100px; margin-bottom: -32px;">
+            style="height: 100px; margin-bottom: -32px; width: unset;">
             <img src="assets/mat-ex-logo.svg" alt="MatEx Logo" width="40" height="40" />
             <span class="mat-body" style="margin-left: 32px;">Current Version: {{version}}</span>
         </mat-toolbar>
