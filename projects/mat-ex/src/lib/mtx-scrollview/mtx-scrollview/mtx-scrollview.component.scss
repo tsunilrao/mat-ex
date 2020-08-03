@@ -1,0 +1,10 @@
+.mtx-scrollview { display: flex; flex-direction: row; overflow-x: scroll; overflow-y: visible; }
+.mtx-scrollview-inner { display: inline-flex; flex-direction: row;}
+
+.mtx-scrollview-item { box-sizing: border-box; margin: 8px; }
+.mtx-scrollview-item:first-child { margin-left: 48px; }
+.mtx-scrollview-item:last-child { margin-right: 48px; }
+
+.mtx-scrollview::-webkit-scrollbar {
+    display: none;
+}

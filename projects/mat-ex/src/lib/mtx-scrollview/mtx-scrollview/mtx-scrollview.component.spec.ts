@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MtxScrollerComponent } from './mtx-scroller.component';
+import { MtxScrollviewComponent } from './mtx-scrollview.component';
 
-describe('MtxScrollerComponent', () => {
-  let component: MtxScrollerComponent;
-  let fixture: ComponentFixture<MtxScrollerComponent>;
+describe('MtxScrollviewComponent', () => {
+  let component: MtxScrollviewComponent;
+  let fixture: ComponentFixture<MtxScrollviewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MtxScrollerComponent ]
+      declarations: [ MtxScrollviewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MtxScrollerComponent);
+    fixture = TestBed.createComponent(MtxScrollviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,16 +2,33 @@
     <h2>Components</h2>
     <a mat-button style="margin-right: -16px;">View all</a>
 </div>
-<mtx-scroller class="mtx-page-full-width"></mtx-scroller>
-
-<div class="row-fill" style="overflow-x: overlay;">
-    <mat-card style="min-width: 240px; height: 180px; box-sizing: border-box;">
-        <button mat-button routerLink="/mtx-app-bar">Mtx App Bar</button>
-    </mat-card>
-    <mat-card style="min-width: 240px; height: 180px; box-sizing: border-box;">
-        <button mat-button routerLink="/mtx-bottom-nav">Mtx Bottom Nav</button>
-    </mat-card>
-    <mat-card style="min-width: 240px; height: 180px; box-sizing: border-box;">
-        <button mat-button routerLink="/mtx-page">Mtx Page</button>
-    </mat-card>
-</div>
+<mtx-scrollview class="mtx-page-full-width">
+    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-app-bar">
+        <div style="width: 160px; height: 160px; background-color: #e0f2f1;"></div>
+        <div class="col" style="height: 60px; justify-content: center; padding: 0 16px;">
+            <h3>App Bar</h3>
+            <small>mtx-app-bar</small>
+        </div>
+    </mat-card>        
+    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-bottom-nav">
+        <div style="width: 160px; height: 160px; background-color: #e8f5e9;"></div>
+        <div class="col" style="height: 60px; justify-content: center; padding: 0 16px;">
+            <h3>Navigation</h3>
+            <small>mtx-bottom-nav</small>
+        </div>
+    </mat-card>        
+    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-page">
+        <div style="width: 160px; height: 160px; background-color: #f1f8e9;"></div>
+        <div class="col" style="height: 60px; justify-content: center; padding: 0 16px;">
+            <h3>Page Layout</h3>
+            <small>mtx-page</small>
+        </div>
+    </mat-card>        
+    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-scrollview">
+        <div style="width: 160px; height: 160px; background-color: #f9fbe7;"></div>
+        <div class="col" style="height: 60px; justify-content: center; padding: 0 16px;">
+            <h3>Scrollview</h3>
+            <small>mtx-scrollview</small>
+        </div>
+    </mat-card>        
+</mtx-scrollview>

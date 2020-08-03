@@ -47,5 +47,5 @@ export * from './lib/mtx-expansion/mtx-expansion.module';
 export * from './lib/mtx-expansion/mtx-expansion/mtx-expansion.component';
 export * from './lib/mtx-expansion/mtx-expansion-content/mtx-expansion-content.component';
 
-export * from './lib/mtx-scroller/mtx-scroller.module';
-export * from './lib/mtx-scroller/mtx-scroller/mtx-scroller.component';
+export * from './lib/mtx-scrollview/mtx-scrollview.module';
+export * from './lib/mtx-scrollview/mtx-scrollview/mtx-scrollview.component';
