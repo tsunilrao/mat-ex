@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input, Attribute } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'mtx-bottom-nav-item',

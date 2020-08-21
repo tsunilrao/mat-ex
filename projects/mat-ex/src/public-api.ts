@@ -48,4 +48,4 @@ export * from './lib/mtx-expansion/mtx-expansion/mtx-expansion.component';
 export * from './lib/mtx-expansion/mtx-expansion-content/mtx-expansion-content.component';
 
 export * from './lib/mtx-scrollview/mtx-scrollview.module';
-export * from './lib/mtx-scrollview/mtx-scrollview/mtx-scrollview.component';
+export * from './lib/mtx-container/mtx-container.module';

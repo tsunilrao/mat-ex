@@ -39,6 +39,8 @@ $quicklix-text-light-secondary: #ffffffc0;
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($quicklix-theme);
+@import '../projects/mat-ex/themes/mat-ex.theme.scss';
+@include mat-ex-theme($quicklix-theme);
 
 /* You can add global styles to this file, and also import other style files */
 

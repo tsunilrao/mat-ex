@@ -1,0 +1,121 @@
+@import '~@angular/material/theming';
+
+@function mtx-background-hue($is-dark-theme) {
+    @return if($is-dark-theme, 900, 50);
+}
+
+@function mtx-background($color, $is-dark-theme, $hue: mtx-background-hue($is-dark-theme) ) {
+    @return mat-color($color, $hue);
+}
+
+$mtx-colors: (
+    mtx-red: $mat-red,
+    mtx-pink: $mat-pink,
+    mtx-purple: $mat-purple,
+    mtx-deep-purple: $mat-deep-purple,
+    mtx-indigo: $mat-indigo,
+    mtx-blue: $mat-blue,
+    mtx-light-blue: $mat-light-blue,
+    mtx-cyan: $mat-cyan,
+    mtx-teal: $mat-teal,
+    mtx-green: $mat-green,
+    mtx-light-green: $mat-light-green,
+    mtx-lime: $mat-lime,
+    mtx-yellow: $mat-yellow,
+    mtx-amber: $mat-amber,
+    mtx-orange: $mat-orange,
+    mtx-deep-orange: $mat-deep-orange,
+    mtx-brown: $mat-brown,
+    mtx-gray: $mat-gray,
+    mtx-blue-gray: $mat-blue-gray,
+);
+
+.mtx-light, .mtx-light-secondary { background-color: map-get($mat-light-theme-background, background); }
+.mtx-light { color: $dark-primary-text; }
+.mtx-light-secondary { color: $dark-secondary-text; }
+
+.mtx-dark, .mtx-dark-secondary { background-color: map-get($mat-dark-theme-background, background); }
+.mtx-dark { color: $light-primary-text; }
+.mtx-dark-secondary { color: $light-secondary-text; }
+
+@each $color-key, $color-value in $mtx-colors {
+    $mtx-color: map-get($mtx-colors, $color-key);
+    .#{$color-key} {
+        background-color: mat-color($mtx-color, 500);
+        color: mat-contrast($mtx-color, 500);
+    }
+    .#{$color-key}-text {
+        color: mat-color($mtx-color, 500);
+    }
+
+    @each $key, $value in $mtx-color {
+        @if $key != contrast {
+            .#{$color-key}-#{$key} {
+                background-color: mat-color($mtx-color, $key);
+                color: mat-contrast($mtx-color, $key);
+            }
+            .#{$color-key}-#{$key}-text {
+                color: mat-color($mtx-color, $key);
+            }
+        }
+    }
+
+}
+
+@mixin mat-ex-theme($theme) {
+    
+    $is-dark-theme: map-get($theme, is-dark);
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .mtx-primary {
+        background-color: mtx-background($primary, $is-dark-theme, 500); 
+        color: mat-contrast($primary, 500);
+    }
+    .mtx-accent {
+        background-color: mtx-background($accent, $is-dark-theme, 500); 
+        color: mat-contrast($accent, 500);
+    }
+    .mtx-warn {
+        background-color: mtx-background($warn, $is-dark-theme, 500); 
+        color: mat-contrast($warn, 500);
+    }
+    .mtx-primary-text { color: mat-color($primary, 500); }
+    .mtx-accent-text { color: mat-color($accent, 500); }
+    .mtx-warn-text { color: mat-color($warn, 500); }
+    
+    .mtx-page { 
+        color: map-get($foreground, foreground);
+
+        background-color: map-get($background, background); 
+        &.mtx-primary { background-color: mtx-background($primary, $is-dark-theme); }
+        &.mtx-accent { background-color: mtx-background($accent, $is-dark-theme); }
+        &.mtx-warn { background-color: mtx-background($warn, $is-dark-theme); }
+        &.mtx-light { background-color: map-get($mat-light-theme-background, background); }
+        &.mtx-dark { background-color: map-get($mat-dark-theme-background, background); }
+        &.mtx-red { background-color: mtx-background($mat-red, $is-dark-theme); }
+        &.mtx-pink { background-color: mtx-background($mat-pink, $is-dark-theme); }
+        &.mtx-purple { background-color: mtx-background($mat-purple, $is-dark-theme); }
+        &.mtx-deep-purple { background-color: mtx-background($mat-deep-purple, $is-dark-theme); }
+        &.mtx-indigo { background-color: mtx-background($mat-indigo, $is-dark-theme); }
+        &.mtx-blue { background-color: mtx-background($mat-blue, $is-dark-theme); }
+        &.mtx-light-blue { background-color: mtx-background($mat-light-blue, $is-dark-theme); }
+        &.mtx-cyan { background-color: mtx-background($mat-cyan, $is-dark-theme); }
+        &.mtx-teal { background-color: mtx-background($mat-teal, $is-dark-theme); }
+        &.mtx-green { background-color: mtx-background($mat-green, $is-dark-theme); }
+        &.mtx-light-green { background-color: mtx-background($mat-light-green, $is-dark-theme); }
+        &.mtx-lime { background-color: mtx-background($mat-lime, $is-dark-theme); }
+        &.mtx-yellow { background-color: mtx-background($mat-yellow, $is-dark-theme); }
+        &.mtx-amber { background-color: mtx-background($mat-amber, $is-dark-theme); }
+        &.mtx-orange { background-color: mtx-background($mat-orange, $is-dark-theme); }
+        &.mtx-deep-orange { background-color: mtx-background($mat-deep-orange, $is-dark-theme); }
+        &.mtx-brown { background-color: mtx-background($mat-brown, $is-dark-theme); }
+        &.mtx-gray { background-color: mtx-background($mat-gray, $is-dark-theme); }
+        &.mtx-blue-gray { background-color: mtx-background($mat-blue-gray, $is-dark-theme); }
+    }
+
+    
+}

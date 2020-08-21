@@ -1,9 +1,5 @@
 :host { margin-top: -32px; }
-.mat-toolbar {
-    display: flex; flex-direction: column; 
-    height: 320px; padding: 32px;
-    white-space: normal; text-align: center;
-}
+.hero-section { height: 320px; padding: 32px; white-space: normal; text-align: center; }
 
 h1 { font-size: 48px; line-height: 1; font-weight: 700; }
 h2 { margin-top: 16px; margin-bottom: 24px; font-size: 18px; line-height: 1.25; font-weight: 300; }

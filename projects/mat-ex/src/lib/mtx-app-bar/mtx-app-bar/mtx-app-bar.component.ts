@@ -3,7 +3,7 @@ import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, 
 const NAV_ATRRIBUTES = [
   { key: 'none' },
   { key: 'menu', icon: 'menu', tooltip: 'Toggle Menu' },
-  { key: 'back', icon: 'arrow_back', tooltip: 'Navigate Back' },
+  { key: 'back', icon: 'keyboard_backspace', tooltip: 'Navigate Back' },
   { key: 'close', icon: 'close', tooltip: 'Close Dialog' },
 ]
 
