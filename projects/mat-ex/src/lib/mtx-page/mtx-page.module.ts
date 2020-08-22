@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MtxPageComponent } from './mtx-page/mtx-page.component';
-import { MtxPageHeaderComponent } from './mtx-page-header/mtx-page-header.component';
-import { MtxPageContentComponent } from './mtx-page-content/mtx-page-content.component';
-import { MtxPageFooterComponent } from './mtx-page-footer/mtx-page-footer.component';
+import { MtxPageAreaComponent } from './mtx-page-area/mtx-page-area.component';
+import { MtxPageComponent } from './mtx-page.component';
 
 
 
 @NgModule({
-  declarations: [MtxPageComponent, MtxPageHeaderComponent, MtxPageContentComponent, MtxPageFooterComponent],
+  declarations: [MtxPageComponent, MtxPageAreaComponent],
   imports: [
     CommonModule
   ],
-  exports: [MtxPageComponent, MtxPageHeaderComponent, MtxPageContentComponent, MtxPageFooterComponent]
+  exports: [MtxPageComponent, MtxPageAreaComponent]
 })
 export class MtxPageModule { }

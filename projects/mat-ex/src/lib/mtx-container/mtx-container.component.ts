@@ -6,15 +6,16 @@ import { Component, OnInit, ViewEncapsulation, ElementRef } from '@angular/core'
   styleUrls: ['./mtx-container.component.scss'],
   host: { 
     class: 'mtx-container', 
-    '[class.mtx-row]': "hostRef.nativeElement.tagName=='MTX-ROW'",
-    '[class.mtx-column]': "hostRef.nativeElement.tagName=='MTX-COLUMN'",
+    '[class.mtx-row]': "selector=='mtx-row'",
+    '[class.mtx-column]': "selector=='mtx-column'",
   },
   encapsulation: ViewEncapsulation.None,
 })
 export class MtxContainerComponent implements OnInit {
 
-  constructor(public hostRef: ElementRef) { 
-  }
+  get selector(): string { return this.hostRef.nativeElement.tagName.toLowerCase() }
+
+  constructor(private hostRef: ElementRef) { }
   
   ngOnInit(): void {
   }

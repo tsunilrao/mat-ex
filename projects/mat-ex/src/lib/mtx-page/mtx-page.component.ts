@@ -5,7 +5,7 @@ import { Title, Meta } from '@angular/platform-browser';
   selector: 'mtx-page',
   templateUrl: './mtx-page.component.html',
   styleUrls: ['./mtx-page.component.scss'],
-  host: { class: 'mtx-page' },
+  host: { class: 'mtx-page mtx-page-padding' },
   encapsulation: ViewEncapsulation.None
 })
 export class MtxPageComponent implements OnInit, OnChanges {

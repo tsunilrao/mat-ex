@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MtxPageFooterComponent } from './mtx-page-footer.component';
+import { MtxPageAreaComponent } from './mtx-page-area.component';
 
-describe('MtxPageFooterComponent', () => {
-  let component: MtxPageFooterComponent;
-  let fixture: ComponentFixture<MtxPageFooterComponent>;
+describe('MtxPageAreaComponent', () => {
+  let component: MtxPageAreaComponent;
+  let fixture: ComponentFixture<MtxPageAreaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MtxPageFooterComponent ]
+      declarations: [ MtxPageAreaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MtxPageFooterComponent);
+    fixture = TestBed.createComponent(MtxPageAreaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

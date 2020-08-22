@@ -6,10 +6,6 @@ export * from './lib/components/toolbar-button/toolbar-button.module';
 export * from './lib/components/toolbar-button/toolbar-button.component';
 
 export * from './lib/mtx-page/mtx-page.module'
-export * from './lib/mtx-page/mtx-page/mtx-page.component'
-export * from './lib/mtx-page/mtx-page-header/mtx-page-header.component'
-export * from './lib/mtx-page/mtx-page-content/mtx-page-content.component'
-export * from './lib/mtx-page/mtx-page-footer/mtx-page-footer.component'
 
 export * from './lib/mtx-app-bar/mtx-app-bar.module'
 export * from './lib/mtx-app-bar/mtx-app-bar/mtx-app-bar.component'
