@@ -21,7 +21,7 @@ const DIALOG_COLOR_ATTRIBUTES = [
 })
 export class MtxDialogComponent implements OnInit, AfterViewInit {
 
-  @Input('title-text') title?: string;
+  @Input('dialogTitle') title?: string;
   @Input() color?: string;
 
   @ViewChild('container') containerRef: ElementRef;
