@@ -29,6 +29,8 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
   @Input() nav;
 
   @Input() overflow;
+  
+  @Input() title: string;
 
   navAttr;
   prominentFlex: number = 0;

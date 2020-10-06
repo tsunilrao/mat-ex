@@ -1,0 +1,21 @@
+:host { display: flex; height: 20px; padding: 0 4px; align-items: center; justify-content: flex-end;}
+
+.icon { 
+    height: 16px; width: 16px;
+    display: flex; align-items: center; justify-content: center;
+}
+.icon-square::after { 
+    content: ""; height: 8px; width: 8px; 
+    background-color: currentColor; 
+}
+.icon-circle::after { 
+    content: ""; height: 8px; width: 8px; 
+    background-color: currentColor; 
+    border-radius: 50%; 
+}
+.icon-triangle-down::after { 
+    content: ""; height: 0; width: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid currentColor;
+}

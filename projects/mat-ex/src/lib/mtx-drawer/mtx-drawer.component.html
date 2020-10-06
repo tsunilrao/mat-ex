@@ -1,0 +1,5 @@
+<mtx-column class="mtx-drawer"
+    [class.mtx-drawer-left]="['mtx-drawer-left', 'mtx-drawer'].includes(selector)"
+    [class.mtx-drawer-right]="selector=='mtx-drawer-right'" (click)="onDrawerClick($event)">
+    <ng-content></ng-content>
+</mtx-column>

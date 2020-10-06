@@ -1,0 +1,91 @@
+<mtx-stroked-card class="mtx-gray-200" style="padding: 0; overflow: hidden; height: 280px">
+    <mtx-sidesheet-container>
+        <mtx-toolbar title="App Bar">
+            <button mat-icon-button style="margin-right: -8px;" aria-label="Open Configuration Panel"
+                matTooltip="Open Configuration Panel" (click)="drawer.open()">
+                <mat-icon>tune</mat-icon>
+            </button>
+        </mtx-toolbar>
+        <mtx-toolbar></mtx-toolbar>
+        <mtx-flat-card class="mat-elevation-z4"
+            style="min-height: 600px; width: 320px; align-self: center; border-radius: 0; padding: 0; transform: scale(0.8) translateY(-75px);">
+            <mtx-mobile-header></mtx-mobile-header>
+            <ng-container *ngTemplateOutlet="demo"></ng-container>
+        </mtx-flat-card>
+        <mtx-sidesheet-right>
+            <ng-container *ngTemplateOutlet="drawerContent"></ng-container>
+        </mtx-sidesheet-right>
+    </mtx-sidesheet-container>
+    <mtx-drawer-right #drawer>
+        <ng-container *ngTemplateOutlet="drawerContent"></ng-container>
+    </mtx-drawer-right>
+</mtx-stroked-card>
+
+<ng-template #drawerContent>
+    <mtx-toolbar title="Configuration">
+        <button mat-icon-button style="margin-right: -12px;" aria-label="Close Configuration Panel"
+            matTooltip="Close Configuration Panel" (click)="drawer.close()" onclick="blur()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mtx-toolbar>
+    <mtx-toolbar icon="home">
+        <mtx-column class="mtx-toolbar-title">
+            <mtx-row class="mat-caption">Size</mtx-row>
+            <mtx-row class="mat-body-strong">{{size[sizeIndex]}}</mtx-row>
+        </mtx-column>
+        <button mat-icon-button style="margin-right: -12px;" aria-label="Flip Size" matTooltip="Flip Size"
+            (click)="flipSize()">
+            <mat-icon>flip</mat-icon>
+        </button>
+    </mtx-toolbar>
+    <mtx-toolbar>
+        <mtx-column class="mtx-toolbar-title">
+            <mtx-row class="mat-caption">Navigation</mtx-row>
+            <mtx-row class="mat-body-strong">{{navigation[navigationIndex]}}</mtx-row>
+        </mtx-column>
+        <button mat-icon-button style="margin-right: -12px;" aria-label="Flip Navigation" matTooltip="Flip Navigation"
+            (click)="flipNavigation()">
+            <mat-icon>flip</mat-icon>
+        </button>
+    </mtx-toolbar>
+    <mtx-toolbar>
+        <mtx-column class="mtx-toolbar-title">
+            <!-- <mtx-row class="mat-caption">Title</mtx-row> -->
+            <mtx-row class="mat-body">Standard</mtx-row>
+        </mtx-column>
+        <button mat-icon-button style="margin-right: -8px;" aria-label="Close Configuration Panel"
+            matTooltip="Close Configuration Panel" (click)="drawer.close()">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </mtx-toolbar>
+    <mtx-toolbar>
+        <mtx-column class="mtx-toolbar-title">
+            <mtx-row class="mat-caption">Buttons</mtx-row>
+            <mtx-row class="mat-body">Standard</mtx-row>
+        </mtx-column>
+        <button mat-icon-button style="margin-right: -8px;" aria-label="Close Configuration Panel"
+            matTooltip="Close Configuration Panel" (click)="drawer.close()">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </mtx-toolbar>
+</ng-template>
+
+<ng-template #demo>
+    <mtx-app-bar style="margin: 0;" [size]="size[sizeIndex].toLowerCase()"
+        [nav]="navigation[navigationIndex].toLowerCase()" color="primary">
+        <!-- <mtx-app-bar-title>{{title.value}}</mtx-app-bar-title>
+        <mtx-app-bar-button *ngIf="icons">
+            <button mat-icon-button>
+                <mat-icon>search</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>notifications</mat-icon>
+            </button>
+        </mtx-app-bar-button>
+        <mtx-app-bar-button *ngIf="buttons">
+            <button mat-button>SAVE</button>
+        </mtx-app-bar-button> -->
+    </mtx-app-bar>
+
+    <mat-menu #menu>...</mat-menu>
+</ng-template>

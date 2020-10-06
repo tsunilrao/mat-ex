@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
+import { FooterSectionModule } from '../shared/footer-section/footer-section.module';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { MatCardModule } from '@angular/material/card';
     HomeComponentsSectionComponent, HomeGuidesSectionComponent
   ],
   imports: [
-    CommonModule, HomeRoutingModule,
+    CommonModule, HomeRoutingModule, FooterSectionModule,
     MtxPageModule, MtxAppBarModule, MtxScrollviewModule, MtxProfileModule, MtxContainerModule,
     MatButtonModule, MatIconModule, MatDividerModule, MatTooltipModule, MatCardModule
   ]

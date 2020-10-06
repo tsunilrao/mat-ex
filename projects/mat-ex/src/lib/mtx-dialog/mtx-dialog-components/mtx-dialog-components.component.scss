@@ -1,0 +1,12 @@
+.mtx-dialog .mtx-dialog-title { 
+    display: flex; flex-direction: row; box-sizing: border-box; z-index: 1; 
+    min-height: 56px; margin: 0; padding: 0 24px; margin: 0; align-items: center; 
+    font-size: 20px; font-weight: 500; line-height: 32px;
+    border-top-left-radius: 4px; border-top-right-radius: 4px; 
+}
+
+.mtx-dialog-actions { display: flex; flex-direction: row; box-sizing: border-box;
+    padding: 0 8px; min-height: 56px; justify-content: flex-end; align-items: center;
+    .mtx-dialog-actions button { margin-left: 8px; }
+    .mtx-dialog-actions button:first-child { margin-left: 0px; }
+}

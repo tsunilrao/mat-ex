@@ -1,40 +1,17 @@
-# Material Extension
+# MatEx
 
-This library extends the basic features of Angular Material
+This project contains reusable components that extend [Angular Material](https://material.angular.io) to the next level. Complete Documentation and demos available at [https://tsunilrao.github.io/mat-ex](https://tsunilrao.github.io/mat-ex)
 
-#### Installation
+## Installation
 
 Run `npm i mat-ex` to install this library
 
-## Toolbar Button `<mtx-toolbar-button>`
+## Components
 
-Toolbar buttons are Angular Material mat-button elements enhanced with Material Extension design and styling.
+- [mtx-app-bar](https://tsunilrao.github.io/mat-ex/mtx-app-bar)
+- [mtx-bottom-nav](https://tsunilrao.github.io/mat-ex/mtx-bottom)
+- [mtx-page](https://tsunilrao.github.io/mat-ex/mtx-page)
 
-#### Properties
+## Colors & Themes
 
-The following attributes define the appearance and behaviour of the toolbar button.
-
-| Attribute  | Description                                       |
-| ---------- | ------------------------------------------------- |
-| `icon`     | Material Icon ligature to display icon in button  |
-| `text`     | Text to display within button                     |
-| `dropdown` | Dropdown caret icon for button                    |
-| `vertical` | Vertical Orientation for content                  |
-
-#### Styling
-
-There are several toolbar button variants, and can be changed using the `variant` property to set 
-the style to `raised`, `flat`, or `stroked`.
-
-#### Theming
-
-Toolbar buttons can be colored in terms of the current theme using the `color` property to set 
-the background color to `primary`, `accent`, or `warn`.
-
-#### Examples
-
-```
-<mtx-toolbar-button icon="check" variant="raised" color="primary"></mtx-toolbar-button>
-<mtx-toolbar-button icon="check" text="Finish" vertical></mtx-toolbar-button>
-<mtx-toolbar-button text="Finish" dropdown></mtx-toolbar-button>
-```
+- [mtx-color](https://tsunilrao.github.io/mat-ex/mtx-color)

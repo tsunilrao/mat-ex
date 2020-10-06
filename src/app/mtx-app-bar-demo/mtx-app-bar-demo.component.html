@@ -1,4 +1,6 @@
-<mtx-page>
+<mtx-page page-title="App Bar | Material Extentions"
+    description="Reusable UI component for mobile and desktop Angular web applications">
+
     <mtx-page-header>
         <mtx-app-bar color="primary" nav="back">
             <mtx-app-bar-title>App Bar</mtx-app-bar-title>
@@ -8,18 +10,23 @@
     <mtx-page-content>
 
         <ng-container *ngTemplateOutlet="InteractiveDemo"></ng-container>
+        <app-footer-section></app-footer-section>
 
     </mtx-page-content>
 
 </mtx-page>
 
 <ng-template #InteractiveDemo>
-    <div style="display: flex; flex-direction: column;">
+    <mtx-column>
 
-        <h3 style="margin-bottom: 16px;">Interactive demo</h3>
+        <p><code>&lt;mtx-app-bar&gt;</code> displays information and actions relating to the current screen.</p>
 
-        <p style="margin-bottom: 24px;">This demo lets you preview the App Bar component, its variations, and
+        <h3>Interactive demo</h3>
+
+        <p>This demo lets you preview the App Bar component, its variations, and
             configuration options. Each tab displays a different type of App Bar.</p>
+
+        <app-bar-interactive style="margin-bottom: 24px;"></app-bar-interactive>
 
         <div class="row" style="margin-bottom: 16px; justify-content: space-between;">
             <mat-form-field style="width: 40%;">
@@ -65,7 +72,7 @@
             </mat-tab>
         </mat-tab-group>
 
-    </div>
+    </mtx-column>
 </ng-template>
 
 <ng-template #demo>
@@ -109,3 +116,23 @@
 
     </code>
 </ng-template>
+
+<ng-template #demo>
+    <mtx-app-bar style="margin: 0;" [size]="size" [nav]="nav" color="primary" [overflow]="overflow?menu:undefined">
+        <mtx-app-bar-title>{{title.value}}</mtx-app-bar-title>
+        <mtx-app-bar-button *ngIf="icons">
+            <button mat-icon-button>
+                <mat-icon>search</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>notifications</mat-icon>
+            </button>
+        </mtx-app-bar-button>
+        <mtx-app-bar-button *ngIf="buttons">
+            <button mat-button>SAVE</button>
+        </mtx-app-bar-button>
+    </mtx-app-bar>
+
+    <mat-menu #menu>...</mat-menu>
+</ng-template>
+

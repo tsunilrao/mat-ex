@@ -1,11 +1,18 @@
 /*
- * Public API Surface of mat-ex
+* Public API Surface of mat-ex
  */
 
 export * from './lib/components/toolbar-button/toolbar-button.module';
 export * from './lib/components/toolbar-button/toolbar-button.component';
 
 export * from './lib/mtx-page/mtx-page.module'
+export * from './lib/mtx-card/mtx-card.module'
+export * from './lib/mtx-container/mtx-container.module';
+export * from './lib/mtx-dialog/mtx-dialog.module';
+export * from './lib/mtx-drawer/mtx-drawer.module';
+export * from './lib/mtx-toolbar/mtx-toolbar.module';
+export * from './lib/mtx-scrollview/mtx-scrollview.module';
+export * from './lib/mtx-sidesheet/mtx-sidesheet.module';
 
 export * from './lib/mtx-app-bar/mtx-app-bar.module'
 export * from './lib/mtx-app-bar/mtx-app-bar/mtx-app-bar.component'
@@ -32,16 +39,8 @@ export * from './lib/mtx-feature-bar/mtx-feature-bar-title/mtx-feature-bar-title
 export * from './lib/mtx-modal/mtx-modal.module';
 export * from './lib/mtx-modal/mtx-modal/mtx-modal.component';
 
-export * from './lib/mtx-dialog/mtx-dialog.module';
-export * from './lib/mtx-dialog/mtx-dialog/mtx-dialog.component';
-export * from './lib/mtx-dialog/mtx-dialog-title/mtx-dialog-title.component';
-export * from './lib/mtx-dialog/mtx-dialog-icon/mtx-dialog-icon.component';
-export * from './lib/mtx-dialog/mtx-dialog-content/mtx-dialog-content.component';
-export * from './lib/mtx-dialog/mtx-dialog-actions/mtx-dialog-actions.component';
 
 export * from './lib/mtx-expansion/mtx-expansion.module';
 export * from './lib/mtx-expansion/mtx-expansion/mtx-expansion.component';
 export * from './lib/mtx-expansion/mtx-expansion-content/mtx-expansion-content.component';
 
-export * from './lib/mtx-scrollview/mtx-scrollview.module';
-export * from './lib/mtx-container/mtx-container.module';

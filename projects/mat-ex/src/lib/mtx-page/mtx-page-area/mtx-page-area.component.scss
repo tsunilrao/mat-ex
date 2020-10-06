@@ -1,5 +1,5 @@
 .mtx-page-area { display: flex; flex-direction: column; box-sizing: border-box; }
 
-.mtx-page-content { padding-top: 32px; padding-bottom: 32px; }
+.mtx-page-content { padding-top: 32px; padding-bottom: 32px; min-height: 100%;}
 
 .mtx-page-header, .mtx-page-footer { z-index: 10; }

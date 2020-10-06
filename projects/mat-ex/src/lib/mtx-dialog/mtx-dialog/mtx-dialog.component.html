@@ -1,7 +1,9 @@
+<h1 mtx-dialog-title *ngIf="title">{{title}}</h1>
 <ng-content select="mtx-dialog-title"></ng-content>
 <div class="content-container" (scroll)="onScrollContainer()" #container>
     <div class="content">
         <ng-content select="mtx-dialog-icon"></ng-content>
+        <ng-content></ng-content>
         <ng-content select="mtx-dialog-content"></ng-content>
     </div>
 </div>

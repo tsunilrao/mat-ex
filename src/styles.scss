@@ -12,80 +12,64 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$quicklix-gray: mat-palette($mat-gray, 600);
-$quicklix-blue: mat-palette($mat-blue, 500);
-$quicklix-green: mat-palette($mat-green, 500);
-$quicklix-orange: mat-palette($mat-orange, 800);
-$quicklix-red: mat-palette($mat-red, 500);
-
-$quicklix-primary: mat-palette($mat-indigo);
-$quicklix-accent: mat-palette($mat-blue, A200, A100, A400);
+$mat-ex-primary: mat-palette($mat-indigo);
+$mat-ex-accent: mat-palette($mat-blue, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$quicklix-warn: mat-palette($mat-red);
+$mat-ex-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$quicklix-theme: mat-light-theme($quicklix-primary, $quicklix-accent, $quicklix-warn);
+$mat-ex-theme: mat-light-theme($mat-ex-primary, $mat-ex-accent, $mat-ex-warn);
 
-$quicklix-light: whitesmoke;
-$quicklix-white: white;
+$mat-ex-light: whitesmoke;
+$mat-ex-white: white;
 
-$quicklix-text-dark: #212121;
-$quicklix-text-secondary: #757575;
-$quicklix-text-light: white;
-$quicklix-text-light-secondary: #ffffffc0;
+$mat-ex-text-dark: #212121;
+$mat-ex-text-secondary: #757575;
+$mat-ex-text-light: white;
+$mat-ex-text-light-secondary: #ffffffc0;
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($quicklix-theme);
+@include angular-material-theme($mat-ex-theme);
 @import '../projects/mat-ex/themes/mat-ex.theme.scss';
-@include mat-ex-theme($quicklix-theme);
+@include mat-ex-theme($mat-ex-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
-.color-gray { background-color: mat-color($quicklix-gray); color: $quicklix-text-light; }
-.color-blue { background-color: mat-color($quicklix-blue); color: $quicklix-text-light; }
-.color-green { background-color: mat-color($quicklix-green); color: $quicklix-text-light; }
-.color-orange { background-color: mat-color($quicklix-orange); color: $quicklix-text-light; }
-.color-red { background-color: mat-color($quicklix-red); color: $quicklix-text-light; }
+.color-primary { background-color: mat-color($mat-ex-primary); color: $mat-ex-text-light; }
+.color-accent { background-color: mat-color($mat-ex-accent); color: $mat-ex-text-light; }
+.color-secondary { background-color: $mat-ex-text-secondary; color: $mat-ex-text-dark; }
+.color-light { background-color: $mat-ex-light; color: $mat-ex-text-dark; }
+.color-white { background-color: $mat-ex-white; color: $mat-ex-text-dark; }
 
-.color-primary { background-color: mat-color($quicklix-primary); color: $quicklix-text-light; }
-.color-accent { background-color: mat-color($quicklix-accent); color: $quicklix-text-light; }
-.color-secondary { background-color: $quicklix-text-secondary; color: $quicklix-text-dark; }
-.color-light { background-color: $quicklix-light; color: $quicklix-text-dark; }
-.color-white { background-color: $quicklix-white; color: $quicklix-text-dark; }
+.textcolor-primary  { color: mat-color($mat-ex-primary); }
+.textcolor-accent  { color: mat-color($mat-ex-accent); }
+.textcolor-warn  { color: mat-color($mat-ex-warn); }
+.textcolor-dark  { color: $mat-ex-text-dark; }
+.textcolor-light  { color: $mat-ex-text-light; }
+.textcolor-secondary  { color: $mat-ex-text-secondary; }
+.textcolor-light-secondary  { color: $mat-ex-text-light-secondary; }
 
-.textcolor-gray { color: mat-color($quicklix-gray); }
-.textcolor-blue { color: mat-color($quicklix-blue); }
-.textcolor-green { color: mat-color($quicklix-green); }
-.textcolor-orange { color: mat-color($quicklix-orange); }
-.textcolor-red { color: mat-color($quicklix-red); }
-
-.textcolor-primary  { color: mat-color($quicklix-primary); }
-.textcolor-accent  { color: mat-color($quicklix-accent); }
-.textcolor-warn  { color: mat-color($quicklix-warn); }
-.textcolor-dark  { color: $quicklix-text-dark; }
-.textcolor-light  { color: $quicklix-text-light; }
-.textcolor-secondary  { color: $quicklix-text-secondary; }
-.textcolor-light-secondary  { color: $quicklix-text-light-secondary; }
-
-.bordercolor-gray { border-color: mat-color($quicklix-gray); }
-.bordercolor-blue { border-color: mat-color($quicklix-blue); }
-.bordercolor-green { border-color: mat-color($quicklix-green); }
-.bordercolor-orange { border-color: mat-color($quicklix-orange); }
-.bordercolor-red { border-color: mat-color($quicklix-red); }
-
-.bordercolor-primary  { border-color: mat-color($quicklix-primary); }
-.bordercolor-accent  { border-color: mat-color($quicklix-accent); }
-.bordercolor-dark  { border-color: $quicklix-text-dark; }
-.bordercolor-light  { border-color: $quicklix-text-light; }
-.bordercolor-secondary  { border-color: $quicklix-text-secondary; }
-.bordercolor-light-secondary  { border-color: $quicklix-text-light-secondary; }
+.bordercolor-primary  { border-color: mat-color($mat-ex-primary); }
+.bordercolor-accent  { border-color: mat-color($mat-ex-accent); }
+.bordercolor-dark  { border-color: $mat-ex-text-dark; }
+.bordercolor-light  { border-color: $mat-ex-text-light; }
+.bordercolor-secondary  { border-color: $mat-ex-text-secondary; }
+.bordercolor-light-secondary  { border-color: $mat-ex-text-light-secondary; }
 
 html, body { height: 100vh; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-width: 320px;}
-h1, h2, h3, h4, h5, h6 { font-weight: 500; }
+
+.mat-typography {
+    p { font-size: 14px; font-weight: 400; line-height: 24px; margin-bottom: 24px; }
+    h1 { font-size: 32px; font-weight: 500; margin: 24px 0; line-height: 48px; }
+    h2 { font-size: 24px; font-weight: 500; margin: 16px 0; line-height: 32px; }
+    h3 { font-size: 20px; font-weight: 500; margin: 16px 0; line-height: 28px; }
+    h4 { font-size: 18px; font-weight: 500; margin: 16px 0; line-height: 24px; }
+    code { display: inline-flex; justify-self: start; background: rgba(0,0,0,.03); }
+}
 
 .row, .col, .row-fill, .col-fill, body { display: flex !important; }
 .col, .col-fill, body { flex-direction: column; }
@@ -160,7 +144,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 500; }
 
 .font-xs-500, .font-sm-500, .font-md-500, .font-lg-500, .font-xl-500 { font-weight: 500; }
 
-.anchor { color: mat-color($quicklix-accent); font-weight: 500; text-decoration: none;}
+.anchor { color: mat-color($mat-ex-accent); font-weight: 500; text-decoration: none;}
 .anchor:hover { text-decoration: underline;}
 
 .form-dialog { width: 50vw; max-height: 80vh; min-width: 280px;}
@@ -179,20 +163,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 500; }
     .content-padding { padding-left: 48px; padding-right: 48px; }
 }
 
-.mat-typography {
-    .mat-display-4, .mat-display-3, .mat-display-2, .mat-display-1,
-    h1, .mat-h1, .mat-headline,
-    h2, .mat-h2, .mat-title	Section,
-    h3, .mat-h3, .mat-subheading-2,
-    h4, .mat-h4, .mat-subheading-1,
-    .mat-body, .mat-body-1,
-    .mat-body-strong, .mat-body-2,
-    .mat-small, .mat-caption,
-    .mat-input,
-    .mat-overline { margin:0; line-height: 1.35}
-
-}
-$background: map-get($quicklix-theme, background);
+$background: map-get($mat-ex-theme, background);
 .mat-icon-button:hover {
     background-color: mat-color($background, hover);
   }

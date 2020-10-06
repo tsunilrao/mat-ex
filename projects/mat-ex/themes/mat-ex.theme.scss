@@ -1,11 +1,23 @@
 @import '~@angular/material/theming';
 
+@function mtx-color($color, $hue: 500) {
+    @return mat-color($color, $hue);
+}
+
+@function mtx-contrast($color, $hue: 500) {
+    @return mat-contrast($color, $hue);
+}
+
+@function mtx-contrast-secondary($color, $hue: 500) {
+    @return if(mtx-contrast($color, $hue)==$dark-primary-text, $dark-secondary-text, $light-secondary-text);
+}
+
 @function mtx-background-hue($is-dark-theme) {
     @return if($is-dark-theme, 900, 50);
 }
 
 @function mtx-background($color, $is-dark-theme, $hue: mtx-background-hue($is-dark-theme) ) {
-    @return mat-color($color, $hue);
+    @return mtx-color($color, $hue);
 }
 
 $mtx-colors: (
@@ -30,32 +42,32 @@ $mtx-colors: (
     mtx-blue-gray: $mat-blue-gray,
 );
 
-.mtx-light, .mtx-light-secondary { background-color: map-get($mat-light-theme-background, background); }
-.mtx-light { color: $dark-primary-text; }
-.mtx-light-secondary { color: $dark-secondary-text; }
+.mtx-light, .mtx-light-secondary { background-color: map-get($mat-light-theme-background, background) !important; }
+.mtx-light { color: $dark-primary-text !important; }
+.mtx-light-secondary { color: $dark-secondary-text !important; }
 
-.mtx-dark, .mtx-dark-secondary { background-color: map-get($mat-dark-theme-background, background); }
-.mtx-dark { color: $light-primary-text; }
-.mtx-dark-secondary { color: $light-secondary-text; }
+.mtx-dark, .mtx-dark-secondary { background-color: map-get($mat-dark-theme-background, background) !important; }
+.mtx-dark { color: $light-primary-text !important; }
+.mtx-dark-secondary { color: $light-secondary-text !important; }
 
 @each $color-key, $color-value in $mtx-colors {
     $mtx-color: map-get($mtx-colors, $color-key);
     .#{$color-key} {
-        background-color: mat-color($mtx-color, 500);
-        color: mat-contrast($mtx-color, 500);
+        background-color: mtx-color($mtx-color, 500) !important;
+        color: mtx-contrast($mtx-color, 500) !important;
     }
     .#{$color-key}-text {
-        color: mat-color($mtx-color, 500);
+        color: mtx-color($mtx-color, 500) !important;
     }
 
     @each $key, $value in $mtx-color {
         @if $key != contrast {
             .#{$color-key}-#{$key} {
-                background-color: mat-color($mtx-color, $key);
-                color: mat-contrast($mtx-color, $key);
+                background-color: mtx-color($mtx-color, $key) !important;
+                color: mtx-contrast($mtx-color, $key) !important;
             }
             .#{$color-key}-#{$key}-text {
-                color: mat-color($mtx-color, $key);
+                color: mtx-color($mtx-color, $key) !important;
             }
         }
     }
@@ -71,24 +83,39 @@ $mtx-colors: (
     $background: map-get($theme, background);
     $foreground: map-get($theme, foreground);
 
-    .mtx-primary {
-        background-color: mtx-background($primary, $is-dark-theme, 500); 
-        color: mat-contrast($primary, 500);
+    .mtx-primary { background-color: mtx-color($primary) !important; color: mtx-contrast($primary) !important; }
+    .mtx-primary-secondary { background-color: mtx-color($primary) !important; color: mtx-contrast-secondary($primary) !important; }    
+    .mtx-primary-text { color: mtx-color($primary); }
+    @each $key, $value in $primary {
+        @if $key != contrast {
+            .mtx-primary-#{$key} { background-color: mtx-color($primary, $key) !important; color: mtx-contrast($primary, $key) !important; }    
+            .mtx-primary-#{$key}-secondary { background-color: mtx-color($primary, $key) !important; color: mtx-contrast-secondary($primary, $key) !important; }    
+            .mtx-primary-#{$key}-text { color: mtx-color($primary, $key) !important; }    
+        }    
+    }    
+
+    .mtx-accent { background-color: mtx-color($accent) !important; color: mtx-contrast($accent) !important; }        
+    .mtx-accent-secondary { background-color: mtx-color($accent) !important; color: mtx-contrast-secondary($accent) !important; }    
+    .mtx-accent-text { color: mtx-color($accent); }
+    @each $key, $value in $accent {
+        @if $key != contrast {
+            .mtx-accent-#{$key} { background-color: mtx-color($accent, $key) !important; color: mtx-contrast($accent, $key) !important; }    
+            .mtx-accent-#{$key}-secondary { background-color: mtx-color($accent, $key) !important; color: mtx-contrast-secondary($accent, $key) !important; }    
+            .mtx-accent-#{$key}-text { color: mtx-color($accent, $key) !important; }    
+        }    
+    }    
+
+    .mtx-warn { background-color: mtx-color($warn) !important; color: mtx-contrast($warn) !important; }        
+    .mtx-warn-text { color: mtx-color($warn); }
+
+    .mtx-card { 
+        background-color: map-get($background, card); 
+        color: map-get($foreground, text);
+        border-color: map-get($foreground, divider);
     }
-    .mtx-accent {
-        background-color: mtx-background($accent, $is-dark-theme, 500); 
-        color: mat-contrast($accent, 500);
-    }
-    .mtx-warn {
-        background-color: mtx-background($warn, $is-dark-theme, 500); 
-        color: mat-contrast($warn, 500);
-    }
-    .mtx-primary-text { color: mat-color($primary, 500); }
-    .mtx-accent-text { color: mat-color($accent, 500); }
-    .mtx-warn-text { color: mat-color($warn, 500); }
     
     .mtx-page { 
-        color: map-get($foreground, foreground);
+        color: map-get($foreground, text);
 
         background-color: map-get($background, background); 
         &.mtx-primary { background-color: mtx-background($primary, $is-dark-theme); }
@@ -119,3 +146,17 @@ $mtx-colors: (
 
     
 }
+
+
+.mtx-overline { line-height: 12px; font-size: 10px; font-weight: 500; }
+.mtx-caption { line-height: 16px; font-size: 12px; font-weight: 500; }
+.mtx-label { line-height: 16px; font-size: 14px; font-weight: 500; }
+.mtx-heading { line-height: 20px; font-size: 16px; font-weight: 500; }
+.mtx-title { line-height: 24px; font-size: 20px; font-weight: 500; }
+
+.mtx-dark-primary-text { color: $dark-primary-text }
+.mtx-dark-secondary-text { color: $dark-secondary-text }
+.mtx-dark-disabled-text { color: $dark-disabled-text }
+.mtx-light-primary-text { color: $light-primary-text }
+.mtx-light-secondary-text { color: $light-secondary-text }
+.mtx-light-disabled-text { color: $light-disabled-text }

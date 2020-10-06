@@ -1,12 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, AfterViewInit, AfterContentInit, Input, ContentChild, ViewChild, ElementRef } from '@angular/core';
-import { MtxDialogTitleComponent } from '../mtx-dialog-title/mtx-dialog-title.component';
-
-const DIALOG_VARIANT_ATTRIBUTES = [
-  'basic',
-  'flat',
-  'stroked',
-  'raised',
-];
+import { Component, OnInit, ViewEncapsulation, AfterViewInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 const DIALOG_COLOR_ATTRIBUTES = [
   'basic',
@@ -16,39 +8,34 @@ const DIALOG_COLOR_ATTRIBUTES = [
 ];
 
 @Component({
-  selector: 'mtx-dialog',
+  selector: `mtx-dialog, mtx-raised-dialog, mtx-stroked-dialog`,
   templateUrl: './mtx-dialog.component.html',
   styleUrls: ['./mtx-dialog.component.scss'],
-  host: { class: 'mtx-dialog' },
+  host: { 
+    class: 'mtx-dialog',
+    '[class.mtx-basic-dialog]': "selector=='mtx-dialog'",
+    '[class.mtx-raised-dialog]': "selector=='mtx-raised-dialog'", 
+    '[class.mtx-stroked-dialog]': "selector=='mtx-stroked-dialog'", 
+  },
   encapsulation: ViewEncapsulation.None,
 })
-export class MtxDialogComponent implements OnInit, AfterViewInit, AfterContentInit {
+export class MtxDialogComponent implements OnInit, AfterViewInit {
 
-  @Input() variant?: string;
+  @Input('title-text') title?: string;
   @Input() color?: string;
 
-  @ContentChild(MtxDialogTitleComponent) dialogTitle: MtxDialogTitleComponent
   @ViewChild('container') containerRef: ElementRef;
+
+  get selector(): string { return this.hostRef.nativeElement.tagName.toLowerCase() }
 
   constructor(private hostRef: ElementRef) { }
 
   ngOnInit(): void {
-    if (!this.variant) this.variant = DIALOG_VARIANT_ATTRIBUTES[0];
     if (!this.color) this.color = DIALOG_COLOR_ATTRIBUTES[0];
   }
 
   ngAfterViewInit(): void {
-    DIALOG_VARIANT_ATTRIBUTES.forEach(attr => {
-      if (attr === this.variant) this.hostRef.nativeElement.classList.add('mtx-dialog-' + attr);
-    })
     this.onScrollContainer()
-  }
-
-  ngAfterContentInit(): void {
-    if (this.dialogTitle) {
-      this.dialogTitle.variant = this.variant
-      this.dialogTitle.color = this.color
-    }
   }
 
   onScrollContainer() {

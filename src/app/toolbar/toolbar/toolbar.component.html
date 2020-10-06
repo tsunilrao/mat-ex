@@ -1,0 +1,66 @@
+<mtx-page page-title="Toolbar | Material Extentions"
+    description="Reusable UI components for mobile and desktop Angular web applications">
+
+    <mtx-page-header>
+        <mtx-app-bar color="primary" nav="back">
+            <mtx-app-bar-title>Toolbar</mtx-app-bar-title>
+        </mtx-app-bar>
+    </mtx-page-header>
+
+    <mtx-page-content>
+
+        <ng-container *ngTemplateOutlet="InteractiveDemo"></ng-container>
+        <app-footer-section></app-footer-section>
+
+    </mtx-page-content>
+
+</mtx-page>
+
+<ng-template #InteractiveDemo>
+    <mtx-column>
+
+        <p><code>&lt;mtx-toolbar&gt;</code> is a container for headers, titles, or actions.</p>
+
+        <h3>Interactive demo</h3>
+
+        <p>This demo lets you preview the Toolbar component, its variations, and
+            configuration options. Each tab displays a different type of Toolbar.</p>
+
+        <mtx-stroked-card class="mtx-gray-200" style="margin: 24px 0; overflow: hidden; /* height: 280px */">
+            <mtx-toolbar title="Toolbar"></mtx-toolbar>
+            <mtx-mini-toolbar icon="home" title="Toolbar" imageUrl="sss"></mtx-mini-toolbar>
+            <mtx-standard-toolbar icon="home" title="Toolbar" imageUrl="sss"></mtx-standard-toolbar>
+            <mtx-large-toolbar icon="home" title="Toolbar" imageUrl="sss"></mtx-large-toolbar>
+            <mtx-huge-toolbar icon="home" title="Toolbar" imageUrl="sss"></mtx-huge-toolbar>
+            <mtx-overline-bar icon="" menu="meta">Title</mtx-overline-bar>
+            <mtx-caption-bar icon="" menu="meta">Title</mtx-caption-bar>
+            <mtx-label-bar icon="" menu="meta">Title</mtx-label-bar>
+            <mtx-header-bar icon="" menu="meta">Title</mtx-header-bar>
+            <mtx-title-bar icon="" menu="meta">Title</mtx-title-bar>
+            <mtx-mini-overline-bar menu="meta">OVERLINE</mtx-mini-overline-bar>
+            <mtx-mini-title-bar class="mtx-primary">OVERLINE</mtx-mini-title-bar>
+            <mtx-mini-toolbar class="mtx-primary">OVERLINE</mtx-mini-toolbar>
+            <mtx-toolbar icon="home" style="margin-top: -16px;">Title</mtx-toolbar>
+            <mtx-caption-toolbar style="margin-top: -16px;">Caption</mtx-caption-toolbar>
+            <mtx-label-toolbar style="margin-top: -16px;">Label</mtx-label-toolbar>
+            <mtx-row style="min-height: 8px; max-height: 8px; margin: 0 16px; font-size: 10px; font-weight: 500; line-height: 8px;">OVERLINE</mtx-row>
+            <mtx-row style="min-height: 24px; max-height: 24px; margin: 0 16px; font-size: 20px; font-weight: 500; line-height: 20px;">Title</mtx-row>
+            <mtx-row style="min-height: 16px; max-height: 16px; margin: 0 16px; font-size: 14px; font-weight: 500; line-height: 16px;">Caption</mtx-row>
+            <mtx-flat-card class="mat-elevation-z4"
+                style="width: 320px; align-self: center; border-radius: 0; transform: scale(0.8)">
+                <mtx-toolbar class="mtx-primary" title="Title">
+                    <button mat-icon-button class="mtx-toolbar-action" aria-label="Close this panel"><mat-icon>close</mat-icon></button>
+                </mtx-toolbar>
+                <mtx-mini-toolbar title="Title">
+                    <button mat-icon-button class="mtx-toolbar-action" aria-label="Close this panel"><mat-icon>more_vert</mat-icon></button>
+                </mtx-mini-toolbar>
+                <mtx-toolbar title="Title">
+                    <button mat-icon-button class="mtx-toolbar-action" aria-label="Close this panel"><mat-icon>search</mat-icon></button>
+                </mtx-toolbar>
+            </mtx-flat-card>
+
+
+        </mtx-stroked-card>
+
+    </mtx-column>
+</ng-template>

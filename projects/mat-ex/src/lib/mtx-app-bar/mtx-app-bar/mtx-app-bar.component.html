@@ -4,6 +4,7 @@
             [matTooltip]="navAttr?.tooltip" [attr.aria-label]="navAttr?.tooltip" *ngIf="navAttr?.icon">
             <mat-icon>{{navAttr?.icon}}</mat-icon>
         </button>
+        <h1 mtx-app-bar-title *ngIf="title">{{title}}</h1>
         <ng-content select="mtx-app-bar-title"></ng-content>
         <div style="display: flex; flex: 1;"></div>
         <ng-content select="mtx-app-bar-button"></ng-content>
