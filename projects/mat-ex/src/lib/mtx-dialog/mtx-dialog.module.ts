@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MtxDialogComponent } from './mtx-dialog/mtx-dialog.component';
+import { MtxDialogComponent } from './mtx-dialog.component';
 import { MtxDialogIconComponent } from './mtx-dialog-icon/mtx-dialog-icon.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
