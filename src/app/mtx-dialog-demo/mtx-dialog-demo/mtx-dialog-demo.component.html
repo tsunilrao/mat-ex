@@ -7,12 +7,53 @@
 
     <mtx-page-content>
 
-        <mtx-dialog dialogTitle="Title" color="primary">I'm a Dialog
-            <mtx-dialog-actions>
-                <button mat-button>Cancel</button>
-                <button mat-button>Submit</button>
-            </mtx-dialog-actions>
-        </mtx-dialog>
+        <p><code>&lt;mtx-dialog&gt;</code> displays dialogs with Material Design styling and animations.</p>
+
+        <mtx-stroked-card class="mtx-gray-50" style="margin: 32px 0;">
+            <mtx-row style="min-height: 56px; padding: 0 16px; align-items: center; justify-content: space-between;">
+                <span>Dialog Overview</span>
+                <button mat-icon-button style="margin-right: -8px;" aria-label="View Code" matTooltip="View Code">
+                    <mat-icon>code</mat-icon>
+                </button>
+            </mtx-row>
+
+            <mtx-row style="min-height: 48px; padding: 0 16px; align-items: center;">
+                <button mat-button (click)="dialog='basic'">Basic</button>
+                <button mat-button (click)="dialog='raised'">Raised</button>
+                <button mat-button (click)="dialog='stroked'">Stroked</button>
+            </mtx-row>
+
+            <mtx-column style="padding: 32px;">
+                <mtx-dialog [class.mtx-basic-dialog]="dialog=='basic'" [class.mtx-raised-dialog]="dialog=='raised'"
+                    [class.mtx-stroked-dialog]="dialog=='stroked'" dialogTitle="Title">I'm a Dialog
+                    <mtx-dialog-actions>
+                        <button mat-button color="primary">Cancel</button>
+                        <button mat-button color="primary">Ok</button>
+                    </mtx-dialog-actions>
+                </mtx-dialog>
+            </mtx-column>
+        </mtx-stroked-card>
+
+        <h3>Attributes</h3>
+        <p>There are several button variants, each applied as an attribute:</p>
+
+        <mtx-row>            
+            <span class="mat-body-strong" style="flex:1">Attribute</span>
+            <span class="mat-body-strong" style="flex:2">Description</span>
+        </mtx-row>
+        <mtx-row>            
+            <mtx-row style="flex:1"><code>mtx-dialog</code></mtx-row>
+            <span style="flex:2">Rectangular contained dialog without elevation</span>
+        </mtx-row>
+        <mtx-row>            
+            <mtx-row style="flex:1"><code>mtx-raised-dialog</code></mtx-row>
+            <span style="flex:2">Rectangular contained dialog with elevation</span>
+        </mtx-row>
+        <mtx-row>            
+            <mtx-row style="flex:1"><code>mtx-stroked-dialog</code></mtx-row>
+            <span style="flex:2">Rectangular outlined dialog without elevation</span>
+        </mtx-row>
+
         <div style="display: flex; flex-direction: column; flex: 1;"></div>
         <app-footer-section style="margin-top:32px"></app-footer-section>
 

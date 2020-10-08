@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MtxDialogDemoComponent implements OnInit {
 
+  dialog = 'basic';
+
   constructor() { }
 
   ngOnInit(): void {

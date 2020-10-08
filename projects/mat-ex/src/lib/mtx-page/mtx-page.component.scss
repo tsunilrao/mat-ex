@@ -3,7 +3,7 @@
     height: 100%; width: 100%; min-width: 320px; min-height: 240px;
 
     .mtx-page-content-container {
-        display: flex; flex-direction: column; flex: 1; overflow-y: overlay; box-sizing: border-box; 
+        flex: 1; overflow-y: overlay; box-sizing: border-box; 
     }
 
     &.mtx-page-padding, .mtx-page-padding { padding-left: 32px; padding-right: 32px; }

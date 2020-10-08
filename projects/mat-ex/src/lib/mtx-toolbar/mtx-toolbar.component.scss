@@ -1,6 +1,6 @@
 .mtx-toolbar {
     display: flex; flex-direction: row; box-sizing: border-box; padding: 0 16px; align-items: center; font-weight: 500;
-    
+
     .mtx-toolbar-visual { display: flex; flex-direction: row; box-sizing: border-box; width: 40px; align-items: center; justify-content: center; margin-right: 16px; }
     .mtx-toolbar-visual:empty { display: none; }
     .mtx-toolbar-content { display: flex; flex-direction: column; box-sizing: border-box; }
@@ -10,13 +10,10 @@
     .mtx-toolbar-meta { font-size: 10px; }
     .mtx-toolbar-image { display: flex; flex-direction: row; box-sizing: border-box; width: 40px; height: 40px; }
     
-    &.mtx-mini-toolbar { height: 40px; }
-    &.mtx-regular-toolbar { height: 56px; }
+    &.mtx-dense-toolbar { height: 40px; }
+    &.mtx-basic-toolbar { height: 56px; }
     &.mtx-large-toolbar { height: 72px; }
-    &.mtx-huge-toolbar { 
-        height: 112px; 
-        .mtx-toolbar-image { width: 80px; height: 80px; }
-    }
+    &.mtx-prominent-toolbar { height: 88px; }
 
 
     &.mtx-overline-bar { height: 24px; font-size: 10px; }
