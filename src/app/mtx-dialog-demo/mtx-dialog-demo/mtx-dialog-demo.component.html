@@ -7,52 +7,34 @@
 
     <mtx-page-content>
 
-        <p><code>&lt;mtx-dialog&gt;</code> displays dialogs with Material Design styling and animations.</p>
+        <mtx-title><code>&lt;mtx-dialog&gt;</code></mtx-title>
+        <mtx-paragraph>Displays dialogs with Material Design styling and animations.</mtx-paragraph>
 
-        <mtx-stroked-card class="mtx-gray-50" style="margin: 32px 0;">
+        <mtx-stroked-card class="mtx-gray-100" style="margin: 32px 0;">
             <mtx-row style="min-height: 56px; padding: 0 16px; align-items: center; justify-content: space-between;">
-                <span>Dialog Overview</span>
+                <mtx-subtitle>Dialog Overview</mtx-subtitle>
                 <button mat-icon-button style="margin-right: -8px;" aria-label="View Code" matTooltip="View Code">
                     <mat-icon>code</mat-icon>
                 </button>
             </mtx-row>
 
-            <mtx-row style="min-height: 48px; padding: 0 16px; align-items: center;">
-                <button mat-button (click)="dialog='basic'">Basic</button>
-                <button mat-button (click)="dialog='raised'">Raised</button>
-                <button mat-button (click)="dialog='stroked'">Stroked</button>
-            </mtx-row>
+            <mat-tab-group style="height: 48px;" (selectedIndexChange)="dialog=attrs[$event]">
+                <mat-tab *ngFor="let attr of attrs; let i = index" [label]="attr"></mat-tab>
+            </mat-tab-group>
 
             <mtx-column style="padding: 32px;">
-                <mtx-dialog [class.mtx-basic-dialog]="dialog=='basic'" [class.mtx-raised-dialog]="dialog=='raised'"
-                    [class.mtx-stroked-dialog]="dialog=='stroked'" dialogTitle="Title">I'm a Dialog
+                <mtx-dialog [class.mtx-basic-dialog]="dialog=='Basic'" [class.mtx-raised-dialog]="dialog=='Raised'"
+                    [class.mtx-stroked-dialog]="dialog=='Stroked'" dialogTitle="Dialog Title">This is the Dialog text
                     <mtx-dialog-actions>
                         <button mat-button color="primary">Cancel</button>
-                        <button mat-button color="primary">Ok</button>
+                        <button mat-button color="primary" autofocus>Ok</button>
                     </mtx-dialog-actions>
                 </mtx-dialog>
             </mtx-column>
         </mtx-stroked-card>
 
-        <h3>Attributes</h3>
-        <p>There are several button variants, each applied as an attribute:</p>
-
-        <mtx-row>            
-            <span class="mat-body-strong" style="flex:1">Attribute</span>
-            <span class="mat-body-strong" style="flex:2">Description</span>
-        </mtx-row>
-        <mtx-row>            
-            <mtx-row style="flex:1"><code>mtx-dialog</code></mtx-row>
-            <span style="flex:2">Rectangular contained dialog without elevation</span>
-        </mtx-row>
-        <mtx-row>            
-            <mtx-row style="flex:1"><code>mtx-raised-dialog</code></mtx-row>
-            <span style="flex:2">Rectangular contained dialog with elevation</span>
-        </mtx-row>
-        <mtx-row>            
-            <mtx-row style="flex:1"><code>mtx-stroked-dialog</code></mtx-row>
-            <span style="flex:2">Rectangular outlined dialog without elevation</span>
-        </mtx-row>
+        <ng-container *ngTemplateOutlet="attributes"></ng-container>
+        <ng-container *ngTemplateOutlet="directives"></ng-container>
 
         <div style="display: flex; flex-direction: column; flex: 1;"></div>
         <app-footer-section style="margin-top:32px"></app-footer-section>
@@ -60,3 +42,49 @@
     </mtx-page-content>
 
 </mtx-page>
+
+<ng-template #attributes>
+    <mtx-title>Attributes</mtx-title>
+    <mtx-paragraph>There are several dialog variants, each applied as an attribute:</mtx-paragraph>
+    <mtx-column style="margin-bottom: 16px;">
+        <mtx-row>
+            <mtx-label style="flex:1">Attribute</mtx-label>
+            <mtx-label style="flex:2">Description</mtx-label>
+        </mtx-row>
+        <mtx-row>
+            <mtx-row style="flex:1"><code>mtx-dialog</code></mtx-row>
+            <mtx-row style="flex:2">Rectangular contained dialog without elevation</mtx-row>
+        </mtx-row>
+        <mtx-row>
+            <mtx-row style="flex:1"><code>mtx-raised-dialog</code></mtx-row>
+            <mtx-row style="flex:2">Rectangular contained dialog with elevation</mtx-row>
+        </mtx-row>
+        <mtx-row>
+            <mtx-row style="flex:1"><code>mtx-stroked-dialog</code></mtx-row>
+            <mtx-row style="flex:2">Rectangular outlined dialog without elevation</mtx-row>
+        </mtx-row>
+    </mtx-column>
+</ng-template>
+
+<ng-template #directives>
+    <mtx-title>Directives</mtx-title>
+    <mtx-paragraph>Several directives are available to make it easier to structure your dialog:</mtx-paragraph>
+    <mtx-column style="margin-bottom: 16px;">
+        <mtx-row>
+            <mtx-label style="flex:1">Directive</mtx-label>
+            <mtx-label style="flex:2">Description</mtx-label>
+        </mtx-row>
+        <mtx-row>
+            <mtx-row style="flex:1"><code>mtx-dialog-title</code></mtx-row>
+            <mtx-row style="flex:2">Container for title bar at the top of the dialog.</mtx-row>
+        </mtx-row>
+        <mtx-row>
+            <mtx-row style="flex:1"><code>mtx-dialog-content</code></mtx-row>
+            <mtx-row style="flex:2">Container for all the content of the dialog.</mtx-row>
+        </mtx-row>
+        <mtx-row>
+            <mtx-row style="flex:1"><code>mtx-dialog-actions</code></mtx-row>
+            <mtx-row style="flex:2"><span>Container for action buttons at the bottom of the dialog. Button alignment can be controlled via the <code>align</code> attribute which can be set to <code>left</code>, <code>right</code> and <code>center</code>.</span></mtx-row>
+        </mtx-row>
+    </mtx-column>
+</ng-template>

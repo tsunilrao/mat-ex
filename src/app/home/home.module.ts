@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent } from './home/home.component';
 import { HomeRoutingModule } from './home-routing.module';
-import { MtxPageModule, MtxAppBarModule, MtxScrollviewModule, MtxProfileModule, MtxContainerModule } from 'projects/mat-ex/src/public-api';
+import { MtxPageModule, MtxAppBarModule, MtxScrollviewModule, MtxProfileModule, MtxContainerModule, MtxTextModule } from 'projects/mat-ex/src/public-api';
 import { HomeHeroSectionComponent } from './home-hero-section/home-hero-section.component';
 import { HomeFeaturesSectionComponent } from './home-features-section/home-features-section.component';
 import { HomeComponentsSectionComponent } from './home-components-section/home-components-section.component';
@@ -23,7 +23,7 @@ import { FooterSectionModule } from '../shared/footer-section/footer-section.mod
   ],
   imports: [
     CommonModule, HomeRoutingModule, FooterSectionModule,
-    MtxPageModule, MtxAppBarModule, MtxScrollviewModule, MtxProfileModule, MtxContainerModule,
+    MtxPageModule, MtxAppBarModule, MtxScrollviewModule, MtxProfileModule, MtxContainerModule, MtxTextModule,
     MatButtonModule, MatIconModule, MatDividerModule, MatTooltipModule, MatCardModule
   ]
 })

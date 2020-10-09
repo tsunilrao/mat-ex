@@ -1,3 +1,9 @@
 .mtx-container { display: flex; box-sizing: border-box; overflow: visible; }
 .mtx-container.mtx-row { flex-direction: row; }
 .mtx-container.mtx-column { flex-direction: column; }
+
+.mtx-container.mtx-title { display: block; line-height: 32px; font-size: 20px; font-weight: 500; }
+.mtx-container.mtx-subtitle { display: block; line-height: 24px; font-size: 16px; font-weight: 500; }
+.mtx-container.mtx-label { display: block; line-height: 20px; font-size: 14px; font-weight: 500; }
+.mtx-container.mtx-caption { display: block; line-height: 16px; font-size: 12px; font-weight: 500; }
+.mtx-container.mtx-overline { display: block; line-height: 16px; font-size: 10px; font-weight: 500; margin-bottom: 16px;}

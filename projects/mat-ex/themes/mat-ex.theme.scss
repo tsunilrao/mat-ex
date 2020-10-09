@@ -85,28 +85,14 @@ $mtx-colors: (
 
     .mtx-primary { background-color: mtx-color($primary) !important; color: mtx-contrast($primary) !important; }
     .mtx-primary-secondary { background-color: mtx-color($primary) !important; color: mtx-contrast-secondary($primary) !important; }    
-    .mtx-primary-text { color: mtx-color($primary); }
-    @each $key, $value in $primary {
-        @if $key != contrast {
-            .mtx-primary-#{$key} { background-color: mtx-color($primary, $key) !important; color: mtx-contrast($primary, $key) !important; }    
-            .mtx-primary-#{$key}-secondary { background-color: mtx-color($primary, $key) !important; color: mtx-contrast-secondary($primary, $key) !important; }    
-            .mtx-primary-#{$key}-text { color: mtx-color($primary, $key) !important; }    
-        }    
-    }    
-
+    .mtx-primary-text { color: mtx-color($primary) !important; }
+ 
     .mtx-accent { background-color: mtx-color($accent) !important; color: mtx-contrast($accent) !important; }        
     .mtx-accent-secondary { background-color: mtx-color($accent) !important; color: mtx-contrast-secondary($accent) !important; }    
-    .mtx-accent-text { color: mtx-color($accent); }
-    @each $key, $value in $accent {
-        @if $key != contrast {
-            .mtx-accent-#{$key} { background-color: mtx-color($accent, $key) !important; color: mtx-contrast($accent, $key) !important; }    
-            .mtx-accent-#{$key}-secondary { background-color: mtx-color($accent, $key) !important; color: mtx-contrast-secondary($accent, $key) !important; }    
-            .mtx-accent-#{$key}-text { color: mtx-color($accent, $key) !important; }    
-        }    
-    }    
+    .mtx-accent-text { color: mtx-color($accent) !important; }
 
     .mtx-warn { background-color: mtx-color($warn) !important; color: mtx-contrast($warn) !important; }        
-    .mtx-warn-text { color: mtx-color($warn); }
+    .mtx-warn-text { color: mtx-color($warn) !important; }
 
     .mtx-card { 
         background-color: map-get($background, card); 
@@ -147,12 +133,6 @@ $mtx-colors: (
     
 }
 
-
-.mtx-overline { line-height: 12px; font-size: 10px; font-weight: 500; }
-.mtx-caption { line-height: 16px; font-size: 12px; font-weight: 500; }
-.mtx-label { line-height: 16px; font-size: 14px; font-weight: 500; }
-.mtx-heading { line-height: 20px; font-size: 16px; font-weight: 500; }
-.mtx-title { line-height: 24px; font-size: 20px; font-weight: 500; }
 
 .mtx-dark-primary-text { color: $dark-primary-text }
 .mtx-dark-secondary-text { color: $dark-secondary-text }
