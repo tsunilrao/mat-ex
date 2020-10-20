@@ -12,4 +12,4 @@
     .mtx-dialog-actions button:first-child { margin-left: 0px; }
 }
 
-.mtx-dialog .mtx-dialog-content { display: flex; flex-direction: column; flex: 1; }
+.mtx-dialog .mtx-dialog-content { display: flex; flex-direction: column; flex: 1; width: 100%; word-break: break-word; }
