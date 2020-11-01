@@ -10,6 +10,7 @@ import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dial
 export class MtxModalComponent implements OnInit {
 
   @Input() disableClose: boolean;
+  @Input() responsivePanel: boolean;
 
   constructor(private dialog: MatDialog) { }
 
@@ -21,8 +22,9 @@ export class MtxModalComponent implements OnInit {
   dialogRef: MatDialogRef<any>
   public open() {
     this.close();
-    const dialogConfig: MatDialogConfig = { panelClass: 'mtx-modal-panel', autoFocus: false }
-    if (this.disableClose) dialogConfig.disableClose = this.disableClose
+    const dialogConfig: MatDialogConfig = { autoFocus: false }
+    if (this.disableClose!==undefined && !this.disableClose) dialogConfig.disableClose = true
+    if (this.responsivePanel===undefined || !this.responsivePanel) dialogConfig.panelClass = 'mtx-modal-panel'
     this.dialogRef = this.dialog.open(this.ref, dialogConfig)
   }
 

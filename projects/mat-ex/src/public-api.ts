@@ -14,6 +14,7 @@ export * from './lib/mtx-text/mtx-text.module';
 export * from './lib/mtx-toolbar/mtx-toolbar.module';
 export * from './lib/mtx-scrollview/mtx-scrollview.module';
 export * from './lib/mtx-sidesheet/mtx-sidesheet.module';
+export * from './lib/mtx-loader/mtx-loader.module';
 
 export * from './lib/mtx-app-bar/mtx-app-bar.module'
 export * from './lib/mtx-app-bar/mtx-app-bar/mtx-app-bar.component'
