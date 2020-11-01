@@ -30,7 +30,7 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
 
   @Input() overflow;
   
-  @Input() title: string;
+  @Input('appBarTitle') title: string;
 
   navAttr;
   prominentFlex: number = 0;

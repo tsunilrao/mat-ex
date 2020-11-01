@@ -1,20 +1,20 @@
 <mat-toolbar class="mtx-app-bar-toolbar" [color]="color">
-    <div style="display: flex; flex:1; align-items: center; position: relative;">
-        <button mat-icon-button style="position: absolute; margin-left: -8px;" (click)="onNavClick($event)"
-            [matTooltip]="navAttr?.tooltip" [attr.aria-label]="navAttr?.tooltip" *ngIf="navAttr?.icon">
-            <mat-icon>{{navAttr?.icon}}</mat-icon>
-        </button>
-        <h1 mtx-app-bar-title *ngIf="title">{{title}}</h1>
-        <ng-content select="mtx-app-bar-title"></ng-content>
-        <div style="display: flex; flex: 1;"></div>
-        <ng-content select="mtx-app-bar-button"></ng-content>
-        <button mat-icon-button style="margin-right: -16px;" (click)="onMenuClick($event)"
-            [matMenuTriggerFor]="overflow" *ngIf="overflow">
-            <mat-icon>more_vert</mat-icon>
-        </button>
-    </div>
-    <div [style.flex]="prominentFlex"
-        style="display: flex; align-items: center; transition: flex 225ms cubic-bezier(0.4, 0, 0.2, 1); ">
-        <ng-content select="mtx-app-bar-prominent"></ng-content>
-    </div>
+  <div style="display: flex; flex:1; align-items: center; position: relative;">
+    <button mat-icon-button style="position: absolute; margin-left: -8px;" (click)="onNavClick($event)"
+      [matTooltip]="navAttr?.tooltip" [attr.aria-label]="navAttr?.tooltip" *ngIf="navAttr?.icon">
+      <mat-icon>{{navAttr?.icon}}</mat-icon>
+    </button>
+    <h1 mtx-app-bar-title *ngIf="title">{{title}}</h1>
+    <ng-content select="mtx-app-bar-title"></ng-content>
+    <div style="display: flex; flex: 1;"></div>
+    <ng-content select="mtx-app-bar-button"></ng-content>
+    <button mat-icon-button style="margin-right: -16px;" (click)="onMenuClick($event)" matTooltip="More Actions Menu"
+      attr.aria-label="More Actions Menu" [matMenuTriggerFor]="overflow" *ngIf="overflow">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+  <div [style.flex]="prominentFlex"
+    style="display: flex; align-items: center; transition: flex 225ms cubic-bezier(0.4, 0, 0.2, 1); ">
+    <ng-content select="mtx-app-bar-prominent"></ng-content>
+  </div>
 </mat-toolbar>
