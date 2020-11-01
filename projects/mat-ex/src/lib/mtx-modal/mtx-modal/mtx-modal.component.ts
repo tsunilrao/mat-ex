@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, ViewEncapsulation, Input } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
@@ -8,6 +8,8 @@ import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material/dial
   encapsulation: ViewEncapsulation.None
 })
 export class MtxModalComponent implements OnInit {
+
+  @Input() disableClose: boolean;
 
   constructor(private dialog: MatDialog) { }
 
@@ -20,6 +22,7 @@ export class MtxModalComponent implements OnInit {
   public open() {
     this.close();
     const dialogConfig: MatDialogConfig = { panelClass: 'mtx-modal-panel', autoFocus: false }
+    if (this.disableClose) dialogConfig.disableClose = this.disableClose
     this.dialogRef = this.dialog.open(this.ref, dialogConfig)
   }
 
