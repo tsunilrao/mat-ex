@@ -9,7 +9,7 @@
     <div style="display: flex; flex: 1;"></div>
     <ng-content select="mtx-app-bar-button"></ng-content>
     <button mat-icon-button style="margin-right: -16px;" (click)="onMenuClick($event)" matTooltip="More Actions Menu"
-      attr.aria-label="More Actions Menu" [matMenuTriggerFor]="overflow" *ngIf="overflow">
+      aria-label="More Actions Menu" [matMenuTriggerFor]="overflow" *ngIf="overflow">
       <mat-icon>more_vert</mat-icon>
     </button>
   </div>
