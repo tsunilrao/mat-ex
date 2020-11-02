@@ -1,5 +1,8 @@
+<mtx-page-header #pageHeader *ngIf="pageHeaderHasContent">
+  <ng-content select="mtx-app-bar"></ng-content>
+</mtx-page-header>
 <ng-content select="mtx-page-header"></ng-content>
 <div class="mtx-page-content-container mtx-page-full-width">
-    <ng-content select="mtx-page-content"></ng-content>
+  <ng-content select="mtx-page-content"></ng-content>
 </div>
 <ng-content select="mtx-page-footer"></ng-content>

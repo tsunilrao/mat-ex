@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, OnChanges, SimpleChanges, AfterViewInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { MtxPageAreaComponent } from './mtx-page-area/mtx-page-area.component';
 
 @Component({
   selector: 'mtx-page',
@@ -8,19 +9,27 @@ import { Title, Meta } from '@angular/platform-browser';
   host: { class: 'mtx-page mtx-page-padding' },
   encapsulation: ViewEncapsulation.None
 })
-export class MtxPageComponent implements OnInit, OnChanges {
+export class MtxPageComponent implements OnInit, OnChanges, AfterViewInit {
 
   @Input('page-title') title?: string;
   @Input() description?: string;
 
-  constructor(private titleService: Title, private metaService: Meta) { }
+  pageHeaderHasContent: boolean = true;
+  @ViewChild('pageHeader') pageHeader: MtxPageAreaComponent
+
+  constructor(private titleService: Title, private metaService: Meta, private cdr: ChangeDetectorRef) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.title) this.titleService.setTitle(this.title)
-    if (changes.description) this.metaService.updateTag({name:'description', content:this.description})
+    if (changes.description) this.metaService.updateTag({ name: 'description', content: this.description })
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    if (this.pageHeader.childCount == 0) this.pageHeaderHasContent = false
+    this.cdr.detectChanges()
   }
 
 }
