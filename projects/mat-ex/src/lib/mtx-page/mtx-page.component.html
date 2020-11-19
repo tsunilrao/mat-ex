@@ -4,5 +4,8 @@
 <ng-content select="mtx-page-header"></ng-content>
 <div class="mtx-page-content-container mtx-page-full-width">
   <ng-content select="mtx-page-content"></ng-content>
+  <mtx-page-content #pageContent *ngIf="pageContentHasContent">
+    <ng-content></ng-content>
+  </mtx-page-content>
 </div>
 <ng-content select="mtx-page-footer"></ng-content>

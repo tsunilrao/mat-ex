@@ -1,15 +1,21 @@
 @import '~@angular/material/theming';
 
-@function mtx-color($color, $hue: 500) {
+@function mtx-color($color, $hue) {
     @return mat-color($color, $hue);
 }
 
-@function mtx-contrast($color, $hue: 500) {
+@function mtx-contrast($color, $hue) {
     @return mat-contrast($color, $hue);
 }
 
 @function mtx-contrast-secondary($color, $hue: 500) {
     @return if(mtx-contrast($color, $hue)==$dark-primary-text, $dark-secondary-text, $light-secondary-text);
+}
+
+@function mtx-low-contrast($contrast) {
+    @if $contrast == $dark-primary-text { @return $dark-secondary-text; }
+    @if $contrast == $light-primary-text { @return $light-secondary-text; }
+    @return $contrast;
 }
 
 @function mtx-background-hue($is-dark-theme) {
@@ -83,16 +89,45 @@ $mtx-colors: (
     $background: map-get($theme, background);
     $foreground: map-get($theme, foreground);
 
-    .mtx-primary { background-color: mtx-color($primary) !important; color: mtx-contrast($primary) !important; }
-    .mtx-primary-secondary { background-color: mtx-color($primary) !important; color: mtx-contrast-secondary($primary) !important; }    
-    .mtx-primary-text { color: mtx-color($primary) !important; }
- 
-    .mtx-accent { background-color: mtx-color($accent) !important; color: mtx-contrast($accent) !important; }        
-    .mtx-accent-secondary { background-color: mtx-color($accent) !important; color: mtx-contrast-secondary($accent) !important; }    
-    .mtx-accent-text { color: mtx-color($accent) !important; }
+    .mtx-primary { background-color: mtx-color($primary, default) !important; color: mtx-color($primary, default-contrast) !important; }
+    .mtx-primary-text { color: mtx-color($primary, default) !important; }
+    .mtx-primary-contrast-text { color: mtx-color($primary, default-contrast) !important; }
+    .mtx-primary-low-contrast-text { color: mtx-low-contrast(mtx-color($primary, default-contrast)) !important; }
+    .mtx-primary-dark { background-color: mtx-color($primary, darker) !important; color: mtx-color($primary, darker-contrast) !important; }
+    .mtx-primary-dark-text { color: mtx-color($primary, darker) !important; }
+    .mtx-primary-dark-contrast-text { color: mtx-color($primary, darker-contrast) !important; }
+    .mtx-primary-dark-low-contrast-text { color: mtx-low-contrast(mtx-color($primary, darker-contrast)) !important; }
+    .mtx-primary-light { background-color: mtx-color($primary, lighter) !important; color: mtx-color($primary, lighter-contrast) !important; }
+    .mtx-primary-light-text { color: mtx-color($primary, lighter) !important; }
+    .mtx-primary-light-contrast-text { color: mtx-color($primary, lighter-contrast) !important; }
+    .mtx-primary-light-low-contrast-text { color: mtx-low-contrast(mtx-color($primary, lighter-contrast)) !important; }
+    
+    .mtx-accent { background-color: mtx-color($accent, default) !important; color: mtx-color($accent, default-contrast) !important; }        
+    .mtx-accent-secondary { background-color: mtx-color($accent, default) !important; color: mtx-contrast-secondary($accent) !important; }    
+    .mtx-accent-text { color: mtx-color($accent, default) !important; }
+    .mtx-accent-contrast-text { color: mtx-color($accent, default-contrast) !important; }
+    .mtx-accent-low-contrast-text { color: mtx-low-contrast(mtx-color($accent, default-contrast)) !important; }
+    .mtx-accent-dark { background-color: mtx-color($accent, darker) !important; color: mtx-color($accent, darker-contrast) !important; }        
+    .mtx-accent-dark-text { color: mtx-color($accent, darker) !important; }
+    .mtx-accent-dark-contrast-text { color: mtx-color($accent, darker-contrast) !important; }
+    .mtx-accent-dark-low-contrast-text { color: mtx-low-contrast(mtx-color($accent, darker-contrast)) !important; }
+    .mtx-accent-light { background-color: mtx-color($accent, lighter) !important; color: mtx-color($accent, lighter-contrast) !important; }        
+    .mtx-accent-light-text { color: mtx-color($accent, lighter) !important; }
+    .mtx-accent-light-contrast-text { color: mtx-color($accent, lighter-contrast) !important; }
+    .mtx-accent-light-low-contrast-text { color: mtx-low-contrast(mtx-color($accent, lighter-contrast)) !important; }
 
-    .mtx-warn { background-color: mtx-color($warn) !important; color: mtx-contrast($warn) !important; }        
-    .mtx-warn-text { color: mtx-color($warn) !important; }
+    .mtx-warn { background-color: mtx-color($warn, default) !important; color: mtx-color($warn, default-contrast) !important; }        
+    .mtx-warn-text { color: mtx-color($warn, default) !important; }
+    .mtx-warn-contrast-text { color: mtx-color($warn, default-contrast) !important; }
+    .mtx-warn-low-contrast-text { color: mtx-low-contrast(mtx-color($warn, default-contrast)) !important; }
+    .mtx-warn-dark { background-color: mtx-color($warn, darker) !important; color: mtx-color($warn, darker-contrast) !important; }        
+    .mtx-warn-dark-text { color: mtx-color($warn, darker) !important; }
+    .mtx-warn-dark-contrast-text { color: mtx-color($warn, darker-contrast) !important; }
+    .mtx-warn-dark-low-contrast-text { color: mtx-low-contrast(mtx-color($warn, darker-contrast)) !important; }
+    .mtx-warn-light { background-color: mtx-color($warn, lighter) !important; color: mtx-color($warn, lighter-contrast) !important; }        
+    .mtx-warn-light-text { color: mtx-color($warn, lighter) !important; }
+    .mtx-warn-light-contrast-text { color: mtx-color($warn, lighter-contrast) !important; }
+    .mtx-warn-light-low-contrast-text { color: mtx-low-contrast(mtx-color($warn, lighter-contrast)) !important; }
 
     .mtx-card { 
         background-color: map-get($background, card); 
@@ -129,8 +164,6 @@ $mtx-colors: (
         &.mtx-gray { background-color: mtx-background($mat-gray, $is-dark-theme); }
         &.mtx-blue-gray { background-color: mtx-background($mat-blue-gray, $is-dark-theme); }
     }
-
-    
 }
 
 

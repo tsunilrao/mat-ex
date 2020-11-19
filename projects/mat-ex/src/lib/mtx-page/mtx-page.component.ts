@@ -16,6 +16,8 @@ export class MtxPageComponent implements OnInit, OnChanges, AfterViewInit {
 
   pageHeaderHasContent: boolean = true;
   @ViewChild('pageHeader') pageHeader: MtxPageAreaComponent
+  pageContentHasContent: boolean = true;
+  @ViewChild('pageContent') pageContent: MtxPageAreaComponent
 
   constructor(private titleService: Title, private metaService: Meta, private cdr: ChangeDetectorRef) { }
 
@@ -29,6 +31,7 @@ export class MtxPageComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngAfterViewInit(): void {
     if (this.pageHeader.childCount == 0) this.pageHeaderHasContent = false
+    if (this.pageContent.childCount == 0) this.pageContentHasContent = false
     this.cdr.detectChanges()
   }
 
