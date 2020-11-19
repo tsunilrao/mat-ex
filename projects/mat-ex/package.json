@@ -1,10 +1,12 @@
 {
   "name": "mat-ex",
   "version": "1.2.32",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "peerDependencies": {
     "@angular/common": "^9.0.0 || ^10.0.0",
     "@angular/core": "^9.0.0 || ^10.0.0",
-    "@angular/material": "^9.0.0 || ^10.0.0",
-    "tslib": "^1.10.0 || ^2.0.0"
+    "@angular/material": "^9.0.0 || ^10.0.0"
   }
 }
