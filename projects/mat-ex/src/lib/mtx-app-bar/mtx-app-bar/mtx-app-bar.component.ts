@@ -11,7 +11,7 @@ const NAV_ATRRIBUTES = [
   selector: 'mtx-app-bar',
   templateUrl: './mtx-app-bar.component.html',
   styleUrls: ['./mtx-app-bar.component.scss'],
-  host: { class: 'mtx-app-bar mtx-page-full-width mat-elevation-z4' },
+  host: { class: 'mtx-app-bar mtx-page-padding mtx-page-full-width mat-elevation-z4' },
   encapsulation: ViewEncapsulation.None
 })
 export class MtxAppBarComponent implements OnInit, OnChanges {
@@ -19,10 +19,6 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
   // ## size
   // Supports `standard`, `dense`, `prominent`, `prominent-2`
   @Input() size;
-
-  // ## color
-  // Supports `none`, `primary`, `accent` and `warn`
-  @Input() color;
 
   // ## nav
   // Supports `none`, `menu`, `back` and `close`
