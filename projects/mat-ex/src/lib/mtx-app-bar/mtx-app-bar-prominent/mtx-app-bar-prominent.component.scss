@@ -1,3 +1,4 @@
-.mtx-app-bar-prominent { display: flex; flex: 1; height: 100%; }
-.mtx-app-bar-prominent { font-weight: 500; overflow: hidden; white-space: normal; }
-.mtx-app-bar-prominent { font-size: 16px; line-height: 20px; align-items: center; }
+.mtx-app-bar-prominent { 
+    display: flex; flex: 1; height: 100%; overflow: hidden; white-space: normal;
+    font-weight: 500; font-size: 16px; line-height: 20px; align-items: center;
+}

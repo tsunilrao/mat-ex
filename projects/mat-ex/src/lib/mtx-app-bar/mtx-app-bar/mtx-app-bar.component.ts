@@ -11,14 +11,19 @@ const NAV_ATRRIBUTES = [
   selector: 'mtx-app-bar',
   templateUrl: './mtx-app-bar.component.html',
   styleUrls: ['./mtx-app-bar.component.scss'],
-  host: { class: 'mtx-app-bar mtx-page-padding mtx-page-full-width mat-elevation-z4' },
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  host: { 
+    class: 'mtx-app-bar mtx-page-padding mtx-page-full-width mat-elevation-z4',
+    '[class.mtx-standard-app-bar]': "size=='standard'",
+    '[class.mtx-dense-app-bar]': "size=='dense'",
+    '[class.mtx-prominent-app-bar]': "size=='prominent'"
+ },
 })
 export class MtxAppBarComponent implements OnInit, OnChanges {
 
   // ## size
   // Supports `standard`, `dense`, `prominent`, `prominent-2`
-  @Input() size;
+  @Input() size = 'standard';
 
   // ## nav
   // Supports `none`, `menu`, `back` and `close`
@@ -31,7 +36,7 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
   navAttr;
   prominentFlex: number = 0;
 
-  constructor(private hostRef: ElementRef) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -41,10 +46,6 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
       if (this.nav == attr.key) this.navAttr = attr
     })
 
-    if (this.size == 'dense') this.hostRef.nativeElement.classList.add('mtx-app-bar-dense');
-    else this.hostRef.nativeElement.classList.remove('mtx-app-bar-dense');
-    if (this.size == 'prominent') this.hostRef.nativeElement.classList.add('mtx-app-bar-prominent');
-    else this.hostRef.nativeElement.classList.remove('mtx-app-bar-prominent');
     this.prominentFlex = this.size == 'prominent' ? 1 : 0
   }
 
