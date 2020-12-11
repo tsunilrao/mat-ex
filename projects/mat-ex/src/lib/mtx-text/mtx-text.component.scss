@@ -1,7 +1,9 @@
 .mtx-text { display: block; }
+.mtx-text.mtx-display { line-height: 72px; font-size: 48px; font-weight: 700; }
+.mtx-text.mtx-headline { line-height: 36px; font-size: 24px; font-weight: 500; }
 .mtx-text.mtx-title { line-height: 32px; font-size: 20px; font-weight: 500; }
 .mtx-text.mtx-subtitle { line-height: 24px; font-size: 16px; font-weight: 500; }
 .mtx-text.mtx-label { line-height: 20px; font-size: 14px; font-weight: 500; }
 .mtx-text.mtx-caption { line-height: 16px; font-size: 12px; font-weight: 500; }
 .mtx-text.mtx-overline { line-height: 16px; font-size: 10px; font-weight: 500; margin-bottom: 16px;}
-.mtx-paragraph { line-height: 20px; font-size: 14px; font-weight: normal; }
+.mtx-paragraph { line-height: 20px; font-size: 14px; font-weight: 300; }
