@@ -5,13 +5,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MtxContainerModule } from '../mtx-container/mtx-container.module';
 import { MtxIconModule } from '../mtx-icon/mtx-icon.module';
+import { MtxTextModule } from '../mtx-text/mtx-text.module';
 
 
 
 @NgModule({
   declarations: [MtxToolbarComponent],
   imports: [
-    CommonModule, MatIconModule, MatButtonModule, MtxContainerModule, MtxIconModule
+    CommonModule, MatIconModule, MatButtonModule, MtxContainerModule, MtxTextModule, MtxIconModule
   ],
   exports: [MtxToolbarComponent]
 })

@@ -15,14 +15,11 @@ import { Component, OnInit, ViewEncapsulation, Input, ElementRef } from '@angula
 })
 export class MtxToolbarComponent implements OnInit {
 
-  @Input() title?: string;
+  @Input() toolbarTitle?: string;
   @Input() icon?: string;
   @Input() imageUrl?: string;
   @Input() meta?: string;
   @Input() menu?: string;
-
-  get visual() { return this.icon; }
-  get action() { return this.meta; }
 
   get selector(): string { return this.hostRef.nativeElement.tagName.toLowerCase() }
 

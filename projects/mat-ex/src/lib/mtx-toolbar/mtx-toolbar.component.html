@@ -1,17 +1,14 @@
-<div class="mtx-toolbar-visual" *ngIf="visual">
-    <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+<div class="mtx-toolbar-icon" *ngIf="icon">
+    <mat-icon>{{icon}}</mat-icon>
 </div>
 <ng-content select=".mtx-toolbar-visual"></ng-content>
-<div class="mtx-toolbar-content">
-    <mtx-row class="mtx-title" *ngIf="title">{{title}}</mtx-row>
-    <ng-content></ng-content>
-</div>
-<ng-content select=".mtx-toolbar-content"></ng-content>
+<mtx-title *ngIf="toolbarTitle">{{toolbarTitle}}</mtx-title>
+<ng-content></ng-content>
 <div style="flex:1"></div>
 <img class="mtx-toolbar-image" [src]="imageUrl" *ngIf="imageUrl" />
 <ng-content select=".mtx-toolbar-image"></ng-content>
-<div class="mtx-toolbar-action" *ngIf="action">
-    <div class="mtx-toolbar-meta" *ngIf="meta">{{meta}}</div>
-</div>
+<div class="mtx-toolbar-meta" *ngIf="meta">{{meta}}</div>
 <ng-content select=".mtx-toolbar-action"></ng-content>
-<button mat-icon-button class="mtx-toolbar-menu" *ngIf="menu"><mtx-icon icon="more_vert"></mtx-icon></button>
+<button mat-icon-button class="mtx-toolbar-menu" *ngIf="menu">
+    <mtx-icon icon="more_vert"></mtx-icon>
+</button>

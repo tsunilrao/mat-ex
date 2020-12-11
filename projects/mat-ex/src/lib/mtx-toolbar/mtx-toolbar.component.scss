@@ -1,13 +1,13 @@
 .mtx-toolbar {
     display: flex; flex-direction: row; box-sizing: border-box; padding: 0 16px; align-items: center; font-weight: 500;
 
-    .mtx-toolbar-visual { display: flex; flex-direction: row; box-sizing: border-box; width: 40px; align-items: center; justify-content: center; margin-right: 16px; }
-    .mtx-toolbar-visual:empty { display: none; }
-    .mtx-toolbar-content { display: flex; flex-direction: column; box-sizing: border-box; }
+    .mtx-toolbar-icon { display: flex; flex-direction: row; box-sizing: border-box; width: 40px; align-items: center; justify-content: center; margin-right: 16px; }
+    .mtx-toolbar-icon:empty { display: none; }
+    .mtx-toolbar-content { display: flex; flex-direction: row; box-sizing: border-box; }
     .mtx-toolbar-action { display: flex; flex-direction: row; box-sizing: border-box; align-items: center; margin-left: 16px; }
     .mtx-toolbar-action:last-child { margin-right: -8px; }
     .mtx-toolbar-menu { margin-right: -16px; }
-    .mtx-toolbar-meta { font-size: 10px; }
+    .mtx-toolbar-meta { display: flex; flex-direction: row; box-sizing: border-box; align-items: center; margin-left: 16px; font-size: 10px; }
     .mtx-toolbar-image { display: flex; flex-direction: row; box-sizing: border-box; width: 40px; height: 40px; }
     
     &.mtx-dense-toolbar { height: 40px; }
@@ -15,17 +15,6 @@
     &.mtx-large-toolbar { height: 72px; }
     &.mtx-prominent-toolbar { height: 88px; }
 
-
-    &.mtx-overline-bar { height: 24px; font-size: 10px; }
-    &.mtx-overline-toolbar { height: 40px; font-size: 10px; }
-    &.mtx-caption-bar { height: 24px; font-size: 12px; }
-    &.mtx-caption-toolbar { height: 40px; font-size: 12px; }
-    &.mtx-label-bar { height: 24px; font-size: 14px; }
-    &.mtx-label-toolbar { height: 40px; font-size: 14px; }
-    &.mtx-header-bar { height: 24px; font-size: 16px; }
-    &.mtx-header-toolbar { height: 40px; font-size: 16px; }
-    &.mtx-title-bar { height: 24px; font-size: 20px; }
-    &.mtx-title-toolbar { height: 56px; font-size: 20px; }
 }
 
 .mtx-toolbar.mtx-mini-overline-bar { 
