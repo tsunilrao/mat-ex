@@ -68,7 +68,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; min-width: 
     h2 { font-size: 24px; font-weight: 500; margin: 16px 0; line-height: 32px; }
     h3 { font-size: 20px; font-weight: 500; margin: 16px 0; line-height: 28px; }
     h4 { font-size: 18px; font-weight: 500; margin: 16px 0; line-height: 24px; }
-    code { display: inline-flex; justify-self: start; background: rgba(0,0,0,.03); }
+    code { display: inline-flex; justify-self: start; }
 }
 
 .row, .col, .row-fill, .col-fill, body { display: flex !important; }
