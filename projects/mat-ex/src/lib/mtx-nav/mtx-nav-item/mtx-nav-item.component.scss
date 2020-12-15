@@ -1,0 +1,16 @@
+.mtx-nav-item {
+    display: flex; flex-direction: column; flex: 1; position: relative;
+    min-height: 56px; height: 56px; min-width: 64px; max-width: 168px; box-sizing: border-box; 
+    align-items: center; justify-content: center; text-align: center;
+    font-weight: 500; font-size: 12px; line-height: 12px;
+    user-select: none; cursor: pointer; outline: none; border: none; -webkit-tap-highlight-color: transparent;
+    white-space: nowrap; text-decoration: none; opacity: .6;
+}
+
+.mtx-nav-item:focus { opacity: 1; }
+
+.mtx-nav-item-ripple {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

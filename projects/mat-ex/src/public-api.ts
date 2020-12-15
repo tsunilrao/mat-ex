@@ -10,6 +10,7 @@ export * from './lib/mtx-card/mtx-card.module'
 export * from './lib/mtx-container/mtx-container.module';
 export * from './lib/mtx-dialog/mtx-dialog.module';
 export * from './lib/mtx-drawer/mtx-drawer.module';
+export * from './lib/mtx-nav/mtx-nav.module';
 export * from './lib/mtx-text/mtx-text.module';
 export * from './lib/mtx-toolbar/mtx-toolbar.module';
 export * from './lib/mtx-scrollview/mtx-scrollview.module';
