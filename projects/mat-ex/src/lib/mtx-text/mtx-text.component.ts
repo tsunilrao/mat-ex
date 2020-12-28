@@ -1,7 +1,8 @@
 import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: `mtx-text, mtx-display, mtx-headline, mtx-title, mtx-subtitle, mtx-label, mtx-caption, mtx-overline, mtx-paragraph`,
+  selector: `mtx-text, mtx-display, mtx-headline, mtx-title, mtx-subtitle, mtx-label, mtx-caption,
+    mtx-overline, mtx-paragraph, mtx-code`,
   templateUrl: './mtx-text.component.html',
   styleUrls: ['./mtx-text.component.scss'],
   host: { 
@@ -14,6 +15,7 @@ import { Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angula
     '[class.mtx-caption]': "selector=='mtx-caption'",
     '[class.mtx-overline]': "selector=='mtx-overline'",
     '[class.mtx-paragraph]': "selector=='mtx-paragraph'",
+    '[class.mtx-code]': "selector=='mtx-code'",
   },
   encapsulation: ViewEncapsulation.None,
 })

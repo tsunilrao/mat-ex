@@ -11,20 +11,15 @@
         Each tag has a font-size, line-height and font-weight. The available levels are:
     </mtx-paragraph>
 
-    <mtx-column style="margin: 16px 0; max-width: 800px;">
+    <mtx-column class="attributes-table" style="margin: 16px 0; max-width: 800px;">
         <mtx-row>
-            <mtx-label style="flex:1">Attribute</mtx-label>
-            <mtx-label style="flex:2">Description</mtx-label>
+            <mtx-label class="attribute">Attribute</mtx-label>
+            <mtx-label class="description">Description</mtx-label>
         </mtx-row>
-        <ng-container *ngFor="let entry of attributes">
-            <ng-container *ngTemplateOutlet="attributeTable; context:entry"></ng-container>
-        </ng-container>
-        <ng-template #attributeTable let-attribute="attribute" let-description="description">
-            <mtx-row>
-                <mtx-paragraph style="flex:1"><code class="mtx-gray-100">{{attribute}}</code></mtx-paragraph>
-                <mtx-paragraph style="flex:2">{{description}}</mtx-paragraph>
-            </mtx-row>
-        </ng-template>
+        <mtx-row *ngFor="let entry of attributes">
+            <mtx-code class="attribute">{{entry.attribute}}</mtx-code>
+            <mtx-paragraph class="description">{{entry.description}}</mtx-paragraph>
+        </mtx-row>
     </mtx-column>
 
     <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
@@ -32,57 +27,18 @@
             <mtx-subtitle class="mtx-dark-secondary-text">Basic Usage</mtx-subtitle>
         </mtx-toolbar>
         <mat-divider></mat-divider>
-        <mtx-column class="mtx-gray-100" style="padding: 32px;">
-            <mtx-paragraph><code>&lt;mtx-display&gt;This is an example.&lt;/mtx-display&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-headline&gt;This is an example.&lt;/mtx-headline&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-title&gt;This is an example.&lt;/mtx-title&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-subtitle&gt;This is an example.&lt;/mtx-subtitle&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-label&gt;This is an example.&lt;/mtx-label&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-paragraph&gt;This is an example.&lt;/mtx-paragraph&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-caption&gt;This is an example.&lt;/mtx-caption&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-overline&gt;This is an example.&lt;/mtx-overline&gt;</code></mtx-paragraph>
-        </mtx-column>
+        <mtx-codeblock class="mtx-gray-100">
+            <mtx-code *ngFor="let entry of attributes">&lt;{{entry.attribute}}&gt;This is an example.&lt;/{{entry.attribute}}&gt;</mtx-code>
+        </mtx-codeblock>
         <mat-divider></mat-divider>
         <mtx-column style="padding: 16px;">
-            <mtx-prime-toolbar>
-                <mtx-paragraph style="min-width: 120px;">Display</mtx-paragraph>
-                <mtx-display style="white-space: nowrap;">This is an example.</mtx-display>
-            </mtx-prime-toolbar>
-            <mat-divider></mat-divider>
-            <mtx-toolbar>
-                <mtx-paragraph style="min-width: 120px;">Headline</mtx-paragraph>
-                <mtx-headline style="white-space: nowrap;">This is an example.</mtx-headline>
-            </mtx-toolbar>
-            <mat-divider></mat-divider>
-            <mtx-toolbar>
-                <mtx-paragraph style="min-width: 120px;">Title</mtx-paragraph>
-                <mtx-title style="white-space: nowrap;">This is an example.</mtx-title>
-            </mtx-toolbar>
-            <mat-divider></mat-divider>
-            <mtx-toolbar>
-                <mtx-paragraph style="min-width: 120px;">Subtitle</mtx-paragraph>
-                <mtx-subtitle style="white-space: nowrap;">This is an example.</mtx-subtitle>
-            </mtx-toolbar>
-            <mat-divider></mat-divider>
-            <mtx-toolbar>
-                <mtx-paragraph style="min-width: 120px;">Label</mtx-paragraph>
-                <mtx-label style="white-space: nowrap;">This is an example.</mtx-label>
-            </mtx-toolbar>
-            <mat-divider></mat-divider>
-            <mtx-toolbar>
-                <mtx-paragraph style="min-width: 120px;">Paragraph</mtx-paragraph>
-                <mtx-paragraph style="white-space: nowrap;">This is an example.</mtx-paragraph>
-            </mtx-toolbar>
-            <mat-divider></mat-divider>
-            <mtx-toolbar>
-                <mtx-paragraph style="min-width: 120px;">Caption</mtx-paragraph>
-                <mtx-caption style="white-space: nowrap;">This is an example.</mtx-caption>
-            </mtx-toolbar>
-            <mat-divider></mat-divider>
-            <mtx-toolbar>
-                <mtx-paragraph style="min-width: 120px;">Overline</mtx-paragraph>
-                <mtx-overline style="white-space: nowrap;">This is an example.</mtx-overline>
-            </mtx-toolbar>
+            <ng-container *ngFor="let entry of attributes; let i = index">
+                <mtx-row style="padding: 8px 16px; align-items: center;">
+                    <mtx-paragraph style="min-width: 112px;">{{entry.title}}</mtx-paragraph>
+                    <mtx-text [class]="entry.attribute" style="white-space: nowrap;">This is an example.</mtx-text>
+                </mtx-row>
+                <mat-divider *ngIf="i!=attributes.length-1"></mat-divider>
+            </ng-container>
         </mtx-column>
     </mtx-stroked-card>
 
@@ -91,10 +47,11 @@
             <mtx-subtitle class="mtx-dark-secondary-text">Title with Label</mtx-subtitle>
         </mtx-toolbar>
         <mat-divider></mat-divider>
-        <mtx-column class="mtx-gray-100" style="padding: 32px;">
-            <mtx-paragraph><code>&lt;mtx-title&gt;John Doe&lt;/mtx-title&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-label class="mtx-dark-secondary-text"&gt;Chief Executive Officer&lt;/mtx-label&gt;</code></mtx-paragraph>
-        </mtx-column>
+        <mtx-codeblock class="mtx-gray-100">
+            <mtx-code>&lt;mtx-title&gt;John Doe&lt;/mtx-title&gt;</mtx-code>
+            <mtx-code>&lt;mtx-label class="mtx-dark-secondary-text"&gt;Chief Executive Officer&lt;/mtx-label&gt;
+            </mtx-code>
+        </mtx-codeblock>
         <mat-divider></mat-divider>
         <mtx-column style="padding: 32px">
             <mtx-title>John Doe</mtx-title>
@@ -107,12 +64,13 @@
             <mtx-subtitle class="mtx-dark-secondary-text">Subtitle with Caption</mtx-subtitle>
         </mtx-toolbar>
         <mat-divider></mat-divider>
-        <mtx-column class="mtx-gray-100" style="padding: 32px;">
-            <mtx-paragraph><code>&lt;mtx-subtitle&gt;John Doe&lt;/mtx-subtitle&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-caption class="mtx-dark-secondary-text"&gt;Chief Executive Officer&lt;/mtx-caption&gt;</code></mtx-paragraph>
-        </mtx-column>
+        <mtx-codeblock class="mtx-gray-100">
+            <mtx-code>&lt;mtx-subtitle&gt;John Doe&lt;/mtx-subtitle&gt;</mtx-code>
+            <mtx-code>&lt;mtx-caption class="mtx-dark-secondary-text"&gt;Chief Executive Officer&lt;/mtx-caption&gt;
+            </mtx-code>
+        </mtx-codeblock>
         <mat-divider></mat-divider>
-    <mtx-column style="padding: 32px">
+        <mtx-column style="padding: 32px">
             <mtx-subtitle>John Doe</mtx-subtitle>
             <mtx-caption class="mtx-dark-secondary-text">Chief Executive Officer</mtx-caption>
         </mtx-column>
@@ -123,16 +81,23 @@
             <mtx-subtitle class="mtx-dark-secondary-text">Overline with Title</mtx-subtitle>
         </mtx-toolbar>
         <mat-divider></mat-divider>
-        <mtx-column class="mtx-gray-100" style="padding: 32px;">
-            <mtx-paragraph><code>&lt;mtx-overline class="mtx-dark-secondary-text"&gt;SALES&lt;/mtx-overline&gt;</code></mtx-paragraph>
-            <mtx-paragraph><code>&lt;mtx-title&gt;$987.65&lt;/mtx-title&gt;</code></mtx-paragraph>
-        </mtx-column>
+        <mtx-codeblock class="mtx-gray-100">
+            <mtx-code>&lt;mtx-overline class="mtx-dark-secondary-text"&gt;SALES&lt;/mtx-overline&gt;</mtx-code>
+            <mtx-code>&lt;mtx-title&gt;$987.65&lt;/mtx-title&gt;</mtx-code>
+        </mtx-codeblock>
         <mat-divider></mat-divider>
         <mtx-column style="padding: 32px">
             <mtx-overline class="mtx-dark-secondary-text">SALES</mtx-overline>
             <mtx-title>$987.65</mtx-title>
         </mtx-column>
     </mtx-stroked-card>
+
+    <mtx-headline style="margin: 16px 0;">Theming</mtx-headline>
+
+    <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+        Mtx-Text can be colored in terms of the current theme or any other colors using the <a
+            routerLink="/mtx-color">Mtx-Color</a> classes.
+    </mtx-paragraph>
 
     <app-footer-section style="margin-top: 32px;"></app-footer-section>
 

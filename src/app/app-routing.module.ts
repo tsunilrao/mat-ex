@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: "mtx-bottom-nav", loadChildren: () => import('./mtx-bottom-nav-demo/mtx-bottom-nav-demo.module').then(m => m.MtxBottomNavDemoModule) },
   { path: "mtx-page", loadChildren: () => import('./mtx-page-demo/mtx-page-demo.module').then(m => m.MtxPageDemoModule) },
   { path: "mtx-text", loadChildren: () => import('./mtx-text-demo/mtx-text-demo.module').then(m => m.MtxTextDemoModule) },
+  { path: "mtx-color", loadChildren: () => import('./mtx-color-demo/mtx-color-demo.module').then(m => m.MtxColorDemoModule) },
 ];
 
 @NgModule({
