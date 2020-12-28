@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/mat-ex",
+    "public": "dist/mat-ex-app",
     "ignore": [
       "firebase.json",
       "**/.*",
