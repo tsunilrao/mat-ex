@@ -3,12 +3,15 @@
 
     <mtx-app-bar class="mtx-primary" nav="back" appBarTitle="Text"></mtx-app-bar>
 
-    <mtx-headline style="margin: 16px 0;">Mtx Text (MtxTextModule)</mtx-headline>
+    <mtx-column style="margin: 16px 0;">
+        <mtx-headline>Mtx Text</mtx-headline>
+        <mtx-caption class="mtx-dark-secondary-text">MtxTextModule</mtx-caption>
+    </mtx-column>
 
     <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
-        Mtx-Text is a way of arranging type to make text legible, readable, and appealing when displayed.
-        Mtx-Text is based on the guidelines from the Material Design spec and is arranged into multiple tags.
-        Each tag has a font-size, line-height and font-weight. The available levels are:
+        Mtx-Text is a way to make text legible, readable, and appealing when displayed. It is based on the guidelines
+        from the Material Design spec and is arranged into multiple tags. Each tag has a font-size, line-height and
+        font-weight. The available levels are:
     </mtx-paragraph>
 
     <mtx-column class="attributes-table" style="margin: 16px 0; max-width: 800px;">
@@ -28,7 +31,8 @@
         </mtx-toolbar>
         <mat-divider></mat-divider>
         <mtx-codeblock class="mtx-gray-100">
-            <mtx-code *ngFor="let entry of attributes">&lt;{{entry.attribute}}&gt;This is an example.&lt;/{{entry.attribute}}&gt;</mtx-code>
+            <mtx-code *ngFor="let entry of attributes">&lt;{{entry.attribute}}&gt;This is an
+                example.&lt;/{{entry.attribute}}&gt;</mtx-code>
         </mtx-codeblock>
         <mat-divider></mat-divider>
         <mtx-column style="padding: 16px;">
@@ -92,7 +96,7 @@
         </mtx-column>
     </mtx-stroked-card>
 
-    <mtx-headline style="margin: 16px 0;">Theming</mtx-headline>
+    <mtx-title style="margin: 16px 0;">Theming</mtx-title>
 
     <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
         Mtx-Text can be colored in terms of the current theme or any other colors using the <a
