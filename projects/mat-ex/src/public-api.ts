@@ -7,6 +7,7 @@ export * from './lib/components/toolbar-button/toolbar-button.component';
 
 export * from './lib/mtx-page/mtx-page.module'
 export * from './lib/mtx-card/mtx-card.module'
+export * from './lib/mtx-codeblock/mtx-codeblock.module'
 export * from './lib/mtx-container/mtx-container.module';
 export * from './lib/mtx-dialog/mtx-dialog.module';
 export * from './lib/mtx-drawer/mtx-drawer.module';

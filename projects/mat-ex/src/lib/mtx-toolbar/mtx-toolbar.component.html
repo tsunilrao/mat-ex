@@ -1,10 +1,9 @@
 <div class="mtx-toolbar-icon" *ngIf="icon">
     <mat-icon>{{icon}}</mat-icon>
 </div>
-<ng-content select=".mtx-toolbar-visual"></ng-content>
+<ng-content select=".mtx-toolbar-icon"></ng-content>
 <mtx-title *ngIf="toolbarTitle">{{toolbarTitle}}</mtx-title>
 <ng-content></ng-content>
-<div style="flex:1"></div>
 <img class="mtx-toolbar-image" [src]="imageUrl" *ngIf="imageUrl" />
 <ng-content select=".mtx-toolbar-image"></ng-content>
 <div class="mtx-toolbar-meta" *ngIf="meta">{{meta}}</div>
