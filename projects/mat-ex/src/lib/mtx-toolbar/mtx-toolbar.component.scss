@@ -4,7 +4,7 @@
     .mtx-toolbar-icon { display: flex; flex-direction: row; box-sizing: border-box; width: 40px; align-items: center; justify-content: center; margin-right: 16px; }
     .mtx-toolbar-icon:empty { display: none; }
     .mtx-toolbar-content { display: flex; flex-direction: row; box-sizing: border-box; }
-    .mtx-toolbar-action { display: flex; flex-direction: row; box-sizing: border-box; align-items: center; margin-left: 16px; }
+    .mtx-toolbar-action { display: flex; flex-direction: row; box-sizing: border-box; align-items: center; margin-left: auto; }
     .mtx-toolbar-action:last-child { margin-right: -8px; }
     .mtx-toolbar-menu { margin-right: -16px; }
     .mtx-toolbar-meta { display: flex; flex-direction: row; box-sizing: border-box; align-items: center; margin-left: 16px; font-size: 10px; }
