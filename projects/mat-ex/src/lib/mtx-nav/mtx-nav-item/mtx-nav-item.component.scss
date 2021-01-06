@@ -7,7 +7,7 @@
     white-space: nowrap; text-decoration: none; opacity: .6;
 }
 
-.mtx-nav-item:focus { opacity: 1; }
+.mtx-nav-item-active, .mtx-nav-item:focus { opacity: 1; }
 
 .mtx-nav-item-ripple {
     position: absolute;

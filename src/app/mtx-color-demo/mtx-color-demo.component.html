@@ -1,1 +1,109 @@
-<p>mtx-color-demo works!</p>
+<mtx-page page-title="Text | Material Extentions"
+    description="Reusable UI component for mobile and desktop Angular web applications">
+
+    <mtx-app-bar class="mtx-primary" nav="back" appBarTitle="Mtx Color"></mtx-app-bar>
+
+    <mtx-column style="margin: 16px 0;">
+        <mtx-headline>Mtx Color</mtx-headline>
+        <mtx-caption class="mtx-dark-secondary-text">MtxColorModule</mtx-caption>
+    </mtx-column>
+
+    <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+        MtxColor classes enables you to customize components to better reflect your product's brand. 
+        A MtxColor class consists of configurations for the individual color and typography systems in 
+        Material Extensions. The library's approach to colors reflects the guidance from the Material 
+        Design specifications.
+    </mtx-paragraph>
+
+    <!-- <mtx-column class="attributes-table" style="margin: 16px 0; max-width: 800px;">
+        <mtx-row>
+            <mtx-label class="attribute">Attribute</mtx-label>
+            <mtx-label class="description">Description</mtx-label>
+        </mtx-row>
+        <mtx-row *ngFor="let entry of attributes">
+            <mtx-code class="attribute">{{entry.attribute}}</mtx-code>
+            <mtx-paragraph class="description">{{entry.description}}</mtx-paragraph>
+        </mtx-row>
+    </mtx-column>
+
+    <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+        <mtx-toolbar>
+            <mtx-subtitle class="mtx-dark-secondary-text">Basic Usage</mtx-subtitle>
+        </mtx-toolbar>
+        <mat-divider></mat-divider>
+        <mtx-codeblock class="mtx-gray-100">
+            <mtx-code *ngFor="let entry of attributes">&lt;{{entry.attribute}}&gt;This is an
+                example.&lt;/{{entry.attribute}}&gt;</mtx-code>
+        </mtx-codeblock>
+        <mat-divider></mat-divider>
+        <mtx-column style="padding: 16px;">
+            <ng-container *ngFor="let entry of attributes; let i = index">
+                <mtx-row style="padding: 8px 16px; align-items: center;">
+                    <mtx-paragraph style="min-width: 112px;">{{entry.title}}</mtx-paragraph>
+                    <mtx-text [class]="entry.attribute" style="white-space: nowrap;">This is an example.</mtx-text>
+                </mtx-row>
+                <mat-divider *ngIf="i!=attributes.length-1"></mat-divider>
+            </ng-container>
+        </mtx-column>
+    </mtx-stroked-card>
+
+    <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+        <mtx-toolbar>
+            <mtx-subtitle class="mtx-dark-secondary-text">Title with Label</mtx-subtitle>
+        </mtx-toolbar>
+        <mat-divider></mat-divider>
+        <mtx-codeblock class="mtx-gray-100">
+            <mtx-code>&lt;mtx-title&gt;John Doe&lt;/mtx-title&gt;</mtx-code>
+            <mtx-code>&lt;mtx-label class="mtx-dark-secondary-text"&gt;Chief Executive Officer&lt;/mtx-label&gt;
+            </mtx-code>
+        </mtx-codeblock>
+        <mat-divider></mat-divider>
+        <mtx-column style="padding: 32px">
+            <mtx-title>John Doe</mtx-title>
+            <mtx-label class="mtx-dark-secondary-text">Chief Executive Officer</mtx-label>
+        </mtx-column>
+    </mtx-stroked-card>
+
+    <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+        <mtx-toolbar>
+            <mtx-subtitle class="mtx-dark-secondary-text">Subtitle with Caption</mtx-subtitle>
+        </mtx-toolbar>
+        <mat-divider></mat-divider>
+        <mtx-codeblock class="mtx-gray-100">
+            <mtx-code>&lt;mtx-subtitle&gt;John Doe&lt;/mtx-subtitle&gt;</mtx-code>
+            <mtx-code>&lt;mtx-caption class="mtx-dark-secondary-text"&gt;Chief Executive Officer&lt;/mtx-caption&gt;
+            </mtx-code>
+        </mtx-codeblock>
+        <mat-divider></mat-divider>
+        <mtx-column style="padding: 32px">
+            <mtx-subtitle>John Doe</mtx-subtitle>
+            <mtx-caption class="mtx-dark-secondary-text">Chief Executive Officer</mtx-caption>
+        </mtx-column>
+    </mtx-stroked-card>
+
+    <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+        <mtx-toolbar>
+            <mtx-subtitle class="mtx-dark-secondary-text">Overline with Title</mtx-subtitle>
+        </mtx-toolbar>
+        <mat-divider></mat-divider>
+        <mtx-codeblock class="mtx-gray-100">
+            <mtx-code>&lt;mtx-overline class="mtx-dark-secondary-text"&gt;SALES&lt;/mtx-overline&gt;</mtx-code>
+            <mtx-code>&lt;mtx-title&gt;$987.65&lt;/mtx-title&gt;</mtx-code>
+        </mtx-codeblock>
+        <mat-divider></mat-divider>
+        <mtx-column style="padding: 32px">
+            <mtx-overline class="mtx-dark-secondary-text">SALES</mtx-overline>
+            <mtx-title>$987.65</mtx-title>
+        </mtx-column>
+    </mtx-stroked-card>
+
+    <mtx-title style="margin: 16px 0;">Theming</mtx-title>
+
+    <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+        Mtx-Text can be colored in terms of the current theme or any other colors using the <a
+            routerLink="/mtx-color">Mtx-Color</a> classes.
+    </mtx-paragraph>
+ -->
+    <app-footer-section style="margin-top: 32px;"></app-footer-section>
+
+</mtx-page>
