@@ -6,7 +6,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./mtx-nav.component.scss'],
   host: {
     class: 'mtx-nav',
-    '[class.mtx-nav-item-active]': "active===true || active!==undefined",
+    '[class.mtx-nav-item-active]': "active!==undefined",
   },
   encapsulation: ViewEncapsulation.None
 })

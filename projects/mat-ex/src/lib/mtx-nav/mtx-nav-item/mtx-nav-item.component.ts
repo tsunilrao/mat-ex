@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MtxNavItemComponent implements OnInit {
 
-  @Input() icon?: string
+  @Input() icon?: string;
+  @Input() disableRipple;
 
   constructor() { }
 
