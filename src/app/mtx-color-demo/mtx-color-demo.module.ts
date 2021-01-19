@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { MtxColorDemoRoutingModule } from './mtx-color-demo-routing.module';
 import { MtxColorDemoComponent } from './mtx-color-demo.component';
-import { MtxAppBarModule, MtxContainerModule, MtxPageModule, MtxTextModule, MtxToolbarModule } from 'projects/mat-ex/src/public-api';
+import { MtxAppBarModule, MtxCardModule, MtxContainerModule, MtxPageModule, MtxTextModule, MtxToolbarModule } from 'projects/mat-ex/src/public-api';
 import { FooterSectionModule } from '../shared/footer-section/footer-section.module';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -18,8 +20,11 @@ import { MatDividerModule } from '@angular/material/divider';
     MtxContainerModule,
     MtxTextModule,
     MtxToolbarModule,
+    MtxCardModule,
     MatDividerModule,
-    FooterSectionModule
+    FooterSectionModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class MtxColorDemoModule { }
