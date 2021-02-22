@@ -1,6 +1,6 @@
 {
   "name": "mat-ex",
-  "version": "1.3.7",
+  "version": "1.3.8",
   "dependencies": {
     "tslib": "^2.0.0"
   },
