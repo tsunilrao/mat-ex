@@ -14,12 +14,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: |
+      - name: Bump version
+        run: |
           cd projects/mat-ex
           npm version patch
           git add package.json
           git commit -m 'Version Bumped: Patch'
-          cd ../..
+          git push https://${{secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex
+cd ../..
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
