@@ -15,7 +15,8 @@ jobs:
 
       - uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
-          branch: gh-pages # The branch the action should deploy to.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
           folder: dist/mat-ex-app
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
