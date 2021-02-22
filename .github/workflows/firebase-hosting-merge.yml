@@ -51,11 +51,12 @@ jobs:
           git config --global user.name "tsunilrao"
           git add package.json
           git commit -m 'Version Bumped: Patch'
-          git push https://${{secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex
+          git push https://${{secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex.git
           cd ../..
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish dist/mat-ex
+      - name: NPM publish
+        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish dist/mat-ex
         env: 
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
