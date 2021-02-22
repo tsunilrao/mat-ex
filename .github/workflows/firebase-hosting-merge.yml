@@ -21,7 +21,7 @@ jobs:
           git add package.json
           git commit -m 'Version Bumped: Patch'
           git push https://${{secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex
-cd ../..
+          cd ../..
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
