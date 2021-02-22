@@ -15,7 +15,9 @@ jobs:
       - run: |
           cd projects/mat-ex
           npm version patch
-          git config https://$(GITHUB_TOKEN)@github.com/tsunilrao/mat-ex.git
+          git add package.json
+          cd../..
+          git commit -m 'Version Bumped: Patch'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
