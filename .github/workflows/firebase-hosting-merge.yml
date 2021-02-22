@@ -18,6 +18,8 @@ jobs:
         run: |
           cd projects/mat-ex
           npm version patch
+          git config --global user.email "t_sunil_rao@yahoo.com"
+          git config --global user.name "tsunilrao"
           git add package.json
           git commit -m 'Version Bumped: Patch'
           git push https://${{secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex
