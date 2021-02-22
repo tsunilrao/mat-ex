@@ -37,6 +37,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - run: npm publish dist/mat-ex
+      - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish dist/mat-ex
         env: 
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
