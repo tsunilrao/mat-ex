@@ -16,8 +16,8 @@ jobs:
           cd projects/mat-ex
           npm version patch
           git add package.json
-          cd../..
           git commit -m 'Version Bumped: Patch'
+          cd../..
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
