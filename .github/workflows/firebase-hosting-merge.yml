@@ -21,8 +21,8 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex.git"
           cd projects/mat-ex
-          CURRENT_VERSION=${{npm run version --silent}}
-          echo ${{CURRENT_VERSION}}
+          CURRENT_VERSION=`npm run version --silent`
+          echo $CURRENT_VERSION
           cd ../..
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
