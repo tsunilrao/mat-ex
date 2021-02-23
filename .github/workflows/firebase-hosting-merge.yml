@@ -15,16 +15,22 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Version Bump
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex.git"
-          cd projects/mat-ex
-          echo ${{ steps.package-version.outputs.current-version}}
-          cd ../..
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGEJSON_DIR:  'projects/mat-ex'
+    
+        # - name: Version Bump
+        # run: |
+        #   git config user.name github-actions[bot]
+        #   git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        #   git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex.git"
+        #   cd projects/mat-ex
+        #   echo ${{ steps.package-version.outputs.current-version}}
+        #   cd ../..
+        # env:
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           # npm version patch
           # git add package.json
