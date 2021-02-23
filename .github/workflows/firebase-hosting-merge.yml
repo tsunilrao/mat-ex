@@ -21,13 +21,17 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex.git"
           cd projects/mat-ex
-          npm version patch
-          git add package.json
+          echo $npm_package_version
+          echo $(npm run version --silent)
           cd ../..
-          git commit -m "Version Bumped"
-          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # npm version patch
+          # git add package.json
+          # git commit -m "Version Bumped"
+          # git push
+
 
       # - name: Build for Firebase
       #   run: npm ci && npm run build -- --prod
