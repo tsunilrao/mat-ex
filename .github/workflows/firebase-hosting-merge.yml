@@ -15,58 +15,62 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build for Firebase
-        run: npm ci && npm run build -- --prod
-
-      - name: Firebase deploy
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAT_EX }}'
-          channelId: live
-          projectId: mat-ex
-        env:
-          FIREBASE_CLI_PREVIEWS: hostingchannels
-
-      - name: Checkout
-        uses: actions/checkout@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build for Github Pages
+      - name: Version Bump
         run: |
-          npm run build -- --prod --base-href "https://tsunilrao.github.io/mat-ex/"
-          cp dist/mat-ex-app/index.html dist/mat-ex-app/404.html
-
-      - name: Github Pages Deploy
-        uses: JamesIves/github-pages-deploy-action@4.0.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          folder: dist/mat-ex-app
-
-      - name: Checkout
-        uses: actions/checkout@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build for NPM
-        run: npm run build mat-ex -- --prod
-
-      - name: Bump version
-        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex.git"
           cd projects/mat-ex
           npm version patch
-          git config --global user.email "t_sunil_rao@yahoo.com"
-          git config --global user.name "tsunilrao"
           git add package.json
-          git commit -m 'Version Bumped: Patch'
-          git push https://${{secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex.git
           cd ../..
+          git commit -m "Version Bumped"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: NPM publish
-        run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish dist/mat-ex
-        env: 
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Build for Firebase
+      #   run: npm ci && npm run build -- --prod
+
+      # - name: Firebase deploy
+      #   uses: FirebaseExtended/action-hosting-deploy@v0
+      #   with:
+      #     repoToken: '${{ secrets.GITHUB_TOKEN }}'
+      #     firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MAT_EX }}'
+      #     channelId: live
+      #     projectId: mat-ex
+      #   env:
+      #     FIREBASE_CLI_PREVIEWS: hostingchannels
+
+      # - name: Build for Github Pages
+      #   run: |
+      #     npm run build -- --prod --base-href "https://tsunilrao.github.io/mat-ex/"
+      #     cp dist/mat-ex-app/index.html dist/mat-ex-app/404.html
+
+      # - name: Github Pages Deploy
+      #   uses: JamesIves/github-pages-deploy-action@4.0.0
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: gh-pages
+      #     folder: dist/mat-ex-app
+
+      # - name: Build for NPM
+      #   run: npm run build mat-ex -- --prod
+
+      # - name: Bump version
+      #   run: |
+      #     cd projects/mat-ex
+      #     npm version patch
+      #     git config --global user.email "t_sunil_rao@yahoo.com"
+      #     git config --global user.name "tsunilrao"
+      #     git add package.json
+      #     git commit -m 'Version Bumped: Patch'
+      #     git push https://${{secrets.GITHUB_TOKEN}}@github.com/tsunilrao/mat-ex.git
+      #     cd ../..
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # - name: NPM publish
+      #   run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish dist/mat-ex
+      #   env: 
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
