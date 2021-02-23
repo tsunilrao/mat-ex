@@ -8,22 +8,6 @@ name: Deploy to Firebase Hosting on merge
       - master
 jobs:
 
-  version_bump:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name:  'Automated Version Bump'
-        uses:  'phips28/gh-action-bump-version@master'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR:  'projects/mat-ex'
-        with:
-          skip-tag:  'true'
-
   build_and_deploy_firebase:
     runs-on: ubuntu-latest
     steps:
@@ -73,8 +57,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name:  'Automated Version Bump'
+        uses:  'phips28/gh-action-bump-version@master'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGEJSON_DIR:  'projects/mat-ex'
+        with:
+          skip-tag:  'true'
+
       - name: Build
-        run: npm run build mat-ex -- --prod
+        run: npm ci && npm run build mat-ex -- --prod
 
       - name: Publish
         run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}" && npm publish dist/mat-ex
