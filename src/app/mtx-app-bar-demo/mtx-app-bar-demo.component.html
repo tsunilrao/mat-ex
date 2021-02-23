@@ -1,138 +1,249 @@
-<mtx-page page-title="App Bar | Material Extentions"
-    description="Reusable UI component for mobile and desktop Angular web applications">
+<mtx-page page-title="Mtx App Bar | Material Extentions"
+    description="Reusable App Bar component for mobile and desktop Angular web applications styled using Material design guidelines">
 
-    <mtx-page-header>
-        <mtx-app-bar class="mtx-primary" nav="back">
-            <mtx-app-bar-title>App Bar</mtx-app-bar-title>
-        </mtx-app-bar>
-    </mtx-page-header>
+    <mtx-app-bar app-bar-title="Mtx App Bar" class="mtx-primary" nav="back"></mtx-app-bar>
 
     <mtx-page-content>
 
-        <ng-container *ngTemplateOutlet="InteractiveDemo"></ng-container>
-        <app-footer-section></app-footer-section>
+        <mtx-column style="margin: 16px 0;">
+            <mtx-headline>Mtx App Bar</mtx-headline>
+            <mtx-caption class="mtx-dark-secondary-text">MtxAppBarModule</mtx-caption>
+        </mtx-column>
+
+        <p mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+            Mtx App Bar is a toolbar that displays information and actions relating to the current UI. It is based
+            on the guidelines from the Material Design specifications and is arranged into multiple tags. Each tag has a
+            different size and are described as under:
+        </p>
+
+        <mtx-column class="attributes-table" style="margin: 16px 0; max-width: 800px;">
+            <mtx-row>
+                <mtx-label class="attribute">Attribute</mtx-label>
+                <mtx-label class="description">Description</mtx-label>
+            </mtx-row>
+            <mtx-row *ngFor="let entry of attributes">
+                <mtx-code class="attribute">{{entry.attribute}}</mtx-code>
+                <mtx-paragraph class="description">{{entry.description}}</mtx-paragraph>
+            </mtx-row>
+        </mtx-column>
+
+        <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+            <mtx-toolbar>
+                <mtx-subtitle class="mtx-dark-secondary-text">Basic Usage</mtx-subtitle>
+            </mtx-toolbar>
+            <mat-divider></mat-divider>
+            <mtx-codeblock class="mtx-gray-100">
+                <mtx-code *ngFor="let entry of attributes">&lt;{{entry.attribute}}&gt;Title&lt;/{{entry.attribute}}&gt;
+                </mtx-code>
+            </mtx-codeblock>
+            <mat-divider></mat-divider>
+            <mtx-column style="padding: 16px;">
+                <ng-container *ngFor="let entry of attributes; let i = index">
+                    <mtx-row style="padding: 8px 16px; align-items: center;">
+                        <mtx-paragraph style="min-width: 112px;">{{entry.title}}</mtx-paragraph>
+                        <mtx-app-bar [class]="entry.attribute" style="margin: 0; padding: 0 16px;">Title</mtx-app-bar>
+                    </mtx-row>
+                    <mat-divider *ngIf="i!=attributes.length-1"></mat-divider>
+                </ng-container>
+            </mtx-column>
+        </mtx-stroked-card>
+
+        <mtx-column style="margin: 8px 0;"></mtx-column>
+        <mtx-title style="margin: 8px 0;">Navigation</mtx-title>
+
+        <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+            Mtx App Bar supports navigation and is managed by the
+            <span style="font-weight: 500;">nav</span>
+            property. It supports the following values and are described as under:
+        </mtx-paragraph>
+
+        <mtx-column class="attributes-table" style="margin: 16px 0; max-width: 800px;">
+            <mtx-row>
+                <mtx-label class="attribute">Value</mtx-label>
+                <mtx-label class="description">Description</mtx-label>
+            </mtx-row>
+            <mtx-row *ngFor="let entry of navAttributes">
+                <mtx-code class="attribute">{{entry.attribute}}</mtx-code>
+                <mtx-paragraph class="description">{{entry.description}}</mtx-paragraph>
+            </mtx-row>
+        </mtx-column>
+
+        <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+            <mtx-toolbar>
+                <mtx-subtitle class="mtx-dark-secondary-text">App Bar nav property</mtx-subtitle>
+            </mtx-toolbar>
+            <mat-divider></mat-divider>
+            <mtx-codeblock class="mtx-gray-100">
+                <mtx-code>&lt;mtx-app-bar class="mtx-primary" app-bar-title="App Bar with menu"
+                    nav="menu"&gt;&lt;/mtx-app-bar&gt;</mtx-code>
+            </mtx-codeblock>
+            <mat-divider></mat-divider>
+            <mtx-column style="padding: 32px">
+                <mtx-app-bar class="mtx-primary" app-bar-title="App Bar with menu" nav="menu"
+                    style="margin: 0; padding: 0 16px;"></mtx-app-bar>
+            </mtx-column>
+        </mtx-stroked-card>
+
+        <mtx-column style="margin: 8px 0;"></mtx-column>
+        <mtx-title style="margin: 8px 0;">Title</mtx-title>
+
+        <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+            Mtx App Bar can have a title and is managed by the
+            <span style="font-weight: 500;">app-bar-title</span>
+            or
+            <span style="font-weight: 500;">appBarTitle</span>
+            property which supports a string value.
+            For custom titles, <span style="font-weight: 500;">mtx-app-bar-title</span> or <span
+                style="font-weight: 500;">h1 mtx-app-bar-title</span> sub-component can be used.
+        </mtx-paragraph>
+
+        <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+            <mtx-toolbar>
+                <mtx-subtitle class="mtx-dark-secondary-text">App Bar title sub component</mtx-subtitle>
+            </mtx-toolbar>
+            <mat-divider></mat-divider>
+            <mtx-codeblock class="mtx-gray-100">
+                <mtx-code>&lt;mtx-app-bar class="mtx-primary"&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1 mtx-app-bar-title&gt;My New Page&lt;/h1&gt;</mtx-code>
+                <mtx-code>&lt;/mtx-app-bar&gt;</mtx-code>
+            </mtx-codeblock>
+            <mat-divider></mat-divider>
+            <mtx-column style="padding: 32px">
+                <mtx-app-bar class="mtx-primary" style="margin: 0; padding: 0 16px;">
+                    <h1 mtx-app-bar-title>My New Page</h1>
+                </mtx-app-bar>
+            </mtx-column>
+        </mtx-stroked-card>
+
+        <mtx-column style="margin: 8px 0;"></mtx-column>
+        <mtx-title style="margin: 8px 0;">Action Buttons</mtx-title>
+
+        <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+            Mtx App Bar can have action buttons on the right and can be defined inside
+            <span style="font-weight: 500;">mtx-app-bar</span> carrying a
+            <span style="font-weight: 500;">action</span> selector.
+            It supports all HTML elements especially <span style="font-weight: 500;">MatButtons</span>
+        </mtx-paragraph>
+
+        <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+            <mtx-toolbar>
+                <mtx-subtitle class="mtx-dark-secondary-text">App Bar with actions</mtx-subtitle>
+            </mtx-toolbar>
+            <mat-divider></mat-divider>
+            <mtx-codeblock class="mtx-gray-100">
+                <mtx-code>&lt;mtx-app-bar class="mtx-primary" nav="close"&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-button&gt;SAVE&lt;/button&gt;</mtx-code>
+                <mtx-code>&lt;/mtx-app-bar&gt;</mtx-code>
+            </mtx-codeblock>
+            <mat-divider></mat-divider>
+            <mtx-column style="padding: 32px">
+                <mtx-app-bar class="mtx-primary" nav="close" style="margin: 0; padding: 0 16px;">
+                    <button mat-button action style="margin-right: -16px;">SAVE</button>
+                </mtx-app-bar>
+            </mtx-column>
+        </mtx-stroked-card>
+
+        <mtx-column style="margin: 8px 0;"></mtx-column>
+        <mtx-title style="margin: 8px 0;">Overflow</mtx-title>
+
+        <mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+            Mtx App Bar can have an overflow menu is managed by the
+            <span style="font-weight: 500;">overflow</span>
+            property which supports a <span style="font-weight: 500;">MatMenu</span>
+        </mtx-paragraph>
+
+        <mtx-column style="margin: 8px 0;"></mtx-column>
+        <mtx-title style="margin: 8px 0;">Examples</mtx-title>
+
+        <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+            <mtx-toolbar>
+                <mtx-subtitle class="mtx-dark-secondary-text">Dense App Bar with overflow</mtx-subtitle>
+            </mtx-toolbar>
+            <mat-divider></mat-divider>
+            <mtx-codeblock class="mtx-gray-100">
+                <mtx-code>&lt;mtx-dense-app-bar class="mtx-primary" app-bar-title="Title" nav="back"
+                    overflow="menu"&gt;&lt;/mtx-dense-app-bar&gt;</mtx-code>
+                <mtx-code>&lt;mat-menu #menu&gt;&lt;/mat-menu&gt;</mtx-code>
+            </mtx-codeblock>
+            <mat-divider></mat-divider>
+            <mtx-column style="padding: 32px">
+                <mtx-dense-app-bar class="mtx-primary" app-bar-title="Title" nav="back" [overflow]="menu1"
+                    style="margin: 0; padding: 0 16px;"></mtx-dense-app-bar>
+                <mat-menu #menu1></mat-menu>
+            </mtx-column>
+        </mtx-stroked-card>
+
+        <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+            <mtx-toolbar>
+                <mtx-subtitle class="mtx-dark-secondary-text">Standard App Bar with buttons</mtx-subtitle>
+            </mtx-toolbar>
+            <mat-divider></mat-divider>
+            <mtx-codeblock class="mtx-gray-100">
+                <mtx-code>&lt;mtx-app-bar class="mtx-primary" app-bar-title="Title" nav="menu"&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;mtx-app-bar-button&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-icon-button&gt;</mtx-code>
+                <mtx-code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mat-icon&gt;search&lt;/mat-icon&gt;
+                </mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-icon-button&gt;</mtx-code>
+                <mtx-code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mat-icon&gt;share&lt;/mat-icon&gt;
+                </mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/mtx-app-bar-button&gt;</mtx-code>
+                <mtx-code>&lt;/mtx-app-bar&gt;</mtx-code>
+            </mtx-codeblock>
+            <mat-divider></mat-divider>
+            <mtx-column style="padding: 32px">
+                <mtx-app-bar class="mtx-primary" app-bar-title="Title" nav="menu" style="margin: 0; padding: 0 16px;">
+                    <button mat-icon-button action>
+                        <mat-icon>search</mat-icon>
+                    </button>
+                    <button mat-icon-button action style="margin-right: -8px;">
+                        <mat-icon>share</mat-icon>
+                    </button>
+                </mtx-app-bar>
+            </mtx-column>
+        </mtx-stroked-card>
+
+        <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+            <mtx-toolbar>
+                <mtx-subtitle class="mtx-dark-secondary-text">Prominent App Bar</mtx-subtitle>
+            </mtx-toolbar>
+            <mat-divider></mat-divider>
+            <mtx-codeblock class="mtx-gray-100">
+                <mtx-code>&lt;mtx-app-bar class="mtx-primary" app-bar-title="Title" nav="menu"&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;mtx-app-bar-button&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-icon-button&gt;</mtx-code>
+                <mtx-code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mat-icon&gt;search&lt;/mat-icon&gt;
+                </mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-icon-button&gt;</mtx-code>
+                <mtx-code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mat-icon&gt;share&lt;/mat-icon&gt;
+                </mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/button&gt;</mtx-code>
+                <mtx-code>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/mtx-app-bar-button&gt;</mtx-code>
+                <mtx-code>&lt;/mtx-app-bar&gt;</mtx-code>
+            </mtx-codeblock>
+            <mat-divider></mat-divider>
+            <mtx-column style="padding: 32px">
+                <mtx-app-bar class="mtx-primary" nav="menu" style="margin: 0; padding: 0 16px;">
+                    <button mat-icon-button action>
+                        <mat-icon>search</mat-icon>
+                    </button>
+                    <button mat-icon-button action style="margin-right: -8px;">
+                        <mat-icon>share</mat-icon>
+                    </button>
+                    <mtx-toolbar prominent style="padding: 0;">Prominent title</mtx-toolbar>
+                </mtx-app-bar>
+            </mtx-column>
+        </mtx-stroked-card>
 
     </mtx-page-content>
 
 </mtx-page>
 
-<ng-template #InteractiveDemo>
-    <mtx-column>
-
-        <p><code>&lt;mtx-app-bar&gt;</code> displays information and actions relating to the current screen.</p>
-
-        <h3>Interactive demo</h3>
-
-        <p>This demo lets you preview the App Bar component, its variations, and
-            configuration options. Each tab displays a different type of App Bar.</p>
-
-        <app-bar-interactive style="margin-bottom: 24px;"></app-bar-interactive>
-
-        <div class="row" style="margin-bottom: 16px; justify-content: space-between;">
-            <mat-form-field style="width: 40%;">
-                <mat-label>Size</mat-label>
-                <mat-select [(value)]="size">
-                    <mat-option *ngFor="let item of ['standard', 'dense', 'prominent']" [value]="item">
-                        {{item}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-
-            <mat-form-field style="width: 40%;">
-                <mat-label>Navigation</mat-label>
-                <mat-select [(value)]="nav">
-                    <mat-option *ngFor="let item of ['none', 'menu', 'back', 'close']" [value]="item">
-                        {{item}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-
-        <mat-form-field style="margin-bottom: 16px;">
-            <mat-label>Title</mat-label>
-            <input matInput type="text" [formControl]="title">
-        </mat-form-field>
-
-        <div class="row" style="margin-bottom: 16px; justify-content: space-between;">
-            <mat-checkbox [checked]="overflow" (change)="overflow=!overflow">Overflow Menu</mat-checkbox>
-            <mat-checkbox [checked]="icons" (change)="icons=!icons">Icons</mat-checkbox>
-            <mat-checkbox [checked]="buttons" (change)="buttons=!buttons">Buttons</mat-checkbox>
-        </div>
-
-        <mat-tab-group>
-            <mat-tab label="Demo">
-                <div style="padding: 32px 0;">
-                    <ng-container *ngTemplateOutlet="demo"></ng-container>
-                </div>
-            </mat-tab>
-            <mat-tab label="Code">
-                <div style="padding: 32px 0;">
-                    <ng-container *ngTemplateOutlet="sourceCode"></ng-container>
-                </div>
-            </mat-tab>
-        </mat-tab-group>
-
-    </mtx-column>
-</ng-template>
-
-<ng-template #demo>
-    <mtx-app-bar style="margin: 0;" [size]="size" [nav]="nav" color="primary" [overflow]="overflow?menu:undefined">
-        <mtx-app-bar-title>{{title.value}}</mtx-app-bar-title>
-        <mtx-app-bar-button *ngIf="icons">
-            <button mat-icon-button>
-                <mat-icon>search</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>notifications</mat-icon>
-            </button>
-        </mtx-app-bar-button>
-        <mtx-app-bar-button *ngIf="buttons">
-            <button mat-button>SAVE</button>
-        </mtx-app-bar-button>
-    </mtx-app-bar>
-
-    <mat-menu #menu>...</mat-menu>
-</ng-template>
-
-<ng-template #sourceCode>
-    <code>
-        <span>&lt;mtx-app-bar</span>
-        <span *ngIf="size!='standard'"> size="{{size}}"</span>
-        <span *ngIf="nav!='none'"> nav="{{nav}}"</span>
-        <span *ngIf="overflow"> overflow="menu"</span>
-        <span>&gt;<br></span>
-        
-        <span *ngIf="title.value!=''">&nbsp;&nbsp;&lt;mtx-app-bar-title&gt;{{title.value}}&lt;/mtx-app-bar-title&gt;<br></span>
-
-        <span *ngIf="icons||buttons">&nbsp;&nbsp;&lt;mtx-app-bar-button&gt;<br></span>
-        <span *ngIf="icons">&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-icon-button&gt;&lt;mat-icon&gt;search&lt;/mat-icon&gt;&lt;/button&gt;<br></span>
-        <span *ngIf="icons">&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-icon-button&gt;&lt;mat-icon&gt;notifications&lt;/mat-icon&gt;&lt;/button&gt;<br></span>
-        <span *ngIf="buttons">&nbsp;&nbsp;&nbsp;&nbsp;&lt;button mat-button&gt;SAVE&lt;/button&gt;<br></span>
-        <span *ngIf="icons||buttons">&nbsp;&nbsp;&lt;/mtx-app-bar-button&gt;<br></span>
-
-        <span>&lt;/mtx-app-bar&gt;</span>
-
-        <span *ngIf="overflow"><br><br>&lt;mat-menu #menu&gt;...&lt;/mat-menu&gt;</span>
-
-    </code>
-</ng-template>
-
-<ng-template #demo>
-    <mtx-app-bar style="margin: 0;" [size]="size" [nav]="nav" color="primary" [overflow]="overflow?menu:undefined">
-        <mtx-app-bar-title>{{title.value}}</mtx-app-bar-title>
-        <mtx-app-bar-button *ngIf="icons">
-            <button mat-icon-button>
-                <mat-icon>search</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>notifications</mat-icon>
-            </button>
-        </mtx-app-bar-button>
-        <mtx-app-bar-button *ngIf="buttons">
-            <button mat-button>SAVE</button>
-        </mtx-app-bar-button>
-    </mtx-app-bar>
-
-    <mat-menu #menu>...</mat-menu>
-</ng-template>
-
+<mat-menu #menu>...</mat-menu>

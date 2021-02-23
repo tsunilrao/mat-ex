@@ -71,20 +71,15 @@
 </ng-template>
 
 <ng-template #demo>
-    <mtx-app-bar class="mtx-primary" style="margin: 0;" [size]="size[sizeIndex].toLowerCase()"
-        [nav]="navigation[navigationIndex].toLowerCase()">
-        <!-- <mtx-app-bar-title>{{title.value}}</mtx-app-bar-title>
-        <mtx-app-bar-button *ngIf="icons">
-            <button mat-icon-button>
-                <mat-icon>search</mat-icon>
-            </button>
-            <button mat-icon-button>
-                <mat-icon>notifications</mat-icon>
-            </button>
-        </mtx-app-bar-button>
-        <mtx-app-bar-button *ngIf="buttons">
-            <button mat-button>SAVE</button>
-        </mtx-app-bar-button> -->
+    <mtx-app-bar class="mtx-primary" style="margin: 0;" [nav]="navigation[navigationIndex].toLowerCase()">
+        <!-- <mtx-app-bar-title>{{title.value}}</mtx-app-bar-title> -->
+        <!-- <button mat-icon-button action action *ngIf="icons">
+            <mat-icon>search</mat-icon>
+        </button>
+        <button mat-icon-button action action *ngIf="icons">
+            <mat-icon>notifications</mat-icon>
+        </button>
+        <button mat-button action *ngIf="buttons">SAVE</button> -->
     </mtx-app-bar>
 
     <mat-menu #menu>...</mat-menu>

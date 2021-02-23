@@ -1,15 +1,14 @@
 .mtx-app-bar {
-    display: flex; flex-direction: column; box-sizing: border-box; z-index: 10;
-    transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex; flex-direction: column; flex: 1; box-sizing: border-box; z-index: 10;
+    font-size: 20px; line-height: 32px; font-weight: 500;
 }
 
-.mtx-app-bar.mtx-standard-app-bar { height: 56px; }
-.mtx-app-bar.mtx-dense-app-bar { height: 48px;}
-.mtx-app-bar.mtx-prominent-app-bar { height: 112px;}
-
-.mtx-app-bar .mtx-app-bar-button:last-child { margin-right: -8px;}
+.mtx-app-bar.mtx-standard-app-bar .mtx-app-bar-top { height: 56px; }
+.mtx-app-bar.mtx-dense-app-bar .mtx-app-bar-top { height: 48px;}
+.mtx-app-bar.mtx-prime-app-bar .mtx-app-bar-top { height: 72px; }
 
 @media(max-height: 479px) {
-    .mtx-app-bar { height: 48px;}
-    .mtx-app-bar.mtx-prominent-app-bar { height: 96px;}
+    .mtx-app-bar.mtx-standard-app-bar .mtx-app-bar-top { height: 48px; }
+    .mtx-app-bar.mtx-dense-app-bar .mtx-app-bar-top { height: 40px;}
+    .mtx-app-bar.mtx-prime-app-bar .mtx-app-bar-top { height: 64px; }
 }

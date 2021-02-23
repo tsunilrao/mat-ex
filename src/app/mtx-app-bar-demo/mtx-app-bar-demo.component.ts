@@ -1,6 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatMenu } from '@angular/material/menu';
 
 @Component({
   selector: 'app-mtx-app-bar-demo',
@@ -16,7 +15,19 @@ export class MtxAppBarDemoComponent implements OnInit {
   icons: boolean = true;
   buttons: boolean = false;
 
-  @ViewChild('menu') menu: MatMenu
+  public attributes = [
+    { title: 'Default', attribute: 'mtx-app-bar', description: 'Standard app-bar for most use cases.' },
+    { title: 'Standard', attribute: 'mtx-standard-app-bar', description: 'Standard app-bar for most use cases.' },
+    { title: 'Dense', attribute: 'mtx-dense-app-bar', description: 'A condensed app-bar with reduced free spaces.' },
+    { title: 'Prime', attribute: 'mtx-prime-app-bar', description: 'A lavish app-bar with lush free spaces.' },
+  ]
+
+  public navAttributes = [
+    { title: 'None', attribute: 'none', description: 'No Navigation.' },
+    { title: 'Menu', attribute: 'menu', description: 'Menu button to trigger an drawer menu.' },
+    { title: 'Back', attribute: 'back', description: 'Back button to navigate to the last page.' },
+    { title: 'Close', attribute: 'close', description: 'Close Button to close the page and navigate to previous page.' },
+  ]
 
   constructor() { }
 

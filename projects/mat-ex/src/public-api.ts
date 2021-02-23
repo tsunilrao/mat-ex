@@ -6,6 +6,7 @@ export * from './lib/components/toolbar-button/toolbar-button.module';
 export * from './lib/components/toolbar-button/toolbar-button.component';
 
 export * from './lib/mtx-page/mtx-page.module'
+export * from './lib/mtx-app-bar/mtx-app-bar.module'
 export * from './lib/mtx-card/mtx-card.module'
 export * from './lib/mtx-codeblock/mtx-codeblock.module'
 export * from './lib/mtx-container/mtx-container.module';
@@ -18,11 +19,6 @@ export * from './lib/mtx-scrollview/mtx-scrollview.module';
 export * from './lib/mtx-sidesheet/mtx-sidesheet.module';
 export * from './lib/mtx-loader/mtx-loader.module';
 
-export * from './lib/mtx-app-bar/mtx-app-bar.module'
-export * from './lib/mtx-app-bar/mtx-app-bar/mtx-app-bar.component'
-export * from './lib/mtx-app-bar/mtx-app-bar-title/mtx-app-bar-title.component'
-export * from './lib/mtx-app-bar/mtx-app-bar-button/mtx-app-bar-button.component'
-export * from './lib/mtx-app-bar/mtx-app-bar-prominent/mtx-app-bar-prominent.component'
 
 export * from './lib/mtx-bottom-nav/mtx-bottom-nav.module'
 export * from './lib/mtx-bottom-nav/mtx-bottom-nav.component'

@@ -8,35 +8,30 @@ const NAV_ATRRIBUTES = [
 ]
 
 @Component({
-  selector: 'mtx-app-bar',
+  selector: `mtx-app-bar, mtx-dense-app-bar, mtx-standard-app-bar, mtx-prime-app-bar`,
   templateUrl: './mtx-app-bar.component.html',
   styleUrls: ['./mtx-app-bar.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  host: { 
+  host: {
     class: 'mtx-app-bar mtx-page-padding mtx-page-full-width mat-elevation-z4',
-    '[class.mtx-standard-app-bar]': "size=='standard'",
-    '[class.mtx-dense-app-bar]': "size=='dense'",
-    '[class.mtx-prominent-app-bar]': "size=='prominent'"
- },
+    '[class.mtx-dense-app-bar]': "selector=='mtx-dense-app-bar'",
+    '[class.mtx-standard-app-bar]': "selector=='mtx-standard-app-bar' || selector=='mtx-app-bar'",
+    '[class.mtx-prime-app-bar]': "selector=='mtx-prime-app-bar'",
+  },
 })
 export class MtxAppBarComponent implements OnInit, OnChanges {
 
-  // ## size
-  // Supports `standard`, `dense`, `prominent`, `prominent-2`
-  @Input() size = 'standard';
-
-  // ## nav
-  // Supports `none`, `menu`, `back` and `close`
   @Input() nav;
-
   @Input() overflow;
+  @Input('appBarTitle') appBarTitle: string;
+  @Input('app-bar-title') _appBarTitle: string;
+
+  get selector(): string { return this.hostRef.nativeElement.tagName.toLowerCase() }
+  get title(): string { return this.appBarTitle || this._appBarTitle}
   
-  @Input('appBarTitle') title: string;
-
   navAttr;
-  prominentFlex: number = 0;
 
-  constructor() { }
+  constructor(private hostRef: ElementRef) { }
 
   ngOnInit(): void {
   }
@@ -45,8 +40,6 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
     if (changes.nav) NAV_ATRRIBUTES.forEach(attr => {
       if (this.nav == attr.key) this.navAttr = attr
     })
-
-    this.prominentFlex = this.size == 'prominent' ? 1 : 0
   }
 
   @Output() navclick = new EventEmitter()

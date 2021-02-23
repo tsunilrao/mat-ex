@@ -1,11 +1,23 @@
 {
   "name": "mat-ex",
-  "version": "1.3.7",
+  "version": "1.3.9",
   "dependencies": {
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
     "@angular/core": ">=8.0.0",
     "@angular/material": ">=8.0.0"
-  }
+  },
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "material",
+    "material design",
+    "components"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsunilrao/mat-ex"
+  },
+  "homepage": "https://mat-ex.web.app"
 }
