@@ -1,17 +1,14 @@
 <mtx-page page-title="Material Extentions UI Component Library"
     description="Reusable components that extend Angular Material">
 
-    <mtx-app-bar class="mtx-primary" nav="menu">
-        <mtx-app-bar-title>Mat Ex</mtx-app-bar-title>
-        <mtx-app-bar-button>
-            <button mat-icon-button onclick="blur()" aria-label="Select a Theme" matTooltip="Select a Theme">
-                <mat-icon>format_color_fill</mat-icon>
-            </button>
-            <a mat-icon-button onclick="blur()" href="https://github.com/tsunilrao/mat-ex"
-                aria-label="GitHub Repository" matTooltip="GitHub Repository">
-                <img src="assets/github-logo.svg" alt="Github Logo" width="24" height="24" />
-            </a>
-        </mtx-app-bar-button>
+    <mtx-app-bar class="mtx-primary" nav="menu" app-bar-title="Mat Ex">
+        <button mat-icon-button action onclick="blur()" aria-label="Select a Theme" matTooltip="Select a Theme">
+            <mat-icon>format_color_fill</mat-icon>
+        </button>
+        <a mat-icon-button action onclick="blur()" href="https://github.com/tsunilrao/mat-ex"
+            style="margin-right: -8px;" aria-label="GitHub Repository" matTooltip="GitHub Repository">
+            <img src="assets/github-logo.svg" alt="Github Logo" width="24" height="24" />
+        </a>
     </mtx-app-bar>
 
     <home-hero-section class="mtx-page-full-width"></home-hero-section>
@@ -23,4 +20,3 @@
     <app-footer-section></app-footer-section>
 
 </mtx-page>
-

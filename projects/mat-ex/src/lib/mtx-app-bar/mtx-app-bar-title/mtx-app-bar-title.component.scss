@@ -1,4 +1,7 @@
 .mtx-app-bar .mtx-app-bar-title { 
-    padding: 0px 48px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    padding: 0px 16px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     font-size: 20px; line-height: 32px; font-weight: 500; margin: 0;
 }
+
+.mtx-app-bar-title:first-child { padding-left: 0; }
+.mtx-app-bar-title:last-child { padding-right: 0; }
