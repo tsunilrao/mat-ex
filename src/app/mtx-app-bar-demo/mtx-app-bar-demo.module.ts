@@ -17,12 +17,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FooterSectionModule } from '../shared/footer-section/footer-section.module';
 import { MobileHeaderModule } from '../shared/mobile-header/mobile-header.module';
-import { AppBarInteractiveComponent } from './app-bar-interactive/app-bar-interactive.component';
 import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
-  declarations: [MtxAppBarDemoComponent, AppBarInteractiveComponent],
+  declarations: [MtxAppBarDemoComponent],
   imports: [
     CommonModule, MtxAppBarDemoRoutingModule, FooterSectionModule, MobileHeaderModule,
     MtxAppBarModule, MtxPageModule, MtxTextModule, MtxContainerModule, MtxCardModule, MtxToolbarModule,
