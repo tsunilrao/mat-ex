@@ -11,12 +11,16 @@
         </a>
     </mtx-app-bar>
 
-    <home-hero-section class="mtx-page-full-width"></home-hero-section>
-    <home-features-section class="mtx-page-full-width home-content"></home-features-section>
-    <mat-divider></mat-divider>
-    <home-components-section class="mtx-page-full-width home-content"></home-components-section>
-    <mat-divider></mat-divider>
-    <home-utilities-section class="mtx-page-full-width home-content"></home-utilities-section>
-    <app-footer-section></app-footer-section>
-
+    <mtx-page-content style="padding: 0">
+        <home-hero-section></home-hero-section>
+        <mtx-column class="mtx-page-padding">
+            <home-features-section class="home-content"></home-features-section>
+            <mat-divider></mat-divider>
+            <home-components-section class="home-content"></home-components-section>
+            <mat-divider></mat-divider>
+            <home-utilities-section class="home-content"></home-utilities-section>
+        </mtx-column>
+        <app-footer-section></app-footer-section>
+    </mtx-page-content>
+        
 </mtx-page>
