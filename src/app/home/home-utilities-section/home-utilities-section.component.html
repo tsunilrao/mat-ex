@@ -3,22 +3,7 @@
     <a mat-button class="mtx-toolbar-action" style="margin-right: -16px;">View all</a>
 </mtx-prime-toolbar>
 <mtx-scrollview class="mtx-page-full-width">
-    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-text">
-        <mtx-column class="mtx-blue-50" style="width: 160px; height: 160px;"></mtx-column>
-        <mtx-prime-toolbar>
-            <mtx-column>
-                <mtx-title>Text</mtx-title>
-                <mtx-label class="mtx-dark-secondary-text">MtxTextModule</mtx-label>
-            </mtx-column>
-        </mtx-prime-toolbar>
-    </mat-card>
-    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-color">
-        <mtx-column class="mtx-blue-50" style="width: 160px; height: 160px;"></mtx-column>
-        <mtx-prime-toolbar>
-            <mtx-column>
-                <mtx-title>Color</mtx-title>
-                <mtx-label class="mtx-dark-secondary-text">MtxColorModule</mtx-label>
-            </mtx-column>
-        </mtx-prime-toolbar>
-    </mat-card>
+    <home-scrollview-card class="mtx-scrollview-item" value="Colors" info="mtx-color" colorClass="mtx-red-50" routerLink="/mtx-color"></home-scrollview-card>
+    <!-- <home-scrollview-card class="mtx-scrollview-item" value="Containers" info="mtx-container" colorClass="mtx-pink-50" routerLink="/mtx-container"></home-scrollview-card> -->
+    <home-scrollview-card class="mtx-scrollview-item" value="Text" info="mtx-text" colorClass="mtx-purple-50" routerLink="/mtx-text"></home-scrollview-card>
 </mtx-scrollview>

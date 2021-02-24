@@ -15,6 +15,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { FooterSectionModule } from '../shared/footer-section/footer-section.module';
 import { HomeUtilitiesSectionComponent } from './home-utilities-section/home-utilities-section.component';
+import { HomeScrollviewCardModule } from './home-scrollview-card/home-scrollview-card.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HomeUtilitiesSectionComponent } from './home-utilities-section/home-uti
     CommonModule, HomeRoutingModule, FooterSectionModule,
     MtxPageModule, MtxAppBarModule, MtxScrollviewModule, MtxProfileModule, MtxContainerModule, 
     MtxToolbarModule, MtxTextModule,
-    MatButtonModule, MatIconModule, MatDividerModule, MatTooltipModule, MatCardModule
+    MatButtonModule, MatIconModule, MatDividerModule, MatTooltipModule, MatCardModule,
+    HomeScrollviewCardModule
   ]
 })
 export class HomeModule { }

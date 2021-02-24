@@ -10,6 +10,9 @@ import { Component, OnInit, ViewEncapsulation, Input, ElementRef } from '@angula
     '[class.mtx-basic-toolbar]': "selector=='mtx-basic-toolbar' || selector=='mtx-toolbar'",
     '[class.mtx-prime-toolbar]': "selector=='mtx-prime-toolbar'",
     '[class.mtx-prominent-toolbar]': "selector=='mtx-prominent-toolbar'",
+    '[class.mtx-toolbar-row]': "column===undefined",
+    '[class.mtx-toolbar-column]': "column!==undefined",
+    '[class.mtx-toolbar-padding]': "nopadding===undefined",
   },
   encapsulation: ViewEncapsulation.None
 })
@@ -20,6 +23,8 @@ export class MtxToolbarComponent implements OnInit {
   @Input() imageUrl?: string;
   @Input() meta?: string;
   @Input() menu?: string;
+  @Input() column;
+  @Input() nopadding;
 
   get selector(): string { return this.hostRef.nativeElement.tagName.toLowerCase() }
 

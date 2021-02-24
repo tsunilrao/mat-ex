@@ -1,18 +1,20 @@
-import { Component, OnInit, Input, ViewEncapsulation, ViewChild, TemplateRef, ChangeDetectionStrategy, ChangeDetectorRef, OnChanges, SimpleChanges, AfterViewInit, AfterContentInit, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, ViewChild, TemplateRef, ElementRef } from '@angular/core';
 
 @Component({
-  selector: `mtx-icon, mtx-small-icon`,
+  selector: `mtx-icon, mtx-small-icon, mtx-prime-icon, mtx-prominent-icon`,
   templateUrl: './mtx-icon.component.html',
   styleUrls: ['./mtx-icon.component.scss'],
   host: {
     class: 'mtx-icon',
-    '[class.mtx-small-icon]': "selector=='mtx-small-icon' || size=='small'",
+    '[class.mtx-standard-icon]': "selector=='mtx-icon'",
+    '[class.mtx-small-icon]': "selector=='mtx-small-icon'",
+    '[class.mtx-prime-icon]': "selector=='mtx-prime-icon'",
+    '[class.mtx-prominent-icon]': "selector=='mtx-prominent-icon'",
   },
   encapsulation: ViewEncapsulation.None,
 })
 export class MtxIconComponent implements OnInit {
 
-  @Input() size?: string;
   @Input() icon?: string;
 
   @ViewChild('more_vert', {static:true}) moreVertRef: TemplateRef<HTMLElement>

@@ -1,5 +1,8 @@
 .mtx-toolbar {
-    display: flex; flex-direction: row; box-sizing: border-box; padding: 0 16px; align-items: center; font-weight: 500;
+    display: flex; box-sizing: border-box; font-weight: 500;
+    &.mtx-toolbar-row { flex-direction: row; align-items: center; }
+    &.mtx-toolbar-column { flex-direction: column; justify-content: center; }
+    &.mtx-toolbar-padding { padding: 0 16px; }
 
     .mtx-toolbar-icon { display: flex; flex-direction: row; box-sizing: border-box; width: 40px; align-items: center; justify-content: center; margin-right: 16px; }
     .mtx-toolbar-icon:empty { display: none; }

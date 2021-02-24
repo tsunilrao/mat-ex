@@ -3,39 +3,10 @@
     <a mat-button style="margin-right: -16px;">View all</a>
 </div>
 <mtx-scrollview class="mtx-page-full-width">
-    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-app-bar">
-        <div style="width: 160px; height: 160px; background-color: #e0f2f1;"></div>
-        <div class="col" style="height: 72px; justify-content: center; padding: 0 16px;">
-            <mtx-title>App Bar</mtx-title>
-            <mtx-label class="mtx-dark-secondary-text">mtx-app-bar</mtx-label>
-        </div>
-    </mat-card>        
-    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-dialog">
-        <div style="width: 160px; height: 160px; background-color: #e0f2f1;"></div>
-        <div class="col" style="height: 72px; justify-content: center; padding: 0 16px;">
-            <mtx-title>Dialog</mtx-title>
-            <mtx-label class="mtx-dark-secondary-text">mtx-dialog</mtx-label>
-        </div>
-    </mat-card>        
-    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-bottom-nav">
-        <div style="width: 160px; height: 160px; background-color: #e8f5e9;"></div>
-        <div class="col" style="height: 72px; justify-content: center; padding: 0 16px;">
-            <mtx-title>Navigation</mtx-title>
-            <mtx-label class="mtx-dark-secondary-text">mtx-bottom-nav</mtx-label>
-        </div>
-    </mat-card>        
-    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-page">
-        <div style="width: 160px; height: 160px; background-color: #f1f8e9;"></div>
-        <div class="col" style="height: 72px; justify-content: center; padding: 0 16px;">
-            <mtx-title>Page Layout</mtx-title>
-            <mtx-label class="mtx-dark-secondary-text">mtx-page</mtx-label>
-        </div>
-    </mat-card>        
-    <mat-card class="mtx-scrollview-item" style="padding: 0;" routerLink="/mtx-scrollview">
-        <div style="width: 160px; height: 160px; background-color: #f9fbe7;"></div>
-        <div class="col" style="height: 72px; justify-content: center; padding: 0 16px;">
-            <mtx-title>Scrollview</mtx-title>
-            <mtx-label class="mtx-dark-secondary-text">mtx-scrollview</mtx-label>
-        </div>
-    </mat-card>        
+    <home-scrollview-card class="mtx-scrollview-item" value="App Bar" info="mtx-app-bar" colorClass="mtx-indigo-50" routerLink="/mtx-app-bar"></home-scrollview-card>
+    <home-scrollview-card class="mtx-scrollview-item" value="Dialog" info="mtx-dialog" colorClass="mtx-blue-50" routerLink="/mtx-dialog"></home-scrollview-card>
+    <home-scrollview-card class="mtx-scrollview-item" value="Icons" info="mtx-icon" colorClass="mtx-light-blue-50" routerLink="/mtx-icon"></home-scrollview-card>
+    <home-scrollview-card class="mtx-scrollview-item" value="Navigation" info="mtx-nav" colorClass="mtx-cyan-50" routerLink="/mtx-bottom-nav"></home-scrollview-card>
+    <home-scrollview-card class="mtx-scrollview-item" value="Page Layout" info="mtx-page" colorClass="mtx-teal-50" routerLink="/mtx-page"></home-scrollview-card>
+    <home-scrollview-card class="mtx-scrollview-item" value="Scrollview" info="mtx-scrollview" colorClass="mtx-green-50" routerLink="/mtx-scrollview"></home-scrollview-card>
 </mtx-scrollview>
