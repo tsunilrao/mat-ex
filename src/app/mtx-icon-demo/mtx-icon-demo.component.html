@@ -1,0 +1,55 @@
+<mtx-page page-title="Mtx Icon | Material Extentions"
+    description="Reusable Icon component for mobile and desktop Angular web applications styled using Material design guidelines">
+
+    <mtx-app-bar app-bar-title="Mtx Icon" class="mtx-primary" nav="parent"></mtx-app-bar>
+
+    <mtx-page-content>
+
+        <mtx-column style="margin: 16px 0;">
+            <mtx-headline>Mtx Icon</mtx-headline>
+            <mtx-caption class="mtx-dark-secondary-text">MtxIconModule</mtx-caption>
+        </mtx-column>
+
+        <p mtx-paragraph style="margin: 16px 0; max-width: 800px;">
+            Mtx Icon makes it easier to use vector-based and bitmap-based icons in your app. It supports icon fonts, SVG
+            icons and bitmap-based formats (png, jpg, etc.).
+        </p>
+
+        <mtx-column class="attributes-table" style="margin: 16px 0; max-width: 800px;">
+            <mtx-row>
+                <mtx-label class="attribute">Attribute</mtx-label>
+                <mtx-label class="description">Description</mtx-label>
+            </mtx-row>
+            <mtx-row *ngFor="let entry of attributes">
+                <mtx-code class="attribute">{{entry.attribute}}</mtx-code>
+                <mtx-paragraph class="description">{{entry.description}}</mtx-paragraph>
+            </mtx-row>
+        </mtx-column>
+
+        <mtx-stroked-card class="mtx-light" style="margin: 32px 0; max-width: 800px; overflow: hidden;">
+            <mtx-toolbar>
+                <mtx-subtitle class="mtx-dark-secondary-text">Basic Usage</mtx-subtitle>
+            </mtx-toolbar>
+            <mat-divider></mat-divider>
+            <mtx-codeblock class="mtx-gray-100">
+                <mtx-code *ngFor="let entry of attributes">&lt;{{entry.attribute}}
+                    icon="home"&gt;&lt;/{{entry.attribute}}&gt;
+                </mtx-code>
+            </mtx-codeblock>
+            <mat-divider></mat-divider>
+            <mtx-column style="padding: 16px;">
+                <ng-container *ngFor="let entry of attributes; let i = index">
+                    <mtx-row style="padding: 8px 16px; align-items: center;">
+                        <mtx-paragraph style="min-width: 112px;">{{entry.title}}</mtx-paragraph>
+                        <mtx-icon [class]="entry.attribute" style="margin: 0; padding: 0 16px;" icon="home"></mtx-icon>
+                    </mtx-row>
+                    <mat-divider *ngIf="i!=attributes.length-1"></mat-divider>
+                </ng-container>
+            </mtx-column>
+        </mtx-stroked-card>
+
+        <app-footer-section class="mtx-page-full-width" style="margin-top: 32px; margin-bottom: -32px;">
+        </app-footer-section>
+    </mtx-page-content>
+
+</mtx-page>
