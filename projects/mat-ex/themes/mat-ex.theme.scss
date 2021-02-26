@@ -48,6 +48,11 @@ $mtx-colors: (
     mtx-blue-gray: $mat-blue-gray,
 );
 
+.mtx-white { background-color: white !important; color: $dark-primary-text !important; }
+.mtx-white-text { color: white !important; }
+.mtx-black { background-color: black !important; color: $light-primary-text !important; }
+.mtx-black-text { color: black !important; }
+
 .mtx-light, .mtx-light-secondary { background-color: map-get($mat-light-theme-background, background) !important; }
 .mtx-light { color: $dark-primary-text !important; }
 .mtx-light-secondary { color: $dark-secondary-text !important; }

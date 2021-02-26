@@ -17,7 +17,6 @@ export class MtxAppBarDemoComponent implements OnInit {
 
   public attributes = [
     { title: 'Default', attribute: 'mtx-app-bar', description: 'Standard app-bar for most use cases.' },
-    { title: 'Standard', attribute: 'mtx-standard-app-bar', description: 'Standard app-bar for most use cases.' },
     { title: 'Dense', attribute: 'mtx-dense-app-bar', description: 'A condensed app-bar with reduced free spaces.' },
     { title: 'Prime', attribute: 'mtx-prime-app-bar', description: 'A lavish app-bar with lush free spaces.' },
   ]
@@ -26,6 +25,7 @@ export class MtxAppBarDemoComponent implements OnInit {
     { title: 'None', attribute: 'none', description: 'No Navigation.' },
     { title: 'Menu', attribute: 'menu', description: 'Menu button to trigger an drawer menu.' },
     { title: 'Back', attribute: 'back', description: 'Back button to navigate to the last page.' },
+    { title: 'Parent', attribute: 'parent', description: 'Back button to navigate to the parent page.' },
     { title: 'Close', attribute: 'close', description: 'Close Button to close the page and navigate to previous page.' },
   ]
 
