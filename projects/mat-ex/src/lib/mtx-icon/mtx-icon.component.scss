@@ -2,12 +2,12 @@
 
 .mtx-icon { display: flex; width: 24px; height: 24px; }
 .mtx-standard-icon { display: flex; width: 24px; height: 24px; }
-.mtx-small-icon { display: flex; width: 18px; height: 18px; }
+.mtx-dense-icon { display: flex; width: 18px; height: 18px; }
 .mtx-prime-icon { display: flex; width: 36px; height: 36px; }
 .mtx-prominent-icon { display: flex; width: 72px; height: 72px; }
 
-.mtx-icon mat-icon { width: 24px; height: 124px; font-size: 24px; line-height: 24px;}
-.mtx-standard-icon mat-icon { width: 24px; height: 124px; font-size: 24px; line-height: 24px;}
+.mtx-icon mat-icon { width: 24px; height: 24px; font-size: 24px; line-height: 24px; overflow: hidden;}
+.mtx-standard-icon mat-icon { width: 24px; height: 24px; font-size: 24px; line-height: 24px;}
 .mtx-dense-icon mat-icon { width: 18px; height: 18px; font-size: 18px; line-height: 18px;}
 .mtx-prime-icon mat-icon { width: 36px; height: 36px; font-size: 36px; line-height: 36px;}
 .mtx-prominent-icon mat-icon { width: 72px; height: 72px; font-size: 72px; line-height: 72px;}
