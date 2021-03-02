@@ -5,7 +5,7 @@
             <mat-icon>{{navAttr?.icon}}</mat-icon>
         </button>
     </div>
-    <ng-content select="[icon]"></ng-content>
+    <ng-content select="[visual], [navigation]"></ng-content>
     <h1 mtx-app-bar-title *ngIf="title">{{title}}</h1>
     <ng-content></ng-content>
     <div style="display: flex; flex: 1;"></div>
