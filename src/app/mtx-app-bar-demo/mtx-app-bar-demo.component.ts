@@ -25,7 +25,6 @@ export class MtxAppBarDemoComponent implements OnInit {
     { title: 'None', attribute: 'none', description: 'No Navigation.' },
     { title: 'Menu', attribute: 'menu', description: 'Menu button to trigger an drawer menu.' },
     { title: 'Back', attribute: 'back', description: 'Back button to navigate to the last page.' },
-    { title: 'Parent', attribute: 'parent', description: 'Back button to navigate to the parent page.' },
     { title: 'Close', attribute: 'close', description: 'Close Button to close the page and navigate to previous page.' },
   ]
 
