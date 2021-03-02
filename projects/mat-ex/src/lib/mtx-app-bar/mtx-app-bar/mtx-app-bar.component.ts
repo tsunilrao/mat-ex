@@ -5,7 +5,6 @@ const NAV_ATRRIBUTES = [
   { key: 'none' },
   { key: 'menu', icon: 'menu', tooltip: 'Toggle Menu' },
   { key: 'back', icon: 'keyboard_backspace', tooltip: 'Navigate Back' },
-  { key: 'parent', icon: 'keyboard_backspace', tooltip: 'Navigate Back' },
   { key: 'close', icon: 'close', tooltip: 'Close Dialog' },
 ]
 
@@ -48,7 +47,6 @@ export class MtxAppBarComponent implements OnInit, OnChanges {
   onNavClick(event) {
     this.navclick.emit(event)
     if (this.nav == 'back') window.history.back()
-    else if (this.nav == 'parent') this.router.navigate(['..'])
 
   }
 

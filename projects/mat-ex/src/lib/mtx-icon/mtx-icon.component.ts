@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation, ViewChild, TemplateRef, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, ElementRef } from '@angular/core';
 
 @Component({
   selector: `mtx-icon, mtx-dense-icon, mtx-prime-icon, mtx-prominent-icon`,
@@ -17,15 +17,6 @@ export class MtxIconComponent implements OnInit {
 
   @Input() icon?: string;
   @Input() src?: string;
-
-  @ViewChild('more_vert', {static:true}) moreVertRef: TemplateRef<HTMLElement>
-
-  get iconRef(): TemplateRef<HTMLElement> {
-    switch (this.icon) {
-      case 'more_vert': return this.moreVertRef;
-      default: return null;
-    }
-  }
 
   get selector(): string { return this.hostRef.nativeElement.tagName.toLowerCase() }
 
