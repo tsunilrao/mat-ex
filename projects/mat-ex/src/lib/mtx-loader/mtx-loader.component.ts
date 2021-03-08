@@ -8,6 +8,8 @@ import { MtxModalComponent } from '../mtx-modal/mtx-modal/mtx-modal.component';
 })
 export class MtxLoaderComponent implements OnInit {
 
+  @Input('message') message: string = 'Please wait...'
+
   @ViewChild('loader') loader: MtxModalComponent;
 
   constructor() { }
