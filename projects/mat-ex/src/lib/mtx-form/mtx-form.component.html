@@ -1,0 +1,44 @@
+<form [formGroup]="form" style="display: flex; flex-direction: column;" *ngIf="form">
+    <ng-container *ngFor="let field of formFields" [ngSwitch]="field.type">
+
+        <mat-form-field style="width: 100%;" *ngSwitchCase="'text'">
+            <input matInput type="text" [autocomplete]="field.autocomplete" [formControlName]="field.tag"
+                [placeholder]="field.placeholder" [required]="field.required">
+            <mat-error *ngIf="form.get(field.tag).hasError('required')">ⓘ Please enter a value – it's required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%;" *ngSwitchCase="'name'">
+            <input matInput type="text" [autocomplete]="field.autocomplete" [formControlName]="field.tag"
+                [placeholder]="field.placeholder" [required]="field.required">
+            <mat-error *ngIf="form.get(field.tag).hasError('required')">ⓘ Please enter a value – it's required
+            </mat-error>
+            <mat-error *ngIf="form.get(field.tag).hasError('maxlength')">ⓘ Maximum 50 characters allowed.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%;" *ngSwitchCase="'email'">
+            <input matInput type="email" [autocomplete]="field.autocomplete" [formControlName]="field.tag"
+                [placeholder]="field.placeholder" [required]="field.required">
+            <mat-error *ngIf="form.get(field.tag).hasError('required')">ⓘ Please enter a value – it's required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%;" *ngSwitchCase="'number'">
+            <input matInput type="number" [autocomplete]="field.autocomplete" [formControlName]="field.tag"
+                [placeholder]="field.placeholder" [required]="field.required">
+            <mat-error *ngIf="form.get(field.tag).hasError('required')">ⓘ Please enter a value – it's required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%;" *ngSwitchCase="'date'">
+            <input matInput type="date" [autocomplete]="field.autocomplete" [formControlName]="field.tag"
+                [placeholder]="field.placeholder" [required]="field.required">
+            <mat-error *ngIf="form.get(field.tag).hasError('required')">ⓘ Please enter a value – it's required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-checkbox [formControlName]="field.tag" *ngSwitchCase="'checkbox'">{{field.placeholder}}</mat-checkbox>
+
+    </ng-container>
+</form>
