@@ -12,6 +12,7 @@ export * from './lib/mtx-codeblock/mtx-codeblock.module'
 export * from './lib/mtx-container/mtx-container.module';
 export * from './lib/mtx-dialog/mtx-dialog.module';
 export * from './lib/mtx-drawer/mtx-drawer.module';
+export * from './lib/mtx-form/mtx-form.module';
 export * from './lib/mtx-icon/mtx-icon.module'
 export * from './lib/mtx-nav/mtx-nav.module';
 export * from './lib/mtx-text/mtx-text.module';
