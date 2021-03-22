@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { MtxFormfield, MtxFormfieldType } from './mtx-form-field.model';
 
@@ -22,14 +22,9 @@ const FieldDefaults: { [key: string]: FieldDefault } = {
   templateUrl: './mtx-form.component.html',
   styleUrls: ['./mtx-form.component.scss']
 })
-export class MtxFormComponent implements OnInit {
+export class MtxFormComponent implements OnInit, OnChanges {
 
-  @Input() formData: MtxFormfield[] = [
-    { tag: 'name', type: 'name', required: true },
-    { tag: 'email', type: 'email', required: true },
-    { tag: 'age', type: 'number' },
-    { tag: 'dob', type: 'date' },
-  ]
+  @Input() formData?: MtxFormfield[] = []
 
   form: FormGroup;
   formFields: MtxFormfield[];
@@ -40,9 +35,16 @@ export class MtxFormComponent implements OnInit {
     this.reset()
   }
 
-  reset() {
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.formData) {
+      this.reset(changes.formData.currentValue)
+    }
+  }
+
+  reset(formData: MtxFormfield[] = this.formData) {
+    if (!formData) throw new Error("Invalid Form Data");
     const controls = {}
-    this.formFields = this.formData.map(field => {
+    this.formFields = formData.map(field => {
       const newField = { ...field }
       newField.value = field.value || null
       newField.autocomplete = field.autocomplete || this.getAutocomplete(field.type)
